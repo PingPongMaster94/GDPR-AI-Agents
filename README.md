@@ -39,7 +39,6 @@ The goal of this repository is to:
 ## 📌 Future Improvements
 
 * Add summaries for each paper
-* Tag papers by topic (e.g., GDPR, AI, compliance)
 * Include a spreadsheet or table mapping papers to key findings
 
 ---
