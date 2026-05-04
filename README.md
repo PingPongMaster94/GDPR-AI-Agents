@@ -2,7 +2,7 @@
 
 This repository contains the academic papers and materials used for the **Systematic Literature Review (SLR)** phase of my thesis.
 
-## 📁 Structure
+## Structure
 
 * **1. Contextual**
   Background literature that provides general context and foundational concepts.
@@ -18,7 +18,7 @@ This repository contains the academic papers and materials used for the **System
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 The goal of this repository is to:
 
@@ -28,7 +28,7 @@ The goal of this repository is to:
 
 ---
 
-## 🔍 Notes
+## Notes
 
 * File names are indexed for easier reference during analysis
 * Papers are categorized based on relevance to the research questions
@@ -36,7 +36,7 @@ The goal of this repository is to:
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 * Add summaries for each paper
 * Include a spreadsheet or table mapping papers to key findings
