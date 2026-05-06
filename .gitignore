@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.pyc
+models/
+*.pkl
+data/annotated/llm_assessment_cache.jsonl
+archive/
