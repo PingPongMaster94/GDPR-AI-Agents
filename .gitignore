@@ -1,5 +1,5 @@
 # Do not upload literature review PDFs
-SLR/
+#SLR/
 
 # Python junk
 __pycache__/
