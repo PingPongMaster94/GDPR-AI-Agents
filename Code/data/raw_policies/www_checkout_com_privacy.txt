@@ -1,0 +1,430 @@
+Checkout.com - Privacy Policy
+Products
+Products
+Connect
+Global payments network
+Accept Online
+Process payments your way
+Unified Payments API
+Connect through a single API
+Flow
+Boost conversions with custom blocks
+Hosted Payment Page
+Deploy a low-code integration
+Mobile SDK
+Build native mobile checkouts
+Payments Links
+Accept payments on any channel
+Plugins
+Plug into platforms
+move
+Payins and payouts
+Acquiring
+Go global with local acquiring
+Payment Methods
+Process cards, transfers, and APMs
+Issuing
+Launch your own card program
+Payouts
+Pay to bank accounts and cards
+protect
+Fraud, risk, and compliance
+Fraud Detection
+Build a robust risk strategy
+Authentication
+Simplify authentication and compliance
+Identity Verification
+Verify identities with AI-powered video
+Disputes
+Protect against chargebacks
+Vault
+Secure and enrich payment data
+boost
+Payment performance
+Intelligent Acceptance
+Boost revenue with the power of AI
+Network Tokens
+Encrypt and secure payments
+Real-Time Account Updater
+Keep recurring payments flowing
+manage
+Money movement controls
+Dashboard
+Manage performance in one place
+Treasury & FX
+Manage cash flow and finances
+Solutions
+Solutions
+USE CASES
+Ecommerce
+Retail, fashion, consumer goods, and digital services
+Gaming
+Sports, e-sports, game streaming, and virtual reality
+Marketplaces
+Multi-sided markets and platforms
+Travel
+Online booking platforms, agents, and supplier partners
+Fintech
+Neobanks, money transfer, trading, and insurance
+Crypto
+Exchanges and wallets
+Payment Facilitators
+Fintechs and financial service providers
+OUR ECOSYSYTEM
+International Coverage
+One powerful network to scale your business
+Our Partners
+Tech stack partners and plugin payment options
+Documentation & Resources
+Documentation & Resources
+Documentation
+For developers
+Explore step-by-step guides and technical know-how.
+Test Account
+Play, test, simulate, and access the latest features.
+API References
+Get started with a comprehensive API guide.
+Trust Center
+Review our security practices and compliance standards.
+RESOURCES
+Blog
+Explore expert perspectives, guides, and reports.
+Case Studies
+Discover real-world success stories from leading brands.
+Newsroom
+Read our press releases and download our press kit.
+Support
+Get help and answers to all your questions.
+Company
+about us
+Our Mission
+Learn how we help businesses to thrive in the digital economy.
+Our Customers
+See what we do for the world’s leading businesses.
+Contact Us
+Speak to us to discover high-performance payments.
+people & careers
+Careers at Checkout.com
+Make your next career move count. Discover where your journey could take you.
+Explore Opportunities
+Find the role that’s right for you. Start your search here.
+Sign in
+Get in touch
+Sign in
+Get in touch
+Legal
+Transparency is a recurring Checkout.com value that is reflected in our pricing promise, our security protocol and our legal agreements.
+Terms & policies
+Service Terms
+Country Terms
+Privacy Notice
+Cookie policy
+Regulatory
+RDR terms
+Disclaimer
+Payment methods rules
+Claims processing
+Checkout.com Privacy Notice
+This notice was last updated on 26 August 2025.
+Checkout provides services which help businesses thrive in the digital economy. These services include payment processing and optimization, tools to manage and reduce fraud, and identity verification solutions. This notice is designed to provide you with clear information about how we use personal data when we provide our services, so that you can continue to trust Checkout to handle your data fairly, lawfully, and securely. We want to make sure you understand what personal data we may collect about you when you interact with us, how we use your personal data, and how we keep it safe. Personal data means data from which you can be identified either directly (e.g. via your name) or indirectly (e.g. via your IP address).
+If you have any questions about how we use your personal data, you can get in touch by one of the methods set out in the Contact us section.
+This is a global notice that applies to the activities of the Checkout.com group, which includes Checkout Ltd and all affiliated companies (“Checkout”, “we”, “our”, or “us”). The Checkout entity which is the data controller and therefore primarily responsible for your personal data will depend on which Checkout entity provides our services in your jurisdiction. You can find details of the relevant Checkout entities
+here
+or under the Country-specifc notices section below.
+You can scroll down to read the entire notice, or you can jump to the section you are interested in by clicking on one of the headings below:
+Link
+What personal data do we collect?
+The personal data we collect, and the ways in which we process it depend on your relationship with us. This notice relates to the information we process about you if you are:
+A Merchant Representative: you represent the businesses and prospective businesses that we support.
+A Merchant Customer: you are an individual customer who purchases goods and services from our Merchants, applies for a card issued by Checkout, or uses our verification services
+A Website User: you are a visitor to our website, including utilising our sandbox environment
+This notice applies where Checkout act as a data controller, but we may sometimes operate as a data processor for Merchant Customer data where we carry out instructions and process data on a Merchant’s behalf. In these instances, you should refer to the privacy notice of the Merchant for details regarding how they process your information.
+‍
+Merchant Representatives:
+Data we collect
+Where we collect it
+Contact information: your name, job title, email address, phone number, personal or business postal address
+-Where you provide it to us by enquiring about, or registering for, our services
+-From certain trusted third parties, for example those with whom you may have shared your data, and companies which aggregate business contact information
+-From publicly available sources, for example
+Companies House
+in the UK
+Sensitive information: proof of address, copy of a personal identification card or passport, financial information and other information as required to validate your identity and background
+-Where you provide it to us directly in the course of registering a Merchant for our services
+-From certain trusted third parties, for example those with whom you may have shared your data, including companies which provide information on company directors and shareholding
+‍
+Merchant Customers:
+Data we collect
+Where we collect it
+Contact information: your name, email address, phone number, personal or business postal address
+Where you make a purchase through a Merchant that uses Checkout to process payments, utilize a physical or virtual card issued by Checkout, or use our verification services
+Cardholder information: your payment card details and billing address
+Where you make a purchase through a Merchant that uses Checkout to process payments or utilize a physical or virtual card issued by Checkout
+Transaction information: information relating to a purchase, including currency, amount, and the identity of the Merchant
+Where you make a purchase through a Merchant that uses Checkout to process payments or utilize a physical or virtual card issued by Checkout
+Technical information: your IP address and device information (including the type of browser and operating system and version you use, unique device identifier, and mobile network information)
+Where you make a purchase through a Merchant that uses Checkout to process payments, or use our verification services
+Verification information: proof of address, copy of a personal identification card or passport and other information as required to validate your identity
+Where you apply for a physical or virtual card issued by Checkout or use our verification services
+Audio visual and, subject to your consent, biometric information: any videos, images, copies of relevant identity documents, face and voice recordings, from which biometric data such as a faceprint, or a voiceprint, can be extracted
+Where you upload this information while validating your identity using Checkout’s identity verification services
+Sensitive information: your payment card details, copies of relevant identity documents, and biometric data derived from images of you (for example, an image of your face from a face scan), copies of personal identification cards or passport and other information as required to validate your identity
+Where you make a purchase through a Merchant that uses Checkout to process payments or utilize a physical or virtual card issued by Checkout
+Where you upload this information while validating your identity using Checkout’s identity verification services
+Where you apply for a physical or virtual card issued by Checkout or use our verification services
+Please note that where you are a Merchant Customer you should also consult the privacy notice of the Merchant from whom you are making a purchase to understand how they may process and share your personal data.
+‍
+Website Users:
+Data we collect
+Where we collect it
+Technical information: IP address and device information (including the type of browser and operating system and version you use, unique device identifier and mobile network information) and your activity when using this website including information on your access times to this website (for example time zone settings and location), pages viewed, URLs clicked on and the pages you visited before and after navigating to this website
+We use cookies, server logs and other technologies, such as web beacons, to collect this information. Please refer to our
+Cookies Policy
+for further information about how we use cookies and similar technologies.
+Contact information: your name, email address, phone number, personal or business postal address
+Where you provide it to us directly by using an enquiry or event sign up form on our website
+‍
+The purposes for which we process personal data and our lawful basis for doing so
+‍
+Merchant Representatives
+Purposes for which we process data
+Our lawful basis
+We use your contact information to facilitate and enable our relationship with you as a prospective, new or existing merchant
+We use your contact information to send you marketing communications via email or text about relevant products and services
+We process this information based on our legitimate interest in contacting you to in the course of offering or providing relevant products and services to you
+Where required by law we rely on your consent in order to send you direct marketing
+We use your verification information, in order to validate your identity, fulfill our regulatory obligations, and conduct due diligence in the form of Know Your Customer (“KYC”) or Know Your Business (“KYB”) checks
+We process this information where it is necessary to comply with a legal obligation
+We also process this information where it is in our legitimate interests to do so to detect and prevent fraud and money laundering
+We use your contact information and verification information to comply with our legal and regulatory obligations
+We process this information where it is necessary to comply with a legal obligation
+We anonymize and aggregate your information and process it to ensure the security, stability, performance and development of our services
+We process this information where it is in our legitimate interests to do so to securely and effectively maintain and develop our products and services
+‍
+Merchant Customers
+Purposes for which we process data
+Our lawful basis
+We use your contact, cardholder, transaction, technical and verification information to process payments and otherwise provide our services to you
+We process this information where it is in our legitimate interests to do so to securely and effectively deliver our services
+We use your contact, cardholder, transaction, technical and verification information to detect and prevent fraudulent activity, financial crime and any other illegal or unauthorized use of Checkout services
+We process this information where it is necessary to comply with a legal obligation
+We also process this information where it is in our legitimate interests to do so to detect and prevent fraud and money laundering
+We use your contact, cardholder, transaction, technical and verification information to comply with our legal and regulatory obligations
+We process this information where it is necessary to comply with a legal obligation
+We use your contact, and audio visual and biometric information to validate your identity (when using Checkout’s Identity Verification Services)
+We process this information where it is necessary for the performance of a contract
+We only process biometric information with your explicit consent
+We anonymize and aggregate your information and process it to ensure the security, stability, performance and development of our services
+We process this information where it is in our legitimate interests to do so to securely and effectively maintain and develop our products and services
+‍
+Website Users
+Purposes for which we process data
+Our lawful basis
+We use your technical information to perform data analytics to improve and optimize our website, products, services, marketing, customer relationships and experiences as further described in our
+Cookies Policy
+We process this information where it is in our legitimate interests to do so to securely and effectively maintain and develop our website
+Where we use certain types of cookies, we will ask for your consent. We explain this further in our
+Cookies Policy
+We use your technical information to administer and protect our website (including troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data)
+We process this information where it is in our legitimate interests to do so to protect and secure our website
+We use your contact information to respond to you where you make an enquiry on our website
+We process this information where it is in our legitimate interests to do so in responding to your enquiries
+‍
+Automated decision making and profiling
+In the course of providing our services, we may make decisions using your personal data which are partially or wholly automated to help make our decisions and services secure and efficient.
+We use automated decision-making in the following circumstances:
+-Fraud detection: Where you are a Merchant Customer and you initiate a transaction with a Merchant that uses our fraud detection services, your information may be processed by Checkout for the purposes of fraud detection and prevention. In some cases, this may lead to an automated decision for a transaction to be declined or for further information to be requested from you in order to proceed. We perform this activity where we have a legal obligation to do so to protect you and our Merchants, and to otherwise ensure the security of our services. Any such automated decision will be based on your contact, cardholder, transaction, and technical information, as further outlined in the What personal data do we collect section of this notice.
+-Identity verification: Where you are a Merchant Representative or Merchant Customer and we ask you to provide identity information to sign up to one of our services, or you use our
+identity verification
+product, the information you provide may be subject to partially or wholly automated decisions as to whether we are able to verify your identity. In the event we are unable to effectively verify your identity, this could have the impact of delaying or denying you access to a product or service operated by Checkout or one of our Merchants. We perform this activity to ensure we comply with our own legal obligations, or on our Merchants’ behalf where they use our identity verification product.  We use verification information to perform these checks, as well as any audio, visual and biometric information you submit to our Identity verification product, as further outlined in the What personal data do we collect section of this notice.
+Depending on your jurisdiction, you may have a right to object to any automated decisions we have made and request that any such decisions are reviewed by a human. For information on how to exercise this right please see Your Choices and Rights below.
+In addition, in the event that a facial image is used multiple times in a short period of time, a temporary block (up to 96 hours) may be applied to a hash of the image. This is to allow us to protect our systems against potential fraud and alert affected Merchants. This does not result in any permanent decision or classification, and all blocks are reviewed and handled by human operators.
+‍
+Your choices and rights
+Depending on your jurisdiction, you have rights and choices over the way your information is used by us:
+Right to opt-out of direct marketing communications: This enables you to opt-out of receiving marketing communications from us. You can do this at any time by clicking on the ‘unsubscribe’ link included in any email marketing material we send to you, or by informing us by emailing dpo@checkout.com.
+Right to request access to your personal data: This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it. In some cases, you have a right to receive a copy of this information in a reusable format and have it transmitted to another organisation.
+Right to request correction of the personal data we hold about you: This enables you to have any incomplete or inaccurate data we hold about you corrected.
+Right to request erasure of your personal data: This enables you to ask us to delete or remove your personal data. Please note that in some cases, for example if we need to retain your data to comply with legal obligations, we may be unable to comply with such requests.
+Right to object to processing of your personal data: In addition to your right to object to direct marketing communications, in certain circumstances you can object to our processing of your personal data for example when we rely on legitimate interests to process your personal data.
+Request restriction of processing of your personal data: This enables you to ask us to suspend the processing of your personal data in certain scenarios.
+Withdrawal of consent: You can withdraw consent at any time where we are relying on consent to process your personal data
+Right to object to automated individual decision-making and profiling: This includes the right to request human intervention where we have relied on automated decision making or profiling.
+If you wish to exercise any of the rights set out above, or any additional rights noted in the Country-specific section of this notice, please contact dpo@checkout.com. You can also submit a request via an authorized representative, in which case we will confirm the representative has authority to act on your behalf before we carry out the request.
+If you object to the processing of your personal data, or if you have provided your consent to processing and you later choose to withdraw it, we will respect that choice in accordance with our legal obligations. However, this could mean that we cannot provide certain products or services to you or we cannot perform the actions necessary to achieve the purposes described (see The purposes for which we process your personal data).
+‍
+How we share your personal data with third parties
+In order to provide our services to you we may share your personal data with the following parties:
+Members of the Checkout Group: Your information may be shared with our affiliates within the Checkout.com group, to provide you with our services.
+Third party service providers: We may also use third-party service providers acting on our behalf. These service providers help us with data and cloud services, website hosting, data analysis, background and screening, application services, advertising networks, information technology and related infrastructure, customer service, communications, and auditing.
+Payment partners: We may share your personal data with third parties across the payments ecosystem as necessary to securely and effectively process payments. This includes banks, card schemes, alternative payment method providers and issuers.
+Law enforcement and regulators: We may share information in response to a law enforcement, government agency or regulator request where permitted to or required by law. We may also share information when we or a third party is investigating potential fraud.
+We may also share your personal data with third parties in the event of any reorganization, merger, sale, joint venture, assignment, transfer or other disposition or any other transaction affecting all or any portion of our business, assets or stock, or for other legal purposes, such as to enforce our legal terms, or to exercise or defend legal claims.
+Checkout.com does not sell personal data to third parties.
+‍
+International data transfers
+Checkout is a global business and in the provision of our services personal data may be transferred to Checkout group companies or third-party service providers located in a different country than your home country.  We will implement appropriate measures to ensure that your personal data remains protected and secure when it is transferred, and we will only transfer your personal data in accordance with applicable laws and regulations. Where data is transferred from the UK or EEA to a third country that is not deemed by the EU Commission or UK Secretary of State to have adequate protections in place, we rely on the EU Standard Contractual Clauses (SCCs) or contractual clauses approved by the ICO (such as the UK Addendum to the EU SCCs) respectively, to transfer your data to that third country and ensure it remains secure. We also carry out transfer impact assessments before transferring your personal data, to assess the level of risk to you and your rights and protections in that third country.
+You can find the EU SCCs
+here
+and the UK Addendum to the EU SCCs
+here
+.  Please contact us if you would like to know more about how we transfer your personal data overseas.
+How we protect your personal data
+Checkout is committed to building a secure and trusted environment for businesses and their communities to thrive in the digital economy. We are committed to maintaining physical, technological, and organizational measures to protect the security of your information. Whilst we cannot guarantee your personal data will be 100% secure, we put in place appropriate measures to secure personal data from being accidentally lost, used, accessed, altered or disclosed in an unauthorized manner. We continually review the security measures we have in place to ensure they are appropriate.
+We are PCI DSS (Payment Card Industry Data Security Standard) Level 1 compliant, which is the highest standard set by the payment card industry to ensure that cardholder data is processed, stored, and transmitted in a secure environment. Checkout’s systems are also ISO27001 certified.
+When deciding how long to keep your personal data, we think about how much and what kind of personal data we have, how sensitive it is, the risk of unauthorized use or disclosure, why we are using your personal data, and if there is another way to achieve these purposes, as well as what the laws and regulations tell us. We will only retain your personal data for as long as reasonably necessary to fulfil the following purposes:
+-to comply with any legal, accounting, tax and reporting requirements
+-to deliver and develop our products and services securely and effectively
+-to perform analysis and undertake internal research
+Once the data is no longer required for these purposes, we securely erase it.
+Contact us & updates to this notice
+If you have any questions about this notice, including any requests to exercise your legal rights, please contact our Data Protection Officer (DPO) using the details set out below.
+Email address: dpo@checkout.com
+Postal Address:
+Data Protection Officer, Checkout Ltd
+Wenlock Works, Shepherdess Walk,
+London N1 7BQ
+United Kingdom
+You can also contact or complain to your local supervisory authority (for example the UK Information Commissioner’s Office (ICO)
+here
+), however please consider contacting us first so that we can address your question directly.
+‍
+Biometric Data
+If you consent to our collection of biometric information or if our collection of biometric information is otherwise permitted by law, you agree that we may collect your imagery of the face, and voice recordings, from which an identifier template such as a faceprint, a minutiae template, or a voiceprint, can be extracted in order to verify your identity using Checkout’s verification services.  Your biometric information may be shared with our third-party cloud providers Snowflake Computing and Amazon Web Services.  We will delete your biometric information no later than 365 days after the date you provide it.
+In addition, in limited cases where your identity document is flagged for further verification, we may process a hashed version of your facial image, for the sole purpose of preventing repeated use of the same facial image with different documents. This data is used for fraud prevention, stored for no more than 96 hours, and does not result in permanent classification, profiling or denial of service.
+‍
+Country-specific notices
+Notice relating to our operations in Brazil
+Checkout.com is providing the following supplemental information for individuals whose personal information is collected or held by Checkout do Brasil institiução de Pagamento Ltda. or any of its affiliated companies.
+The data protection officer for Checkout do Brasil institiução de Pagamento Ltda. can be contacted at dpo@checkout.com.
+‍
+Notice relating to our operations in Canada
+Checkout.com is providing the following supplemental information for individuals whose personal information is collected or held by Checkout Payment Systems Canada Inc. or any of its affiliated companies.
+In Canada, your personal data is under the control of Checkout Payment Systems Canada Inc. Personal data may be processed by Checkout Payment Systems Canada Inc., its affiliates and service providers outside of Canada, where applicable laws may not offer the same level of data protection as the laws of Canada. Checkout Payment Systems Canada Inc. uses appropriate technical, physical and administrative security measures to protect personal data from unauthorized access, use or disclosure, however, the security of your personal data cannot be guaranteed.
+We process your personal data with your consent, which may be express or implied. We may also process your personal data without your consent, as permitted or required by law. Under applicable data protection law, you may have certain rights (e.g. the possible right to information, to correction, to restrict the dissemination of your personal data in certain circumstances, or to make a complaint) in relation to your personal data.
+If you have any questions about how your personal data is processed or if you would like to exercise any of your rights in respect of your personal data, you may contact you can contact our Data Protection Officer using the contact details provided above.
+‍
+Notice relating to our operations in France
+Checkout.com is providing the following supplemental information for individuals whose personal information is collected or held by Checkout SAS or any of its affiliated companies.
+‍
+Instruction on the processing of your Personal Data after your death
+. For data subjects in France or if your data is processed by Checkout SAS, you have the right to issue general or specific instructions regarding the fate of your Personal Data after your death, in accordance with the terms of Article 85 of French Law No. 78-17.
+‍
+Notice relating to our operations in the United States:
+California
+Checkout.com is providing the following supplemental information for individuals whose personal data is collected or held by Checkout LLC in the State of California as defined in the
+California Consumer Privacy Act as amended by the California Privacy Rights Act (collectively, “CCPA”)
+.
+Your right to access the personal information we hold about you.
+You may request a copy of the personal information that we have collected about you
+Your right to request the deletion of your personal information.
+Subject to certain limitations under applicable law, you may request that we delete the personal confirmation we have collected from you.
+Non-discrimination.
+You have the right not to be discriminated against for exercising any of your rights under CCPA.
+Authorized Agent
+. Only you, or someone legally authorized to act on your behalf, may make a verifiable consumer request related to your personal information. You may also make a verifiable consumer request on behalf of your minor child. To authorize an agent, provide written authorization signed by you and your designated agent, and contact us as set forth in “Contact us & updates to this notice” above.
+Verification.
+To protect your privacy, we will take steps to reasonably verify your identity before fulfilling your request. These steps may involve asking you to provide sufficient information that allows us to reasonably verify you are the person about whom we collected personal information or an authorized representative, or to answer questions regarding your account and use of our Services.
+“Do Not Track.”
+Do Not Track (“DNT”) is a privacy preference that users can set in certain web browsers. Please note that we do not respond to or honor DNT signals or similar mechanisms transmitted by web browsers.
+Your right to opt-out of cross-context behavioral advertising.
+You may opt-out of the sharing of your personal information for cross-context behavioral advertising. Please click the link
+here
+or contact us at dpo@checkout.com to submit a request to opt-out of cross-context behavioral advertising
+Sale of personal information:
+Checkout does not sell personal information, as such we do not knowingly sell personal information relating to minors
+Contact.
+To submit a request to exercise any of your rights, you can contact our Data Protection Officer using the contact details provided above.
+Colorado
+‍
+Checkout.com is providing the following supplemental information for individuals whose personal data is collected or held by Checkout LLC in the State of Colorado as defined in the Colorado Privacy Act.
+‍
+Processing of Sensitive Information
+. In some situations, we may need your explicit consent to process your sensitive personal information (e.g., government issued identification, biometric information, financial information) for the purpose of providing Services and/or other purposes stated in this Privacy Notice, in each case as required by applicable law.
+Email Address
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+Where the world checks out.
+Global (English)
+Select your location
+Products and features may vary by country
+COUNTRIES
+France (Français)
+Germany (Deutsch)
+Spain (Español)
+Italy (Italiano)
+United Arab Emirates (اللغة العربية)
+Portugal (Português)
+China (中文)
+Japan (日本語)
+Language
+Products
+Accept Online
+Flow
+Payouts
+Issuing
+Payment Integrations
+Integrated Platforms
+Payment Methods
+Payment Processing
+Fraud Detection
+Authentication
+Intelligent Acceptance
+Identity Verification
+Vault
+Real-Time Account Updater
+Network Tokens
+Pricing
+Solutions
+use cases
+Ecommerce
+Fintech
+Gaming
+Crypto
+Marketplace
+Payment facilitators
+Travel
+our ecosystem
+International Coverage
+Our Partners
+Company
+Our mission
+Our customers
+Leadership
+Contact us
+Careers at Checkout.com
+Explore opportunities
+Hiring
+Life at Checkout
+Carbon Offsetting
+Documentation
+For developers
+API reference
+Test account
+Trust center
+Resources
+Blog
+Case studies
+Newsroom
+Support
+© 2026 Checkout.com
+Checkout.com or its affiliates provide services under a license or registration in various jurisdictions. Money transmission services in the U.S. provided by Checkout US Inc. (NMLS # 1791692). For details please visit our Regulatory page.
+Terms & policies
+Service terms
+Country terms
+Privacy notice
+Regulatory
+Cookie settings
+Vulnerability Disclosure Program
+Disclaimer
+Modern slavery statement
+Supplier code of conduct
+ABC policy
+Accessibility statement
+this is a social media link
+this is a social media link
+this is a social media link
+this is a social media link
+this is a social media link
+this is a social media link
+this is a social media link
