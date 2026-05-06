@@ -1,1 +1,18 @@
+# Do not upload literature review PDFs
+SLR/
+
+# Python junk
+__pycache__/
+*.pyc
 .DS_Store
+
+# Environments
+.env
+venv/
+env/
+
+# Local/archive/model artifacts
+Code/archive/
+Code/models/
+*.pkl
+Code/data/annotated/llm_assessment_cache.jsonl

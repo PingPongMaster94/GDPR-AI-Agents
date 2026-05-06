@@ -1,0 +1,665 @@
+Customer Privacy Notice
+Skip to Content
+Personal
+Current accounts
+It all starts with our personal current account
+Personal account
+Joint account
+Under 16s account
+16-17s account
+See all current accounts
+Plans
+Upgrade your personal account from Â£3 a month
+Compare plans
+Why Monzo?
+Bank on an award-winning app
+Organise with Pots
+Earn cashback
+Travel without fees
+Spend with friends
+Get paid into Monzo
+Protect your money
+Connect your mortgage
+Pay and get paid
+Savings and ISAs
+Put your money to work with flexible ways to save.
+Instant Access
+Select Access
+Cash ISAs
+Under 16s Savings
+See all savings and ISAs
+Investments and pensions
+Investments
+Pensions
+Credit cards and loans
+Flex Purchase credit card
+Flex Build credit card
+Loans
+Overdrafts
+Insurance
+Home insurance
+Contents insurance
+Help and support
+Help centre
+Security at Monzo
+Staying safe from fraud
+Support with money worries
+Switching to Monzo
+Plus help
+Premium help
+Refer a friend
+Switch to Monzo
+Business
+Sign up
+Personal
+Business
+Sign up
+Terms & Conditions
+FSCS Information
+Privacy Notice
+Cookie Notice
+Fee Information
+Complaints Data
+Overdraft Information
+Loan Information
+Cashback on Your Loan
+Making decisions using Open Banking Terms and Conditions
+Making decisions using Open Banking Privacy Notice
+Monzo Plus
+Monzo Premium
+Referral Scheme
+Referral Variable Reward Scheme
+Our Tax Strategy
+Browser Support Policy
+Attributions
+Mobile Operating System Support Policy
+Credit Insights
+Joint Account Terms & Conditions
+Joint Overdraft Information
+Version 2.1
+Customer Privacy Notice
+17th February 2026
+Table of Contents
+Table of Contents
+Who are we?
+We're Monzo Bank Limited ('we', 'our', 'us') and operate under the name Monzo.
+We're registered with the United Kingdom (UK) data protection authority (the Information Commissioner's Office or ICO) under number ZA108184.
+This notice explains how and why we use your personal information when you apply for an account, use our website, app, card, or services managed by Monzo.
+For information about what cookies are and how we use them, please
+read our Cookie Notice.
+Getting in touch
+For any questions, please contact us however you prefer:
+chat with us through the app
+email
+help@monzo.com
+write to us at Monzo, Broadwalk House, 5 Appold Street, London, EC2A 2DA, UK.
+Your rights âœ…
+You have a right to:
+access the personal data we hold about you, or to get a copy of it
+ask for a copy of your personal data in a portable (machine-readable) format or make us send it to someone else
+ask us correct inaccurate data
+ask us to delete your data, though for legal reasons we might not always be able to do it
+object to us using your data for direct marketing and where your data is processed on the basis of 'legitimate interests', or for research and statistical reasons
+withdraw any consent you've given us at any time but this does not make prior processing based on consent invalid
+restrict processing of your data
+complain to the Information Commissionerâ€™s Office. We ask that you first contact us to give us an opportunity to address any concerns
+ask us to review an automated decision.
+To do any of these things, please get in touch using the details above.
+Where we store or send your data ğŸ”’
+We may store the data we collect from you outside the UK, or transfer it to organisations outside the UK. When we do this, we make sure that your data is protected and that:
+the UK Government has deemed the country or organisation to provide an adequate level of protection for personal data
+we've agreed specific contracts approved for use in the UK which give personal data the same protection it has in the UK.
+How to make a complaint
+If you have a complaint about how we use your personal information, please contact us through the app or send an email to
+help@monzo.com
+and we'll do our best to fix the problem. You can also reach our Data Protection Officer (DPO) at
+dpo@monzo.com
+.
+If you're still not happy, you can refer your complaint to the Information Commissionerâ€™s Office (ICO), the UK regulator for data protection issues. For more details,
+visit their website
+.
+Changes to this notice ğŸ“�
+We'll update the privacy notice on this page and if they're significant changes, we'll let you know by email or in the app.
+Monzo Customers, or application for a Monzo account
+Monzo will collect data about you when you apply to be a Monzo customer, and if you are successful. In certain circumstances, we may continue to process your information as outlined below when you leave Monzo as well, for example, if you need to make credit repayments to us. Please note, references to Flex, Loans, overdraft and data sharing to and from credit reference agencies do not apply to under 18s.
+The information we hold about you, and how we use it ğŸ‘€
+When you sign up for a Monzo account or use our services
+We collect:
+personal details like your name, date and place of birth
+contact details like your home address (and previous addresses), email and phone number
+information about your identity, such as a copy of your ID document, a short video of yourself
+information about your right to live in the UK and your tax residency
+financial details, such as your employment status and the industry you work in, annual income, number of dependents, residential status and monthly housing costs
+details you give us when you sign up for a specific service, like your National Insurance number if you open an Individual Savings Account (ISA)
+if you apply for credit, we'll ask for details about your financial circumstances and reasons for borrowing
+details you give us which we pass to our partners when you let us know you're interested in their services
+information you give us through in-app chat, emails and in-app forms
+answers you give to surveys about Monzo and our services
+details about payments to and from your Monzo account, your savings activity and any overdrafts, loans or Monzo Flex offers you use
+details about who you split a bill with (for example, the contact's name, email, phone number, and transaction details)
+details about services from us and our partners that you show interest in
+details about how you use our app
+all the countries you're a tax resident in and your Tax Identification Number for each one.
+We may sometimes ask for additional information about transactions through our app to protect you and to help detect and prevent fraud and other suspicious activities.
+When you use our website or social media
+We collect:
+your social media handle
+your interactions with our website or social media channel
+direct messages you send to our social media pages.
+When you get in touch
+If you contact us outside of in-app chat, we collect the following information so we can help:
+the phone number you're calling from and information you give us during the call (we record all calls)
+the email address you use and the contents of your email and any attachments
+public details from your social media profile (like Facebook, Instagram or Twitter) if you reach out to us via these platforms, and the contents of your messages or posts to us
+details about why you are contacting us;
+details of any support needs or communication preferences you disclose to us
+details of the device that you are contacting us from.
+We may collect some data from your device
+We collect this information to:
+provide our services to you
+keep your data safe
+improve features for you
+show you relevant advertising through our third-party advertising services on non-Monzo sites
+perform data analysis to measure and improve our advertising channels.
+This includes your:
+mobile network and operating system, so we can analyse how our app works and fix any problems
+IP address and device ID (we may link your mobile number with your device)
+mobile advertising ID, so we can share it with companies that help us with advertising online (you can reset this ID or limit tracking in your phone 'Settings')
+location, if enabled, so we can help protect your account; and phone contacts (we don't store your phone contact list)
+actions taken in our app.
+From external sources
+If you provide your information to a Credit Broker that Monzo partners with, they will provide your information to us so that we can identify what lending Monzo might be able to offer you. The details of which will get passed back to the Credit Broker. When using a Credit Broker service please make sure that you read their Privacy Notice to understand how they process your information.
+When you sign up for a Monzo account, we search your record at:
+credit reference agencies to verify your identity, check if we can offer you an overdraft and manage business risk (this is a 'soft search' and won't impact your credit score)
+if you take out a loan, use Monzo Flex, or turn on your overdraft for the first time, we do a full search (which may impact your credit score). We also use this info to check you can continue to afford your loan and as part of our commitment to supporting and helping our customers, we may use this information, alongside other information we hold about you, to identify signs that you may be at risk of financial difficulties
+fraud prevention agencies, KYC (Know Your Customer) and AML (Anti Money Laundering) service providers to fulfil our legal duties.
+For more information about data we collect from and share with credit reference agencies, see 'Who we share your data with'.
+When you connect your mortgage in the Monzo app, we send your personal data, including your name, date of birth and address to TransUnion so that we can fetch your full credit file.
+To find out how they use your information see their
+privacy notice here
+.
+We may also collect information about you from public sources for AML reasons or market research.
+This includes:
+official public records, like the Electoral Register or Companies House; and
+information published by the press or on social media.
+If you sign up to a service from one of our partners through the Monzo app, they may share details with us about your deal.
+Special category data
+We may need to process sensitive information about customers that data protection laws call 'special category' data. This is information that can reveal a person's:
+racial or ethnic origin
+political opinions
+religious or philosophical beliefs
+trade union membership
+genetic or biometric data (if used for identification purposes)
+information concerning a person's health, sex life or sexual orientation
+Data protection laws say we need a second lawful basis to use special category data. This can be: explicit consent, exercising legal rights in connection with an employment relationship, protecting vital interests, establishing, defending or exercising legal claims or reasons of substantial public interest.
+We process special category data for reasons such as to:
+adhere to regulations
+prevent fraud
+support you if you are, or become, a vulnerable customer.
+To process special category data we rely on:
+substantial public interest, such as to authenticate your identity using biometric data
+vital interests, if itâ€™s necessary to protect your or another personâ€™s life and you canâ€™t consent
+explicit consent, in limited circumstances that have been brought to your attention.
+Automated decision making
+We sometimes make decisions without a human using automated decision making. Some examples of where we do this include to:
+decide if we can give you a Monzo account and products based on information such as your age, residency, nationality, financial position, and other circumstances, like the results of anti-money laundering and sanctions checks and information from Credit Reference Agencies where applicable (borrowing products)
+decide if youâ€™re eligible for products offered by our Partners
+decide if we need to take action, like freezing a transaction or account because we suspect fraud or money-laundering against Monzo or a customer. We decide this based on patterns in our data, like an account or policy being used in a way that fraudsters work
+decide if our services and products, or those of companies we work with, are suitable for you so that we can tailor our marketing
+complete initial assessments for disputed transactions you raise through the app.
+Some of those automated decisions will have significant effects on you, such as a refusal of credit. Weâ€™re only allowed to make these kinds of decisions in certain circumstances, and we will always assess and carefully consider whether the law allows us to do this. If we make a solely automated decision about you that significantly affects you, you have the right to request a manual review of that decision by a person. You can also share your perspective and challenge the outcome. You can ask us to review by contacting us using the details above.
+Artificial intelligence
+We may use artificial intelligence (â€˜AIâ€™) to provide our products and services and to help us achieve the purposes for processing your personal data described in this notice. If we use AI to process your personal data for any new purposes, weâ€™ll either update this notice or tell you separately that we are doing so. Examples of how we use AI include things like helping with customer service queries, detecting and monitoring fraud or other unlawful activity, helping make business decisions or improving marketing.
+We may also use your data to train and analyse the performance of our AI systems. Weâ€™ll only do this if itâ€™s not possible to anonymise your data. We donâ€™t allow third parties whose AI systems or models we use to use your personal data for their own training purposes.
+Our reasons for using your information ğŸ”�
+Data protection laws say we need to have a lawful basis for using your personal data. At least one of the following must apply:
+contractual duty
+legal obligation
+legitimate interest
+public interest
+vital interest
+consent.
+In this section we explain which one we rely on to use your data in a certain way.
+We need to use your data for a contract we have with you, or to enter into a contract with you
+We use details about you to:
+consider your applications
+give you services we agreed to in line with our, and our partners, terms and conditions
+send you messages about your account and other services you use if you get in touch, or we need to tell you about something
+exercise our right under contract weâ€™ve entered into with you, like managing, collecting and recovering money you owe us
+investigate and fix complaints and other problems
+support you if you contact our customer support team, or to help investigate complaints
+provide you with our personalised Monzo service through the app based on your financial goals, preferences, your use of the service and other information you tell us
+set up and maintain third party access if you request another person has access to your account.
+Legal obligation
+We:
+confirm your identity when you sign up or get in touch
+check your record at immigration and fraud prevention agencies
+prevent illegal activities like money laundering, tax evasion and fraud
+check your credit history and ask about your reasons for applying and your financial circumstances
+keep records of information we hold about you in line with our legal and regulatory requirements
+adhere to laws and regulations (these mean we sometimes need to share information with regulators, tax authorities, law enforcement or other third parties)
+compare information we hold about you with tax residency information to make sure we donâ€™t have a reason to doubt it.
+Legitimate interest
+We need to use your data for our legitimate interest, or those of a third party. This means using data in a way that you might expect us to, for a reason which is in your and/or our (or a third partyâ€™s) interest and which doesnâ€™t involve overriding your privacy rights. Details of the processing of your data on the basis of legitimate interests are set out below.
+Product development and marketing
+We:
+tell you about products and services through our app or other channels, like social media companies, based on how your use our products and services and other information we hold about you
+may also exclude ads on this basis so we can make sure our ads are useful and relevant, including instructing platforms to show or not show Monzo adverts to existing customers
+enter you into, and run, prize draws
+share limited information about you with social media companies, other communication platforms, and analytics and search engineer providers
+improve our products and services based on how you respond to ads we show you
+may ask for feedback if youâ€™ve shown interest in a service. We do this so that we can make our products better and understand how to market them
+use the information you share with us, data we get from our partners and data Monzo has about you to suggest features and products youâ€™d find useful
+use data Monzo has about you to check that you are eligible for products that we show you
+share insights with the public about trends
+may use the personal information you give us to test third party services
+may use your personal data to train, test and analyse the performance of AI tools that we develop and use
+decide what type of marketing content to send to you by email and push notification (if you have asked to receive this from us)
+recommend other products and services in our app that we think youâ€™ll like.
+Give you special features
+We:
+show where you bought something with Google maps
+send you travel reports when you are abroad (we do this using transaction data, not by tracking your phone)
+give you reports on how youâ€™ve spent and/or saved money using Monzo
+personalise your visual experience in the Monzo app, like choosing a picture for your virtual card based on what youâ€™ve told us youâ€™ll use it for
+show your profile pictures,name and phone number to Monzo contacts in their app if you have not turned off your profile privacy settings (if you pay someone, theyâ€™ll see your name regardless. Itâ€™s our legal duty to show this).
+Give you tailored support
+We:
+record information that you provide us about your support needs
+provide signposting for support that we think may be relevant for your needs
+record your communication preferences or any of your reasonable adjustments
+tailor the support we provide to manage your account
+reach out to you about information that you provide us via our â€˜Share With Usâ€™ feature to see how we can best support you.
+Security and business management
+We:
+protect the rights, property or safety of us, our customers and others
+carry out security and maintenance checks to make sure everything runs smoothly
+manage Monzoâ€™s business risk and finances
+share information with credit bureaus and crime prevention agencies so we can benefit from up-to-date information when we make decisions about our products and services and to help us make responsible lending and investing decisions and fight financial crime
+store backup copies in case we face a legal claim about the information
+share information with companies so they can help us provide our services, including to validate your card status with card producers and networks or card transaction processors to ensure your card is not used for fraudulent purposes.
+use information to provide customer services.
+Public interest
+We:
+use facial recognition technology to identify people who use our services in the Monzo app to prevent or detect unlawful acts
+record information about your health if itâ€™s necessary to protect your economic well-being or to safeguard your overall wellbeing if you are at risk and enable us to tailor the support we give you
+Vital interest
+We may share information about you externally (generally with law enforcement in an emergency), if it's necessary to protect your or another person's life and you cannot consent.
+Consent
+Weâ€™ll ask for your consent to:
+tell you about our, or our partners, products and services by email or push notification if we think theyâ€™re of interest to you. You can unsubscribe from these by email or in the app (if you don't want to see lending promotions in the app, you can opt out in â€˜Settingsâ€™);
+help protect you against fraud by tracking the location of your phone if you've authorised it
+tell people that you have a paid account
+share information, including special category data, about you with companies we work with when we need your permission (see â€˜Who we share your data withâ€™)
+details about other bank accounts you hold when you use our connected banks feature or connect using open banking
+fetch your full credit file
+eligibility check for your borrowing products.
+You can withdraw your consent to processing at any time either through the app, or contacting customer services but this does not make prior processing based on consent invalid.
+Who we share your data with ğŸ¤�
+Here we mean companies that help us provide services you use, and need to process details about you for this reason.
+We share as little information as we can and encrypt and/or make it impossible for the recipient to identify you where possible (for example, by using a User ID rather than your name). These include:
+companies that make our Monzo cards
+card producers and networks, like MasterCard
+card processing partners
+payment service providers for certain bank transfers
+banking infrastructure partners and payment platforms, for example when you have a Monzo Currency Account
+analytical, Know Your Customer (KYC) and cyber security service providers that help us with identity verification or fraud checks
+cloud computing power, storage and software providers
+our business intelligence and analytics platform provider
+companies that help us with functional analytics (to help us solve technical problems with the app, for example)
+companies that help us with marketing (we won't share identifiable personal data with third parties for their own direct marketing unless you give us permission, and you can opt out any time)
+we may also get information about you from some of our partners, which provides us with further insights to suggest features and products you'd find useful. You have the right to object to this processing and can do so by turning off personalised marketing in the app
+software companies that we use to email you, or for processing and storing emails with you
+companies that help us with customer support
+companies that help us with fraud prevention
+your trusted contact, so that they can review your transactions
+companies that offer benefits or rewards through special programmes you sign up to in the app
+some merchants that we work with to offer you cashback, so they can confirm your purchase qualifies for cashback. To find out how each merchant handles your information, please read their privacy notices
+digital wallet providers. For example, if the functionality is available we may share your Flex monthly payment options so that they can be displayed to you through the wallet provider
+companies that print written statements and notices
+companies that manage our CCTV and security if you visit our offices
+third-party advertising services to show you relevant ads on non-Monzo sites and measure ad performance.
+Credit reference agencies (CRAs)
+CRAs give lenders information about borrowers to help them make responsible lending decisions. Banks share details about their customers to help CRAs maintain up-to-date information about people's financial status. We work with TransUnion, Experian and Equifax.
+When you sign up, and for as long as you're a customer, we'll exchange details about you with CRAs. This includes:
+your name, address and date of birth
+accounts you have, including when you opened them and money going into them (if you owe us money, we'll also share your balance)
+credit applications you've made and limits you've turned on
+if you've borrowed, details of your loan (including through Monzo Flex) and repayments (like whether you repay in full and on time)
+fraud prevention information.
+We'll use this information to comply with our legal duties and when it's in our 'legitimate interest' to:
+verify your identity and make sure what you've told us is true;
+help detect and prevent fraud and money laundering;
+assess whether you can afford to make repayments if you borrow;
+to understand if you might be showing signs of financial stress;
+manage your account with us;
+trace and recover debts; and
+make sure our offers are relevant for you.
+If you apply for a joint account with someone else, we and CRAs will link your records with theirs.
+For more information about how the CRAs we work with use your data, read
+TransUnion
+,
+Equifax
+and
+Experian's
+CRA Information Notices.
+Fraud prevention agencies (FPAs)
+When you apply for an account, we check your record with FPAs like
+Cifas
+. During the application process and after you become a customer, we may share information about you with them to help prevent fraud and money laundering when it's in our 'legitimate interest'.
+If we detect fraud, we may stop activity on your account or block access. Other organisations may use information we share with FPAs about fraud to refuse their services, finance or employment. For more information about the details we collect from and share with Cifas, and how they'll use your data, see
+Cifas' Fair Processing Notice
+.
+Anyone you give us permission to share it with
+We tell you in the app when we need your consent to share your data with:
+companies that introduce their own services via the Monzo app, like insurance or remortgaging companies or cross border credit bureaus
+other customers you want to set up joint Monzo accounts with
+other apps
+other banks if you use account switching or aggregation services;
+people you've asked to represent you, like solicitors and debt management companies.
+Law enforcement and other external parties
+We may share information about you with:
+authorities that spot and stop financial crime, money laundering, terrorism and tax evasion if the law says we have to, or if itâ€™s necessary for other reasons
+the police, courts or dispute resolution bodies if we have to
+local health authorities, such as Adult Social Services, to safeguard your wellbeing
+other banks to help trace money if youâ€™re a victim of fraud or other crimes, or if thereâ€™s a dispute about a payment
+any other third parties where necessary to meet our legal obligations.
+Debt Purchasers
+If you default on any borrowing with us, we may share your contact details with debt purchasers who can help you manage your debt. Any debt purchasers we work with are regulated by the FCA.
+Credit Brokers
+If you use a Credit Broker service that Monzo partners with, we will share information about what Loan rates we might offer you. If you get a debt consolidation loan we will also share your account details so that any remaining balance is sent to your Monzo account, with your permission we also get information from your credit file to show your existing debts to consolidate. This is in line with the service you request from the Credit Broker.
+Other Monzo Group companies
+We may share details about you with other Monzo companies for reasons explained in the â€˜Our reasons for using your informationâ€™ section. We may share your details with people or companies if we change the structure of our group of companies, merge with another company, or get bought by another company.
+Additional Monzo Services â­�ï¸�
+Savings Accounts
+Some of our savings accounts are provided with our selected partners, who are shown when you sign up for a savings account. Sometimes we may need to share your data with the provider to enable them to meet their obligations for holding Deposit Products on behalf of Monzo. The information we share is in line with our obligations with the Financial Services Compensation Scheme (FSCS).
+Credit Insights on free account
+If you use the credit insights feature, we will share some of your details like your name, date of birth and address with TransUnion.
+If you want to find out more about how TransUnion use your information, you can review their
+privacy notice
+.
+Credit information is provided by TransUnion International UK Limited. Registered in England and Wales with company number: 3961870. Registered office: One Park Lane, Leeds, West Yorkshire, LS3 1EP. TransUnion International UK Limited, part of the TransUnion Information Group, is authorised and regulated by the Financial Conduct Authority under registration number 737740.
+Mortgages
+When you connect your mortgage in the Monzo app, we send your personal data, including your name, date of birth and address to TransUnion so that we can fetch your full credit file. To find out how they use your information see their
+privacy notice here
+.
+If you use our remortgage service, we may share personal data with
+Better.co.uk
+or Hey Habito Limited, including your email and mortgage information, so that they can find a remortgage deal for you. We will show you your remortgage application status in our app.
+Monzo Paid Plans
+If you sign up for Monzo Paid plan, we'll share your name and contact details with our insurance and perks partners so they can provide the services you get through your Monzo Plan.
+We also share your account details, so insurance partners can pay you if you make a successful insurance claim. We share your payment details too, so we can collect payments you owe us for using lounge access benefits. Our legal basis for sharing your information for these reasons is contractual necessity: we need to use your data for a contract we have with you. To learn how our partners use your information, please see their privacy noticeâ€™s below.
+We will also share:
+details of anyone else that you have asked to be covered on the travel insurance and breakdown cover
+usage of the extras
+Our legal basis for sharing your information for these reasons is contractual necessity: we need to use your data for a contract we have with you. To learn how our partners use your information, please read:
+Assurant Privacy Notice
+(phone insurance)
+Qover Privacy Notice
+(travel insurance)
+LoungeKey Privacy Notice
+(airport lounge access)
+RAC Privacy Notice
+(breakdown cover)
+Greggs Privacy Notice
+(weekly hot drink or snack)
+Trainline Privacy Notice
+(Annual railcard)
+Vue Privacy Notice
+(1 ticket every month + 10% off food and drink)
+If you use the auto-spreadsheets feature to transfer transaction data into your Google Drive account, weâ€™ll share this information with the Google company that manages your account until you pause exports or remove access. Weâ€™ll have access to your spreadsheet, but wonâ€™t collect the information in it.
+If you use the credit insights feature, we will share some of your details like your name, date of birth and address with TransUnion, Equifax and Experian.
+Monzo will also receive up to date notifications about what has changed on your credit file to show to you in app and through push notifications.
+If you want to find out more about how TransUnion use your information, you can review their
+privacy notice
+.
+Credit information is provided by TransUnion International UK Limited. Registered in England and Wales with company number: 3961870. Registered office: One Park Lane, Leeds, West Yorkshire, LS3 1EP. TransUnion International UK Limited, part of the TransUnion Information Group, is authorised and regulated by the Financial Conduct Authority under registration number 737740.
+If you want to find out more about how Equifax use your information, you can review their
+privacy notice
+.
+Credit information is provided by Equifax Limited. Registered in England and Wales with company number: 2425920. Registered office: at 1 Angel Court, London, EC2R 7HJ. Equifax Limited, is authorised and regulated by the Financial Conduct Authority under registration number 73900.
+For example, details of how Credit reference agencies process personal data as part of their core credit referencing activities and other products and services, can be found in the
+â€œCredit Reference Agency Information Noticeâ€� (CRAIN) privacy notice
+.
+If you want to find out more about how Experian use your information, you can review their
+privacy notice
+.
+Credit information is provided by Experian Limited. Registered in England and Wales with company number: 653331. Registered office: The Sir John Peace Building, Experian Way, NG2 Business Park, Nottingham, NG80 1ZZ. Experian Limited, is authorised and regulated by the Financial Conduct Authority under registration number 738097.
+Information we get from Credit Reference Agencies
+If you pass our credit reference agencies authentication process, theyâ€™ll give us the following information monthly for as long as youâ€™re using Credit Insights
+your credit score;
+information from your credit report that explains your credit score, your full credit report
+reasons why your score has changed, if there have been any changes since the previous month
+actions that you can take to help improve your credit.
+Weâ€™ll share this information with you in the Monzo app for as long as youâ€™re using Credit Insights, and let you know when we have new information to show you.
+Open Banking
+With your permission, we access and store specific details about accounts you hold with other banks to help us make lending decisions. If you don't give us consent to access an account, we may not be able to offer you the service.
+When you give us consent to access details about accounts you hold with other banks we collect:
+full legal name of any account holders and status (open/closed)
+your account number, sort code
+your account balance
+details of transfers in the last 13 calendar months. This includes transaction amounts, currencies, exchange rates, merchants and information about people who've paid you
+We consider the information we get about non-Monzo accounts you've connected with valid for 30 days.
+In certain circumstances you may be able to initiate payments to your Monzo account using Open Banking.
+Investments and Pensions
+When signing up to Monzo investment and pension services, we will need to share your details with our services partner who provides certain services to Monzo and you and our fund manager.
+If you use our pension tracing services, we will send your details of your previous employment, and any data about your pensions that you have told us, to Raindrop.
+If you are over 50 and want to set up a meeting with a pension advisor, we will send your contact details to Pensionwise so that they can book an appointment to discuss your options.
+Under 16s Accounts
+If you open an Under 16s account, we will store your childâ€™s data as well as your own. We will keep a record of how you and your child use the account in line with our legal and regulatory obligations.
+If you contact Monzo about your child, we will keep a record of your conversation against your and your childâ€™s customer profiles.
+To view the privacy notice for your child, please see
+here
+.
+Home & Contents Insurance
+If you take out home or contents insurance, we will need to process your data upon entering the contract with you. We will share your data with Chubb, the insurer under the policy, provide you with your quote and your policy. For more information on how Chubb will handle your data, please see their
+privacy notice
+. The data we will share with Chubb includes but is not limited to:
+personal details such as your full name and address
+contact details, such as your phone number and email address
+your residential status and property information
+details about your policy and claim
+details in relation to any communications and complaints
+your accessibility needs
+Monzo may also receive information from Chubb and their third parties to aid us with displaying your policy information within the app.
+How long we keep your information ğŸ“�
+Weâ€™ll keep your information for 10 years after your account closes, in case we need to respond to a legal claim. In some circumstances, like cases of anti-money laundering or fraud, we may keep data longer if we need to (thatâ€™s in our legitimate interest) and/or the law says we have to.
+To work out how long we keep different categories of data, we consider why we hold it, how sensitive it is, how long the law says we need to keep it for, and what the risks are.
+Non - Monzo Customers
+Monzo may collect data about you even if you are not a Monzo customer. This might be if you use our website, pay or get paid by a Monzo customer, or are named in an insurance policy.
+The information we hold about you, and how we use it ğŸ‘€
+We may collect information about you when
+you use our website or you interact with our social media pages
+you pay a Monzo customer
+a Monzo customer pays you
+when you are named as a beneficiary on a Monzo policy
+when you contact Monzo
+you are added to Monzo Split
+The information we might collect and hold about you includes;
+your name
+your identity documents
+your contact details, such as your email address, phone number and address
+payment details including card details, transactions details and any references
+your cookie and tracking preferences
+interactions you have had with Monzo
+your social media handles and posts
+Monzo Splits that you are added to
+tab notification settings
+bills that you upload
+payment details
+Our reasons for using special category information
+We may need to process sensitive information about you that data protection laws call â€˜special category dataâ€™. This is information that can reveal a person's:
+mental or physical health
+racial or ethnic origin
+political opinions
+religious or philosophical beliefs
+trade union membership
+genetic or biometric data (if used for identification purposes)
+information about sex life or sexual orientation.
+Data Protection laws say we need a second lawful basis to use special category data. This can be: explicit consent, exercising legal rights in connection with an employment relationship, protecting vital interests, establishing, defending or exercising legal claims or reasons of substantial public interest.
+We process special category data for reasons such as to:
+adhere to regulations
+prevent fraud.
+To process special category data we rely on:
+substantial public interest, such as to authenticate your identity using biometric data
+vital interests, if itâ€™s necessary to protect your or another personâ€™s life and you canâ€™t consent
+explicit consent, in limited circumstances that have been brought to your attention.
+Automated decision making
+We sometimes make decisions without a human using automated decision making. Some examples of where we do this include to decide if:
+we need to take action, like freezing a transaction or account because we suspect fraud or money-laundering, or other unlawful activity against Monzo or a customer. We decide this based on patterns in our data, like an account or policy being used in a way that fraudsters work; and
+our services and products, or those of companies we work with, are suitable for you so that we can tailor our marketing.
+If we make an automated decision or create a profile about you that significantly affects you, you have the right to request a manual review of that decision by a person. You can also share your perspective and challenge the outcome. You can ask us to review by contacting us using the details above.
+Artificial intelligence
+Sometimes we may use artificial intelligence to provide our products and services, which may include using different technologies, for example generative artificial intelligence models. This includes things like helping with customer service queries, detecting and monitoring fraud, helping make business decisions or improving marketing. We may also use your data to train and analyse the performance of our artificial intelligence models.
+Our reasons for using your information ğŸ”�
+Data protection laws say we need to have a lawful basis for using your personal data. At least one of the following must apply: contractual or legal duty, legitimate interest, public interest, vital individual interest or consent.
+We need to use your data for a contract to:
+facilitate a payment;
+send you receipts of your payment;
+help you with your queries;
+ensure that we are talking to the right person; and
+supply you with services such as insurance.
+We need to use your data to comply with the law to:
+confirm your identity when you sign up or get in touch;
+check your record at fraud prevention agencies;
+prevent illegal activities such as financial crime;
+keep records of information we hold about you in line with legal requirements;
+adhere to banking laws and regulations (these mean we sometimes need to share customer details with regulators, tax authorities, law enforcement or other third parties); and
+detect and monitor fraud and other crimes.
+When itâ€™s in our â€˜legitimate interestâ€™
+We use your data for our legitimate interests or those of a third party. This means using data in a way that you might expect us to, for a reason which is in your and/or our (or a third partyâ€™s) interest and which doesnâ€™t involve overriding your rights. Details of the processing of your data on the basis of legitimate interests are set out below.
+Such legitimate interests may include:
+analytics to help us solve problems with services you use
+product and service development to deliver you better offerings
+tell you about products and services through channels such as social media, depending on how you interact with Monzo
+may also exclude ads on this basis by sharing limited data with third parties
+track, analyse and improve Monzo based on how you interact with ads and Monzo accounts
+requesting feedback if youâ€™ve shown interest in a service
+testing third party services through our user research initiatives;
+helping to respond to customer service queries
+improving marketing
+tell you about products and services through channels such as social media, depending on how you interact with Monzo
+exclude ads by sharing limited data with third parties
+track, analyse and improve Monzo based on how you interact with ads and Monzo accounts.
+When you give us your consent to:
+share your story
+answer any surveys, take part in research or prize draws.
+You can withdraw your consent to processing at any time by contacting customer services but this does not make prior processing based on consent invalid.
+Who we share your data with ğŸ¤�
+Companies that give services to us
+Here we mean companies that help us provide services and need to process details about you for this reason, such as:
+cloud computing power, storage and software providers
+our business intelligence and analytics platform providers
+companies that help us with functional analytics (to help us solve technical problems with the website, for example)
+software companies that we use for emailing you
+,
+or for processing and storing email communications with you
+companies that help us with customer support if you reached out to Monzo
+our insurance providers and other third companies that give us benefits
+companies that help us with fraud prevention
+third-party advertising services to show you relevant ads on non-Monzo sites and measure ad performance.
+Fraud prevention and Law enforcement agencies
+We may share information about you with:
+authorities that spot and stop financial crime, money laundering, terrorism and tax evasion if the law says we have to, or if itâ€™s necessary for other reasons
+the police, courts or dispute resolution bodies if we have to
+local health authorities, such as Adult Social Services, to safeguard your wellbeing
+other banks to help trace money if youâ€™re a victim of fraud or other crimes, or if thereâ€™s a dispute about a payment
+any other third parties where necessary to meet our legal obligations
+We also may share your details with our regulators if required.
+Anyone you give us permission to share it with
+We may share your data:
+we may share your posts on social media platforms
+with journalists.
+Other Monzo Group companies
+We may share details about you with other Monzo companies for reasons explained in the â€˜Our reasons for using your informationâ€™ section. We may share your details with people or companies if we change the structure of our group of companies, merge with another company, or get bought by another company.
+How long we keep your information ğŸ“�
+Weâ€™ll keep your information for 6 years in case we need to respond to a legal claim. In some circumstances, like cases of anti-money laundering or fraud, we may keep data longer if we need to (thatâ€™s in our legitimate interest) and/or the law says we have to.
+To work out how long we keep different categories of data, we consider why we hold it, how sensitive it is, how long the law says we need to keep it for, and what the risks are.
+Adjust your cookie preferences
+We use 4 types of cookie. You can choose which cookies you're happy for us to use. For more detail, and a list of the cookies we use, see the
+Monzo cookie policy
+.
+Past versions
+Version 2.1
+Version 2.0
+Version 1.24
+Version 1.23
+Version 1.22
+Version 1.21
+Version 1.20
+Version 1.19
+Version 1.18
+Version 1.17
+Version 1.16
+Version 1.15
+Version 1.14
+Version 1.13
+Version 1.12
+Version 1.11
+Version 1.10
+Version 1.9
+Version 1.8
+Version 1.7
+Version 1.6
+Version 1.5
+Version 1.4
+Version 1.3
+Version 1.2
+Version 1.1
+Site information and links
+Products
+Current accounts
+Business accounts
+Savings
+Credit cards
+Loans
+Investments
+Pensions
+Home Insurance
+Company
+Careers
+Press
+Blog
+Investor information
+Helping everyone belong
+Modern slavery statement
+Using Monzo
+Web app login
+Accessibility
+Life events
+Terms and Conditions
+Information about our current account services
+Savings hub
+Personal loan calculator
+Currency Converter
+1p Savings Challenge
+Help and security
+Help centre
+FAQs
+Fraud protection
+Security at Monzo
+Money worries
+FSCS information
+Site and app information
+Privacy notice
+Cookie notice
+Browser support policy
+Mobile operating system support policy
+App performance
+ğŸ‡¬ğŸ‡§
+United Kingdom
+|
+English
+Monzo Logo
+Monzo Bank Limited is a company registered in England and Wales (No.09446231). Monzo Bank Limited is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Our financial Services Register number is 730427. Our address is Broadwalk House, 5 Appold St, London EC2A 2AG.
+Can we use optional cookies?
+Weâ€™re not talking about the crunchy, tasty kind. These cookies help us keep our website safe, give you a better experience and show more relevant ads. You can learn more about
+our cookie policy
+.
+Accept all
+Reject all
+Customise
+Adjust your cookie preferences
+We use 4 types of cookie. You can choose which cookies you're happy for us to use. For more detail, and a list of the cookies we use, see the
+Monzo cookie policy
+.
