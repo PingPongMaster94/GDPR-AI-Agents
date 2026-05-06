@@ -1,0 +1,489 @@
+Privacy Policy - UnitedHealth Group
+Skip to content
+Close Menu
+Close
+                                    Search
+About
+About UnitedHealth Group
+We are a health care and well-being company made up of a diverse team around the world dedicated to making health care work better through two distinct and complementary businesses: Optum and UnitedHealthcare.
+Mission & Values
+Our People & Culture
+United for Giving
+Awards & Recognition
+United Health Foundation
+Our Businesses
+Sustainability
+What We Do
+Value-Based Care
+Health Financial Services​
+Health Benefits
+Artificial Intelligence
+Pharmacy Services​
+How We Do It
+Careers
+Careers
+UnitedHealth Group is a health care and well-being company dedicated to improving health outcomes for millions of people around the world. We comprise two distinct but complementary businesses, UnitedHealthcare and Optum, working together to build a better health system for all.
+Find your next job
+Join our talent community
+Work Here
+Clinical Professionals
+Corporate & Business Operations
+Customer Service & Support
+Early Careers
+Sales & Account Management
+Technology & Data
+Life Here
+Culture of Belonging
+Employee Benefits
+Military Fellowship Program
+Job Seeker Resources
+Blog
+Events
+Newsroom
+Insights, News & Resources
+Explore our news stories to see our mission at work, find recent press releases and read research offering solutions for addressing health care challenges and opportunities.
+Newsroom
+Media Resources
+Latest Updates
+Insights & Research
+Center for Health Care Research
+A Path Forward
+Investor Relations
+Investor Relations
+We are dedicated to continuously improving the quality of our performance for consumers, customers, care providers and our shareholders.
+Investor Relations
+Financial & Earnings Reports
+Shareholder Resources
+Dividend History & Stock Basis
+Archive
+UnitedHealth Group Reports 2025 Results and Issues 2026 Outlook
+UnitedHealth Group reported full year and fourth quarter 2025 results and issued its 2026 outlook.
+Read the announcement
+UnitedHealthcare
+Our mission is to help people live healthier lives and make the health system work better for everyone. We dedicate ourselves to this every day for our members by being there for what matters in moments big and small — from their earliest days to their working years and through retirement.
+Go to UnitedHealthcare
+Find a Doctor
+Find Medicare Advantage Plan
+Estimate Drug Costs
+Check My Coverage
+Review My EOB
+Optum
+We’re a leading health solution and care delivery organization. Our work is complex, but our mission is simple: create a healthier world, with you at the center.
+Go to Optum
+About Optum
+Careers at Optum
+For Business
+Find Care
+Member Sign-In
+Search
+Close Search
+Country
+Country
+Built for Better Health
+Online Services Privacy Policy
+We recognize that the privacy of your information is important. This Online Services Privacy Policy ("Privacy Policy" or "Policy") describes our practices in connection with information we collect through the online and mobile websites, platforms, services, and applications that we own or operate and that contain a link to this Privacy Policy (collectively, "Online Services").
+As used in this Policy, terms such as "we," "us," "our," and "Company" refer to current and future affiliated entities, subsidiaries, agents, contractors, or vendors of UnitedHealth Group, Inc. Our Online Services are intended for a United States audience. Any information you provide, including any personal information, will be transferred to and processed by a computer server located within the United States.
+By using the Online Services, you consent to our collection, use, disclosure, and storage of information as described in this Privacy Policy.
+Our Privacy Policy explains:
+When This Privacy Policy Applies
+What Information We Collect About You
+How We Use Your Information
+How We Share Your Information
+How to Manage Your Information
+Protecting Your Information
+Children Under 13
+Additional Rights for California Residents
+State Consumer Privacy Notice (CA)
+Social Media Disclaimer
+Social Security Number Protection Policy
+Changes to This Policy
+Contact Us
+When This Privacy Policy Applies
+Our Policy applies to Online Services that we own or operate and that contain a link to this Privacy Policy. Our Policy does not apply to information collected through other means such as by telephone, via Online Services that do not link to this Privacy Policy, or in person, although that information may be protected by other privacy policies.
+Our Policy does not apply to the practices of other companies or other websites or software applications that may be linked from or made available through our Online Services.
+The inclusion of a link on our Online Services or the ability to utilize a third-party website or software application through our Online Services does not imply that we endorse, or otherwise monitor the privacy or security practices of that third-party website or software application or the accuracy of its content, and your use of the third-party website or software application is governed by the third-party's privacy policy.
+Some of our products and services are regulated by certain state and federal laws, including the Health Insurance Portability and Accountability Act ("HIPAA") and the Gramm-Leach-Bliley Act and may have specific privacy practices ("Product Privacy Notices") such as a HIPAA Notice of Privacy Practices or other specific privacy practices that we want you to be aware. When a Product Privacy Notice exists, the content of the Product Privacy Notice applies to your use of the product and service.
+This Privacy Policy is not intended to and does not create any contractual or other legal rights in or on behalf of any party.
+What Information We Collect About You
+We may collect two basic types of information through the Online Services:
+(1)
+information you provide directly to us, and
+(2)
+information that is automatically provided to us or collected through your use of our Online Services (collectively, “Information”).
+Such Information may include information that identifies you such as your full name, telephone number, email address, postal address, certain account numbers, your User ID that you create or is assigned to you, health and medical information, including Protected Health Information, financial information and other information described in this Privacy Policy.
+When you use the Online Services, you may provide certain Information directly to us. For example, you may input a telephone number or email address into a webform or enter information into a chat functionality. We also may make certain information available to you on the Online Services that we collect from other sources. For example, we may pre-populate certain demographic information in an online form or make health or medical information viewable on the Online Services that you have provided to us on paper forms or maintained in other information systems.
+We also may obtain Information that is automatically collected through the Online Services. The automatically collected Information may include demographic, de-identified, aggregated, or certain information from your device such as technical information about your device, web-browser information, and server log files collected by us or provided by you. See
+Cookies and Tracking
+for more information on automatically collected information.
+You may limit the Information you provide or make available to us if you want to; however, that may limit your ability to access or use certain functions of the Online Services or to request certain services or information.
+Mobile Devices and Applications
+In addition to the Information identified above, our mobile applications also may collect the following Information:
+Information that Identifies You
+Health, medical, therapy, or financial information;
+Information created by UnitedHealth Group;
+Location data such as GPS, Wi-Fi, or carrier network location (see below for more details); and
+User files stored on your device, like calendars, photos, and videos, if you grant permission through your device settings.
+What You Do on Your Device
+Camera use. Certain features may have access to your camera if you grant permission in your device settings;
+Local storage;
+Phone dialer;
+Use of screen,
+e.g.
+, what points are touched, frequency, etc.; and
+Patterns of app usage.
+Device or System Data
+Mobile Device Identifier,
+e.g.
+, Unique Device Identifier (UDID), Android ID; and
+Technical information about your device and system and application software,
+e.g.
+, type of phone, Operating System (OS), and IP address.
+We may obtain location data from your device to provide location-related services (
+e.g.
+, driving directions or distance calculation, via the mobile application). You may withdraw consent to use precise, real-time, or network location data at any time by turning off the location-based feature on your mobile device or by not using any location-based features. If you withdraw your consent, functionality associated with precise, real-time, or network location (
+e.g.
+, navigation) will no longer work.
+How We Use Your Information
+We may use your Information:
+To respond to an email, chat or other instant message or particular request from you;
+To communicate with you;
+To provide you with content, services, and functionality through our Online Services or other services that we may offer;
+To process an application for a product or service as requested by you;
+To authenticate you on any portion of our Online Services and with vendors acting on our behalf;
+To administer surveys and promotions;
+To personalize your experience on our Online Services;
+To provide you with informational or promotional offers, as permitted by law, that we believe may be useful to you, such as information about products or services provided by us or other businesses;
+To perform analytics and to improve our products, Online Services, and advertising;
+To facilitate the provision of software updates and product support;
+To improve products and other services related to the Online Services or to provide services or technologies to you;
+To comply with applicable laws, regulations, and legal process;
+To protect someone's health, safety, or welfare;
+To protect our rights, the rights of affiliates or related third parties, or to take appropriate legal action, such as to enforce our Terms of Use;
+To keep a record of our transactions and communications; and
+As otherwise necessary or useful for us to conduct our business, so long as such use is permitted by law or for any other purpose with your consent.
+We may contact you using the Information you provide through our Online Services, including any email address, telephone number, cell phone number, or fax number. We may communicate, electronically or via telephone with you about your benefit plan, programs, products, or services that are or may be available to you in connection with your transactions with us including, but not limited to, Online Services updates, general wellness reminders or information, prescription reminders, appointment reminders, general health information, newsletters, and surveys. These electronic communications may contain protected health information. You acknowledge and accept that such communications may be sent unencrypted and there is some risk of disclosure or interception of the contents of these communications.
+We may, when permitted, combine your Information with other information, whether online or offline, maintained or available to us from you or from other sources, such as from our vendors, and we may use and disclose combined data for the purpose described in this Section or for internal business purposes. We may, when permitted, use and disclose de-identified and aggregated data for any purpose, which may include, without limitation, disclosures to third parties for analytics purposes such as evaluating the Online Services and providing additional benefits, programs, and services.
+How We Share Your Information
+We will only share your Information with third parties as outlined in this Policy and as otherwise permitted by law or as permitted with your consent.
+We may share Information if all or part of the Company is sold, merged, dissolved, acquired, or disbanded to any extent in a similar transaction, or in connection with steps that may need to be taken in anticipation of such events.
+We may share Information in response to a court order, subpoena, search warrant, or to comply with law or regulation. We may cooperate with law enforcement authorities in investigating and prosecuting activities that are illegal, violate our rules, or may be harmful to other visitors.
+We may also share Information within the Company, including among affiliates, or with our parent company, or subsidiaries.
+We may also share Information with other third-party companies with which we have a business relationship or hire to perform services on our behalf. For example, we may hire a third-party company to help us send and manage email, and we might provide that third-party company with your email address and certain other Information for them to send you an email message on our behalf. Similarly, we may hire third-party companies to host or operate some of our Online Services and related computers and software applications
+How to Manage Your Information
+Our Online Services may permit you to view your profile, if applicable, and access related Information about you and to request changes to such Information. Please remember, however, if we have already disclosed some of this Information to third parties, we may not have access to that disclosed information and may not be able to force the modification of any Information by the third parties to whom we have made those disclosures.
+Communication Preference Management
+Our Online Services may permit you to select how you would like to receive certain communications. You can
+contact us
+to update your marketing communication preferences.
+We may offer mobile applications that enable us to communicate with you through push notifications. Where mobile applications are offered, you may be able to manage push notifications in your mobile phone or tablet settings. You may also be able to control preview settings in your email applications.
+If you need additional assistance in opting out of a communication, please
+Contact Us
+for assistance. Please be aware that opt-outs may not apply to certain types of communications, such as account status, Online Service updates, or other communications.
+Informational Electronic Communications
+We may provide you with Informational Electronic Communications. Informational Electronic Communications include, but are not limited to, information about your benefit plan, programs, products, or services that are or may be available to you in connection with your transactions with us, Online Services updates, account information, general wellness prescription or appointment reminders, general health information, newsletters, and surveys.
+Any request to opt-out of receiving Informational Electronic Communications will be effective only after we have a reasonable period of time to process your request. Opt-outs may not apply to certain types of communications, such as account status, Online Service updates, or other communications.
+Communications sent electronically may be provided either (1) via email; (2) by access to a website that we will designate in a notice we send to you when the information is available; or (3) by other electronic means. At times, in our sole discretion, we may still send you paper communications in lieu of, or in addition to, sending them electronically.
+Informational Calls and Texts
+When you provide us a telephone number, whether landline or mobile, we may contact you, using automated, pre- recorded, or non-automated means, to provide you information about existing benefits, programs, products, services, or tools.
+Personal Information collected through our texting programs will not be shared, sold, or disclosed to third parties for their own marketing purposes.
+We reserve the right to modify this section at any time. The modified section will be effective immediately upon posting. Your continued receipt of Informational Electronic Communications and Informational Calls and Texts will constitute your acceptance of the modified section.
+Our
+Texting Terms and Conditions
+, as well as any program specific requirements apply to your interactions with us via text and are incorporated in this Privacy Policy by reference.
+Cookies and Tracking
+The Company may use various technologies, including cookies, tokens, tags, web logs, web beacons, scripts, and web server logs to gather automatically collected information and may aggregate this information from visitors of our Online Services or to enable certain features of our Online Services. This information may include demographic data, technical information about the technology (
+e.g.
+, phone, computer) you use to connect to the Online Services, web browser information, your IP address, and browsing behavior such as pages visited and how often they are visited (collectively, "Activity Information"). We may also use third-party analytics companies to provide these services.
+We may also allow third parties to use cookies and other technologies to collect Activity Information and to track browsing activity over time and across third-party websites such as web browsers used to read our Online Services, which websites are referring traffic or linking to our Online Services, and to deliver targeted advertisements to you. We do not control these third-party technologies, and their use of such technologies is governed by their own privacy policies. For more information about third-party advertising networks and similar entities that use these technologies, see
+youradchoices.com/control
+, and to opt-out of such ad networks' and services' advertising practices, go to
+optout.aboutads.info
+and
+optout.networkadvertising.org/
+. Once you click the links, you may choose to opt out of such advertising from all participating advertising companies or only from advertising provided by specific advertising companies. Please note that, to the extent advertising technology is integrated into the Online Services, you may still receive advertisements even if you opt out of tailored advertising. In that case, the ads will just not be tailored. Also, we do not control any of the above opt-out links and are not responsible for any choices you make using these mechanisms or the continued availability or accuracy of these mechanisms.
+Activity Information is captured using various technologies and may include cookies. "Cookies" are small text files that may be placed on your computer or mobile device when you visit an Online Service or click on a URL using your web browser. Cookies may include "single-session cookies" which generally record information during only a single visit to a website and then are erased, and "persistent" cookies which are generally stored on a computer or mobile device unless or until they are deleted or are set to expire. You may disable cookies and similar items by adjusting your browser preferences at any time; however, this may limit your ability to take advantage of all the features on our Online Services. In addition, you may also have additional means to manage the collection of Activity Information by:
+Managing the use of "flash" technologies, with the
+Flash management tools
+available at Adobe's website;
+Visiting the
+Adobe Digital Marketing Suite
+to "Opt-Out" of data aggregation and analysis;
+Clicking on the "Opt-Out" link at the bottom of the home web page, if applicable;
+Visiting
+Google
+to "Opt-Out" of display advertising or customize Google display network ads;
+Visiting
+Google
+to “Opt-Out” of sharing site visit information with Google Analytics;
+Selecting the Optum Pixel "Opt-Out"
+link
+; and
+Choosing the Glassbox “Opt-Out”
+link
+.
+Please note that we do not currently respond to web browser "Do Not Track" signals that provide a method to opt out of the collection of Information about online activities over time and across third-party websites or online services because, among other reasons, there is no common definition of such signals and no industry-accepted standards for how such signals should be interpreted.
+We gather Activity Information about you to improve the quality of our services, such as the best method and time to contact you. Without limiting the other ways in which we may use Information as described herein, we may otherwise use and disclose your Activity Information unless restricted by this Policy or by law. Some examples of the ways we use your Activity Information include:
+Customizing your experiences, including managing and recording your preferences;
+Authenticating your account information;
+Marketing, product development, and research purposes;
+Tracking resources and data accessed on the Online Services;
+Developing reports regarding Online Service usage, activity, and statistics;
+Assisting users experiencing problems with our services;
+Updating and servicing our Online Services;
+Enabling certain functions and tools on the Online Services; and
+Tracking paths of visitors to the Online Services and within the Online Services.
+As described above, we may use tracking technologies that allow us to recognize your device when you return to our Online Services within a period of time, as determined by us, and to support automatic login to your Online Services. To maintain your privacy, you should affirmatively log out of your account prior to your session ending (whether you end your session or we end your session, for example if our Online Services has "timed out" -
+i.e.
+, we have ended your session automatically after a period of inactivity as determined by us in our sole discretion). Unless you affirmatively log out of your account, you may be automatically logged back in the next time you or any user of your devices visits the Online Services.
+Retention of Data
+We will retain your personally identifiable information (PII) and Activity Information for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your PII to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
+Posting Messages, Comments and Content
+Our Online Services may have voluntary collaboration areas, including but not limited to "blogs," "bulletin boards," "leader boards," and "health games," that permit users to have collaborative discussions and/or share Information. Some of our Online Services may permit you to select a display name or image that will be your "nickname" on the Online Service. Please note, any Information you submit or post to these collaboration areas, including your display name or image, may be visible by other users of the Online Service, and such users may be able to identify you and make information public. Out of respect for the privacy of others, please avoid referring to the full names of others in your response and refrain from sharing other participants’ identities or comments outside of these discussions.
+Also see our
+Social Media Disclaimer
+to learn about our practices related to posting on our social media accounts.
+Protecting Your Information
+We maintain administrative, technical, and physical safeguards designed to protect the Information that you provide on our Online Services. These safeguards vary based on the sensitivity of the Information that is being collected, used, and stored. We cannot guarantee the security of our Online Services, nor can we guarantee the security of the Information you transmit to us over the Internet, including your use of email. We are not liable for the illegal acts of third parties such as criminal hackers.
+It is your responsibility to safeguard the devices you use to access our Online Services (such as laptops, tablets and mobile devices), and to use appropriate security settings on those devices. If those devices are lost, stolen or misplaced, others may be able to access your account and your personal Information using those devices. You should affirmatively log out of your account (i) prior to ending your session, or (ii) if you will be inactive on the Online Services for more than a few minutes; otherwise, the next user of that computer or device, particularly a public one or one not owned by you, may be able to access your account and the Information in your account if your session has not ended.
+You agree that we are not responsible for any harm that may result from someone accessing your account or personal Information on any computer or device where you do not, for any reason, take the necessary steps to log out of your account prior to ending a session on such device or computer.
+We retain Information for as long as necessary for the purpose for which it is collected, subject to a longer period if the Information is relevant to a legal challenge.
+Children Under 13
+We will not intentionally collect any personal information (as that term is defined in the Children's Online Privacy Protection Act) from children under the age of 13 through our Online Services without receiving parental consent. If you think that we have collected such personal information from a child under the age of 13 through our Online Services, please
+Contact Us
+immediately.
+Additional Rights for California Residents
+California “Shine the Light” Privacy Rights
+California law permits our customers who are California residents to request certain information regarding the disclosure of certain personal information to third parties for their direct marketing purposes.
+If we have disclosed any personal information to third parties for direct marketing purposes, we will provide a list of the categories of personal information, along with the names and addresses of these third parties to you at your request. To make such a request, write us at the postal or email address found in the
+Contact Us
+section of this Policy.
+This request may be made no more than once per calendar year. We reserve our right not to respond to requests submitted other than to the specified email or postal address. You should put "California Privacy Rights-Direct Marketing" in the email subject line and in the body of your request. You must provide us with specific information regarding yourself so that we can accurately respond to the request.
+California Minors Under 18
+If you are a California resident under the age of 18 and are a registered user of our Online Services, you may request that we remove from our Online Services any content you post to our Online Services that can be accessed by any other user (whether registered or not). Please note that any content that is removed from visibility on our Online Services may still remain on our servers and in our systems. To request removal of content under this provision, please write or email us at the postal or email address found in the
+Contact Us
+section of this Policy. When you write to us, please provide us with a description of the content and the location of the content on our Online Services, along with any other information that we may require to consider your request. Please note that removal of content under this provision does not ensure complete or comprehensive removal of the content or information posted on the Online Services by you.
+State Consumer Privacy Notice
+This State Consumer Privacy Notice applies to residents of California and sets forth their rights under their respective state's comprehensive privacy laws.
+This State Consumer Privacy Notice supplements our Privacy Policy. It explains what Personal Information (PI) we collect about you, where and from whom we obtain it, why we collect it, and your respective state rights regarding it. If you are a California resident, this notice applies to any PI that we collect about you.
+PI We Collect and Disclose for Business Purposes
+In the preceding twelve (12) months, we may have collected the following PI about California residents and have disclosed it for the business purposes described below:
+Category of PI
+Examples
+Collected
+Categories of Third Parties to Which We Disclose PI for Business Purposes
+Shared for Advertising Purposes*
+Categories of Third Parties with Which We Share PI for Advertising Purposes
+Some Personal Information included in the categories below may overlap with other categories.
+*Advertising cookies only apply to
+https://careers.unitedhealthgroup.com
+.
+Identifiers
+A real name, alias, postal address, unique personal identifier, online identifier, Internet Protocol address, email address, account name, government-issued identification numbers or other similar identifiers.
+Yes
+Employers
+Yes, only with respect to
+https://careers.unitedhealthgroup.com
+.
+Contracted Service Providers and Vendors
+Personal information categories
+A name, signature, address, telephone number, government-issued identification numbers, education, employment, employment history, medical information, or health insurance information.
+Yes
+Employers
+No
+None
+Protected classification characteristics
+Age, race, color, national origin, citizenship, marital status, medical condition, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), veteran or military status.
+Yes
+Employers
+No
+None
+Sensitive personal data categories ("Sensitive Personal Data")
+Government-issued identification number, precise geolocation information, racial or ethnic origin, biometrics data, health data, mental or physical health condition or diagnosis, sexual orientation, citizenship or immigration status.
+Yes
+Employers
+No
+None
+Commercial information
+Records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.
+No
+None
+No
+None
+Biometric information
+Fingerprints, faceprints, and voiceprints, iris or retina scans, keystroke, vital signs, labs, or test results.
+Yes
+Employers
+No
+None
+Internet and/or network activity
+Browsing history, search history, information on a consumer's interaction with a website, application, or advertisement.
+Yes
+Employers
+No
+None
+Geolocation data
+Physical location or movements.
+No
+None
+No
+None
+Sensory data
+Audio, electronic, visual, or similar information.
+No
+None
+No
+None
+Professional or employment-related information
+Current or past job history or performance evaluations.
+Yes
+Employers
+No
+None
+Education information subject to the Family Educational Rights and Privacy Act
+Education records directly related to a student maintained by an educational institution or party acting on its behalf, such as grades, transcripts, class lists, or student disciplinary records.
+Yes
+Employers
+No
+None
+Inferences drawn from other personal information
+Profile reflecting a person's preferences, characteristics, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.
+No
+None
+No
+None
+We will retain the foregoing categories of PI consistent with our internal record-retention policies and for as long as is necessary to provide products and services to you or as required by law.
+PI does not include:
+De-identified or aggregated consumer information
+Publicly available information from government records
+Health or medical information covered by the Health Insurance Portability and Accountability Act of 1996 (HIPAA) and the California Confidentiality of Medical Information Act (CMIA) or clinical trial data
+PI covered by other privacy laws, including: The Fair Credit Reporting Act (FCRA), the Gramm-Leach-Bliley Act (GLBA), the California Financial Information Privacy Act (FIPA), and the Driver's Privacy Protection Act of 1994
+Categories of Sources of PI
+We obtain the categories of PI listed above from:
+You or your authorized agent,
+Service providers,
+Affiliates,
+Publicly available information,
+Organizations with which you are employed or affiliated, or
+Activity on our apps and websites.
+Collection from these sources may occur online, in person, via paper or other electronic means, and may occur automatically where state law permits such profiling absent an explicit request to opt-out.
+Why We Collect PI
+We collect your PI for one or more of the following business purposes:
+To respond to an email or particular request from you
+To communicate with you
+To personalize services for you
+To process an application as requested by you
+To administer surveys and promotions
+To provide you with information that we believe may be useful to you, such as information about products or services provided by us or other businesses
+To perform analytics and to improve our products, websites, and advertising
+To comply with applicable laws, regulations, and legal processes
+To protect someone's health, safety, or welfare
+To protect our rights, the rights of affiliates or related third parties, or take appropriate legal action
+To keep a record of our transactions and communications
+To detect and protect against security incidents
+To debug to identify and repair errors
+As otherwise necessary or useful for us to conduct our business, so long as such use is permitted by law
+Sharing or Selling Your PI
+At times, we may share or sell your PI with third parties to display advertisements to you based on your activities, preferences, or interests. You may opt-out of this activity on your device by using our cookie management tool on our website and by submitting a request via the Do Not Share or Sell My Information link on the website. The preceding only applies to
+https://careers.unitedhealthgroup.com
+.
+Third parties are not allowed to use or disclose your PI other than as specified in our contract and as permitted by law.
+If we seek to use your PI for a materially different purpose than we previously disclosed in this notice, we will notify you and will not use your PI for this new purpose without your explicit consent.
+You may configure opt-out preference signals through your web browser utilizing functionality enabled on our website. Use this functionality to opt-out of sharing/selling your PI.
+Sensitive Personal Data
+We only process Sensitive Personal Data to process transactions necessarily related to your employment or application for employment.
+How Long We Retain Your PI
+We will retain your PI for as long as we provide products and services to you or as required by law.
+Your Rights
+1. You have the right to request that we disclose certain information to you about our collection and use of your PI over the preceding twelve (12) months prior to your request. Once we receive and confirm your verifiable consumer request, we will disclose to you:
+What PI we collect about you
+Where and from whom we collect PI about you
+Our business purpose for collecting PI about you
+The types of third parties with whom we share your PI
+The specific pieces of PI we collect about you, in a readily-usable format—note that we will not disclose your actual Social Security number, driver's license number or other government-issued identification number, financial account number, any health insurance or medical identification number, an account password, or security questions and answers
+The types of PI that we disclosed about you for a business purpose, and the categories of third parties to whom we disclosed your PI
+2. You have the right to be informed about the PI that we collect about you at the time that or before we collect it. This is that notice.
+3. You have the right to request that we delete any PI about you that we have.
+4. You have the right to request a correction of any inaccurate information in the PI we collect about you.
+5. You have the right to stop us from sharing your PI to display advertisements to you based upon your activities, preferences, and interests.
+6. If we use your sensitive PI for purposes other than to render services or offer products to you, you will have the right to request that we limit the processing of your sensitive PI.
+7. You will not be discriminated against or penalized for exercising your rights to your PI, and we will honor your rights by not:
+Denying you services,
+Charging you different prices or rates for services,
+Imposing penalties, or
+Providing you with a different level or quality of services.
+8. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why and you may appeal this decision (see additional information in Appeals section below).
+How to Exercise Your Rights
+You may exercise your rights by:
+Calling us at 1-800-561-0861. Let us know you are calling about a "CPRA Request."
+Submitting your online request here.
+Only applies to
+https://careers.unitedhealthgroup.com
+: You may opt-out of the sharing of your PI collected on your device by using our cookie management tool on our website and by submitting a request via the Do Not Share or Sell My Information link on the website.
+You may be required to submit proof of your identity for these requests to be processed.
+We will not be able to comply with your request if we are unable to confirm your identity.
+You may designate an authorized agent to make a request on your behalf subject to proof of identity and authorization.
+Timing
+Our responses to any of your requests for the information described above will be limited to information that we have collected in the preceding twelve (12) months before our receipt of your verified request.
+We will acknowledge receipt of your request within 10 days of receipt of your submission. You will receive our response to your request within 45 days of your request, unless we provide you with notice that it will take more than 45 days to respond (in that case, we won't take more than 90 days to respond).
+Appeals
+If the business denies any of your requests, you may appeal by:
+Calling us at 1-800-561-0861. Let us know you are calling about a "CPRA Request."
+Submitting your online request here.
+We will respond to your appeal within 45 days of receipt, unless we notify you that we will require an additional 15 days to respond.
+If you remain concerned about the result of that appeal, you may contact the attorney general in your state of residency.
+Contact Us
+Please contact HRdirect at 1-800-561-0861 if you have any questions.
+Last Revised:
+June 7, 2024
+Social Media Disclaimer
+Are you using social media? So are we! We encourage you to read, share, follow us and provide commentary on Facebook
+®
+, X
+™
+(formerly known as Twitter
+®
+), Pinterest
+®
+, LinkedIn
+®
+, Instagram
+®
+, YouTube
+™
+, and other social media sites ("Social Media Site"). Before you post on our pages or accounts, please make sure you read our social media disclaimer:
+We are under no obligation to screen or monitor your posts or any other user content; however, we reserve the right to monitor participation to ensure that you stay on topic, are courteous and avoid making offensive comments. Your posts and user content must adhere to the following requirements and cannot:
+Contain any third-party material including logos, drawings, tattoos, photographs, pictures, sculptures, paintings and other images or works of art, phrases, trademarks, trade secrets, or other items without explicit, prior, written permission to use such materials;
+Contain sexually explicit, graphic, gratuitous or unnecessarily violent content or defamatory or derogatory content against any ethnic, racial, gender, religious, sexual orientation, professional or age group, or contain any pornographic or nude material;
+Contain any private information about yourself or any other individual, including without limitation, information related to the health of the individual, financial information about the individual, or any identification or account numbers related to the individual, with or without their permission or consent;
+Contain any software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software, hardware, or telecommunications equipment; and
+Contain any advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or promote illegal activity and/or illegal contests, sweepstakes, gambling, including any online casino, sports books, bingo, poker, or any other form of solicitation.
+We reserve the right to edit comments for content, remove off-topic contributions, delete offensive comments or remarks, block offensive contributors, and delete actual or suspected spam content from any Social Media Site. Please be aware that once you post something online, there is the potential for numerous individuals to read your words, even years from now. Therefore, we suggest that you exercise caution when posting on any Social Media Sites and that you not disclose Information like your location, medical record number, personal medical information, financial information, etc. We are not responsible for the content of any comments or responses posted by others to any Online Service or Social Media Site we manage or monitor. We do not control the placement of any marketing or advertising displayed on our pages by social media or third-party organizations.
+Please remember that content posted on any of our social media profiles or platforms is for general informational purposes only and should not be considered medical advice and should not replace a consultation with your health care or financial professional. Always consult an appropriate health care or financial professional for your specific needs. If you are experiencing a medical emergency, call 9-1-1 or your local emergency number. Some treatments mentioned on social media formats may not be covered by your health plan. Please refer to your benefit plan documents for information about coverage.
+We reserve the right to respond to any post or user content and may occasionally privately request your contact information to assist you offline, with your consent, by routing the matter to the appropriate persons or department for further handling. Questions about your account can be addressed by calling 800-328-5979.
+All trademarks are the property of their respective owners.
+Social Security Number Protection Policy
+It is our policy to protect the confidentiality of Social Security numbers (“SSNs”) that we receive or collect in the course of business. We secure the confidentiality of SSNs through various means, including physical, technical, and administrative safeguards that are designed to protect against unauthorized access. It is our policy to limit access to SSNs to that which is lawful and to prohibit unlawful disclosure of SSNs.
+Changes to This Policy
+We may change this Policy at any time. If we do so, such change will appear on this page. You may always visit this Policy to learn of any updates.
+Your continued access to or use of the Online Services constitutes your consent to these changes to this Policy.
+Contact Us
+Contact us regarding this Policy or related privacy practices. If you believe we or any company associated with us has misused your Information, please contact us immediately.
+UnitedHealthcare
+Customer Service — Privacy Unit
+PO Box 1459
+Minneapolis, MN 55440-1459
+Effective Date
+August 9, 2024
+Contact Us
+Suppliers
+Privacy Policy
+Company Statement Policy
+Terms of Use
+Site Map
+United Health Foundation
+Careers
+Optum
+UnitedHealthcare
+Do Not Share or Sell My Personal Information
+©2026 UnitedHealth Group. All rights reserved.
+Follow Us.

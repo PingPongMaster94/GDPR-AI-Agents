@@ -1,0 +1,374 @@
+Privacy Notice | Calendly
+English
+English
+Talk to sales
+Product
+Solutions
+Resources
+Pricing
+Log In
+Log In
+Log In
+Get started
+Log In
+Log In
+Log In
+Get started
+Product
+Scheduling
+Simplified booking
+Notetaker
+Meeting recaps and action items
+Payments
+Flexible ways to get paid
+Product overview
+Why choose Calendly
+Platform
+Integrations
+Mobile app
+Browser extension
+Admin controls
+Security
+By business size
+Individuals
+For solopreneurs
+Small business
+For growing businesses
+Large companies
+For enterprise
+By team
+By industry
+Sales
+Marketing
+Customer success
+Recruiting
+Education
+Technology
+Financial Services
+Professional Services
+Explore
+Customer stories
+See how businesses are growing with calendly
+Blog
+Read the latest product and company news
+Resource library
+Access ebooks, webinars, guides, videos, and more
+About us
+Discover our mission and commitment to customers
+The State of Meetings 2024
+Gain insights on how meetings are changing—spanning productivity, engagement, and strategies for improvement across roles and industries.
+Learn & connect
+Help Center
+API & Developer tools
+Calendly Community
+Newsroom
+Contact us
+Overview
+Terms
+Policies
+CCPA Notice at Collection for California Residents
+FERPA and COPPA Privacy Notice and Privacy Notice for Children
+Acceptable Use Policy
+Digital Millennium Copyright Act (DMCA) and Trademark Infringement Policy
+Calendly Web Accessibility Statement
+Developer Policy
+Contact us
+Table of contents
+Privacy Notice
+Effective Date:
+October 17, 2025
+Introduction.
+This privacy notice (“Privacy Notice”) describes how Calendly, LLC (“Calendly”, “we”,“us”, “our”) collects, uses, and discloses your Personal Data in the course of our business. Throughout this document, we will use a few defined terms.
+“
+Personal Data
+” when used in this Privacy Notice means any data relating to an identified or identifiable natural person that is processed by Calendly as described in this Privacy Notice when such information is protected as “personal data” or “personal information” or a similar term under applicable data protection laws.
+“
+Services
+” when used in this Privacy Notice means all of Calendly’s websites, applications (including, but not limited to, mobile and cloud applications), tools, platforms, and services offered by Calendly, but excluding third party applications.
+“
+Website
+” when used in this Privacy Notice means the Calendly.com website or any other proprietary website owned by Calendly or that Calendly has the authority to manage and control and which link to this Privacy Notice.
+Applicability.
+Unless stated otherwise, this Privacy Notice only applies to Personal Data for which Calendly acts as a controller, such as when you visit our Website or create an account for our Services.  Please note that when our customers use our Services to directly collect and process Personal Data, such as when our customers use our Services to schedule a meeting with you or record a meeting, Calendly acts as a processor (or service provider) on behalf of our customers (who are controllers of the Personal Data) under the Calendly
+Data Processing Addendum
+and
+Customer Terms and Conditions
+.   If you have questions about how your data is processed by our customers or wish to exercise your rights with respect to that data, you should contact the customer which collected your information.
+Information We Collect and Process.
+Information You Provide Directly to Calendly
+When You Visit Our Website
+.  We may collect Personal Data from you when you submit information via a web form or otherwise interact with our Website, for example to request a demo, create a help center or developer account, or download resources and white papers.  In these instances, we may ask for certain Personal Data, such as your name, email address, and phone number.
+Account Information.
+Calendly’s customers provide Calendly with Personal Data, including name, email address, username, and password, when they set up their account.  If a customer has multiple account holders, then each account holder will provide us with similar information.
+Billing Information.
+If you purchase a paid version of Calendly, our third party payment processors will collect and store your billing address and credit card information. We store the last four digits of your credit card number, card type, and the expiration date.
+Marketing Information
+. People interested in Calendly’s products and services may contact us through forms made available on the Website and voluntarily provide information such as name, email address, phone number, company, and role. People interested in our newsletter may also submit their name and email addresses to join our mailing list. We also receive other similar information provided by you if you participate in an event hosted by or attended by Calendly or its partners (such as webinars, conferences, and trade shows) and in your interactions with our social media accounts.
+Additional Information
+. We may also receive certain Personal Data as you interact with Calendly through activities such as surveys, focus groups, or any other product education initiatives aimed at receiving your feedback.
+Information Collected Automatically From You.
+We and our authorized third parties use Cookies (defined below), pixels, web beacons, and other technologies (such as local storage) to receive and store certain types of information when you interact with us through your computer or mobile device (subject to your consent, opt-out preferences or other appropriate legal basis where legally required). Using these technologies helps us customize your experience with our Website and Services, improve your experience, tailor marketing messages, and detect and prevent fraud and security risks. Here is more specific information about the types of information we collect automatically:
+Log & Device Data.
+When you access the Website or the Services, we and our authorized third parties may automatically record certain information (“log data”), including information that your browser sends whenever you visit our Website. This log data may include information, such as the web address you came from or are going to, your device model, operating system, browser type, unique device identifier, IP address, mobile network carrier, and time zone or approximate location. Whether we collect some or all of this information often depends on what type of device you’re using and its settings. For example, different types of information are available depending on whether you’re using a Mac or PC, or an iPhone or an Android phone. To learn more about what information your device makes available to us, please check the policies of your device manufacturer or software provider.
+Cookie and Local Storage Data.
+Depending on how you’re accessing our Services and subject to your consent, opt-out preferences, or other appropriate legal basis where legally required, we and our authorized third parties may use “Cookies” (a small text file sent by your computer each time you visit our Website, unique to your Calendly account or your browser) or similar technologies such as pixels, web beacons or local storage to record log data. When we use Cookies, we may use ‘session’ Cookies (that last until you close your browser) or ‘persistent’ Cookies (that last until you or your browser deletes them). For example, we may use Cookies to keep you logged into Calendly. Some of the Cookies we use are associated with your Calendly account (including Personal Data about you, such as the email address you gave us), and other Cookies are not associated with your Calendly account. Calendly provides a centralized cookie management service across the entire Calendly Website. When visiting the Calendly Website or a booking page for the first time, Website visitors will see a cookie banner in accordance with their region. Cookie preferences can be adjusted at any time.  To learn how to manage your cookie preferences, please read the “Your Rights and Choices” Section of this Privacy Notice. We may also use your browser’s local storage under “localStorage” to store certain information that enables us to recognize you when you return to our website. You may erase the local storage objects by deleting your browser's history.
+Usage Data.
+When our customers use our Services, we and our authorized third parties collect certain information about how you use the Services.  For example, we collect information on the meeting types our customers use most often, how many meetings are scheduled each day, the app used for the virtual meeting, and whether the meeting was recorded. We use this information to help us monitor and improve the Services, such as to determine which features are most popular amongst our customers, and which features could be added or improved.
+Information from Third Party Sources
+We may obtain Personal Data about you from third party sources.  This Personal Data may include personal and employment information from lead-generation and marketing companies.  For example, these third party sources may provide Calendly with name, email address, phone number, location of business, time zone, biographical details, job title, employer (and related company details), employment seniority, social media usernames and avatars, and social media activity details.  Calendly uses this information to assist with its sales and marketing efforts.
+Information We Process on Behalf of Customers When They Use Our Services
+The Services we offer our customers enable our customers to schedule meetings, manage their own customer relationships, and have a better overall experience in their meetings.  When customers use our Services, they may process certain Personal Data, such as first and last name, email address, phone number, virtual meeting recordings, transcripts and summaries, and other information about you.  We call the information that our customers submit or collect via our Services “Customer Data” under our
+Customer Terms and Conditions
+.
+Calendly stores and processes Customer Data on behalf of our customers as a processor (or service provider) based on our customers’ instructions and in accordance with our
+Data Processing Addendum
+and
+Customer Terms and Conditions
+.   Each customer controls and is  responsible for the information they process using our Services and for complying with any regulations or laws that require providing notice, disclosure, and/or obtaining consent prior to transferring Personal Data to Calendly. For example, when Microsoft uses our Services, we process and store relevant data on behalf of Microsoft. To learn more about how Microsoft handles personal data, you can review their privacy statement
+here
+. If you have questions about how your data is processed by our customers or wish to exercise your rights with respect to that data, you should contact the customer which collected your information.
+How We Use Your Information.
+We may use information that we collect about you, including Personal Data, for the following purposes:
+Provide the Calendly Services
+. We will use your information to provide our Services to you, including to facilitate scheduling; record, transcribe and summarize your meetings; help manage your customer relationships; create and manage your account; respond to your inquiries; prevent or address service errors, security, or technical issues; analyze and monitor usage; prevent spam, fraud and abuse on the Services; investigate potential violations of our Terms, verify your identity; and for other customer service and support purposes. We use the payment information you provide to us in order to alert you of past, current, and upcoming charges, to allow us to present the billing history to you on your billing page in your account, and to perform internal financial processes, such as looking at the status of a credit card charge. In the event of a credit card dispute, we also share account information with your bank to verify the legitimacy of a charge.
+For EU/UK purposes, our legal bases for processing are performance of a contract and legitimate interests.
+Understand and improve our products.
+We will perform research and analysis about your use of, or interest in, our products, Services or content, or products, services or content offered by others. We do this to help make our Services better and to develop new Services.
+For EU/UK purposes, our legal basis for processing is legitimate interests.
+Communicate with you.
+Service-related communications.
+We may send you service and administrative emails to ensure the service is working properly. We will also email you regarding your calendar appointments. These messages are considered part of the Services and you may not opt out of these messages.
+For EU/UK purposes, our legal basis for processing is performance of a contract.
+Promotional.
+Subject to your opt-out preference and subscription, we may send you emails about new product features or other news about Calendly or on topics we think would be relevant to you. In some cases, when you visit our Website, we may obtain your email address to send you these promotional emails. You may opt out of receiving these communications at any time. Visit the ‘Your Rights and Choices’ section below. Please be assured that we do not use the email addresses that you enter to schedule a meeting with a Calendly customer to send any type of direct marketing. However, you may receive marketing communications if you have used the same email address to sign up for them previously or to manage your account as a Calendly customer.
+For EU/UK purposes, our legal basis for processing is consent or legitimate interests.
+Responding to your requests.
+We will also use your information to respond to your questions or comments.
+For EU/UK purposes, our legal bases for processing are performance of a contract, legitimate interests and/or compliance with a legal obligation.
+Administrative.
+We may contact you to inform you about changes to your account, our Services and other important service-related notices, such as changes to the Terms or Privacy Notice or about security or fraud notices.
+For EU/UK purposes, our legal bases for processing are performance of a contract, legitimate interests, and/or compliance with a legal obligation.
+Protecting Rights and Interests.
+We will use your information to protect our rights and interests as well as the rights and interests of our customers and any other person, as well as to enforce this Privacy Notice or our Terms.
+For EU/UK purposes, our legal basis for processing is legitimate interests
+.
+Legal Compliance.
+We may use your information to comply with applicable legal or regulatory obligations, including complying with requests from law enforcement or other governmental authorities, or in legal proceedings involving Calendly.
+For EU/UK purposes, our legal basis for processing is compliance with a legal obligation.
+Other.
+We also may use your information to manage our business or perform functions as otherwise described to you at the time of collection subject to your consent where legally required.
+For EU/UK purposes, our legal basis for processing is consent or legitimate interests.
+With Whom We May Share Your Information.
+We may share information we collect about you, including Personal Data, in the following ways:
+With third party Service Providers, agents, and contractors.
+We use other companies, agents, or contractors (“Service Providers”) to perform services on our behalf or to assist us with providing services and communicating with you. For example, we may engage Service Providers to process credit card transactions or other payment methods. We may also engage Service Providers to provide services such as monitoring and developing Calendly Services; aiding in communications, infrastructure, and IT services; customer service; debt collection; and analyzing and enhancing data. These Service Providers may have access to your Personal Data or other information to provide these functions. In addition, some of the above-listed types of information that we request may be collected by Service Providers on our behalf.
+We may also disclose information to Service Providers for certain web tracking purposes, including allowing Service Providers to directly collect information using Cookies and related tracking technologies (such as pixels and web beacons).  For example, we use session replay, session recording and similar tools provided by Service Providers to record your interactions with our Website, such as how you move throughout our Website and engage with our webforms. In addition to analytics, this information helps us improve our Website and Services, our marketing activities, and identify and fix technical issues visitors may be having with our Website.
+In addition, we may share information with Service Providers for legal, security, and safety purposes. This includes sharing information to enforce policies or contracts, address security breaches, and assist in the investigation of fraud, security issues, or other concerns.
+We require Service Providers to agree to take reasonable steps to keep the Personal Data that we provide to them secure. We do not authorize them to use or disclose your Personal Data except in connection with providing their services. You may find the list of Calendly’s Service Providers which are also sub-processors
+here
+.
+Third Party Partners and Other Third Party Tools.
+We may disclose information to third party partners, including marketing, advertising and analytics providers, and also business and integration partners.  We may also disclose information or allow third parties to directly collect information using third party cookies and related tracking technologies (such as pixels and web beacons) on our Website, such as social media companies, advertising networks, companies that provide analytics (including ad tracking and reporting), security providers and others that help us operate our Services and Website.  We use such third party tools subject to your consent, opt-out preferences, or other appropriate legal basis where legally required.  For example, we use third party providers such as Google Analytics to provide certain analytics in connection with the operation of our Website, including collection and tracking of certain data and information regarding characteristics and activities or visitors to the Website.  To learn how Google Analytics collects and processes data, please visit: “How Google uses data when you use our partners’ sites or apps” located at
+www.google.com/policies/privacy/partners
+.
+Affiliates.
+We may disclose information to current or future affiliates or subsidiaries for purposes consistent with this Privacy Notice.
+Government entities.
+We may share your data if we believe that disclosure is reasonably necessary to comply with a law, regulation, legal, or governmental request; to respond to a subpoena, court order, warrant, or other legal process; to enforce applicable Terms or this Privacy Notice, including investigation of potential violations thereof; to protect the safety, rights, or property of the public, any person, or Calendly; to detect, prevent, or otherwise address, security or technical issues, illegal, or suspected illegal activities (including fraud); or as evidence in litigation in which we are involved, or as part of a judicial or regulatory proceeding.
+Authorized Agents.
+If you are using Calendly as a member of an organization or with your organization’s email domain (thereby representing yourself as a member of the organization), we may share your email address, plan information, and data within your account with an authorized agent of your company upon your company’s request for them to administer the account for the company.
+Reorganization Event.
+We may, as a result of a sale, merger, consolidation, change in control, transfer of assets, reorganization, or liquidation of our company (a "Reorganization Event"), transfer or assign your Personal Data to parties involved in the Reorganization Event. You acknowledge that such transfers may occur and are permitted by and subject to this Privacy Notice.
+Children and Educational Service Providers
+Calendly is not directed to children under eighteen (18) years of age, and we do not knowingly collect Personal Data from children under 18. If we discover that a child under 18 has provided us with Personal Data, we will promptly delete such Personal Data from our systems. For educational service providers and schools, please see our
+FERPA and COPPA Privacy Policy and Notice
+.
+Your Rights and Choices.
+Depending on your relationship with Calendly, you may exercise your rights and choices in the following ways:
+Account.
+If you are a customer, you may keep your Personal Data accurate and complete by logging into the Services to review and update your account information, including contact and billing information, via your account settings page.
+E-mail.
+As described above, if you do not wish to receive promotional emails from us, you may opt out at any time by following the opt-out link contained in the email itself. Please note that it may take up to ten (10) days to process your request. Please also note that if you opt out of receiving marketing communications from us, we may continue to send to you service-related emails which are not available for opt-out. If you do not wish to receive any service-related emails from us, you have the option to delete your account.
+Cookies.
+Depending on your browser and device, you may have the ability to block or reject Cookies via your browser settings. Your browser’s help function should contain instructions on how to set your computer to accept all Cookies, to notify you when a Cookie is issued, or to not receive Cookies at any time. Please keep in mind that certain Cookies are required to authenticate your account as well as perform some actions within Calendly, and therefore, to use the Website, some strictly necessary Cookies are required.  Calendly also provides a centralized cookie management module across the entire Calendly Website, which can be used to adjust your cookie preferences at any time.  This cookie management module can be accessed in four ways: (1) when visiting the Calendly Website for the first time, Website visitors will see a cookie banner, which includes a link to this cookie management module, in accordance with their region; (2) Website visitors can also navigate to the footer of the Calendly Website at any time and change their Cookie preferences under “Cookie Settings” or “Your Privacy Choices;” (3) customers can manage their cookie preferences by accessing “Cookie Settings” under “Account Settings” within their Calendly account; and (4) when a customer wishes to schedule a meeting with you and provides you with a hyperlink to do so, you will be taken to the bookings page of our Website where you can click on “Cookie Settings.”
+Third-party analytics and advertising services.
+Some of the third party tools we use provide the ability to opt-out.
+Google Analytics.
+You may opt out of Google Analytics’ services using the Opt-Out feature on their website. The Google Analytics service is provided by Google Inc. You can opt-out from Google Analytics service from using your information by installing the Google Analytics Opt-out Browser tool:
+https://tools.google.com/dlpage/gaoptout
+. For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page:
+https://policies.google.com/privacy
+.
+Clearbit
+. You may opt out of Clearbit’s services using their opt-out feature:
+https://preferences.clearbit.com/?locationCode=US-CA
+. For more information on the privacy practices of Clearbit, please visit their privacy policy:
+https://clearbit.com/privacy
+.
+Facebook Pixel
+. You may opt out of Facebook Pixel’s services using their opt-out feature:
+https://facebook.com/help/568137493302217
+. For more information on the privacy practices of Facebook, please visit their Data Policy:
+https://facebook.com/about/privacy
+MNTN.
+You may opt out of TV advertising using their opt-out feature:
+https://mountain.com/opt-out/
+. For more information on the privacy practices of MNTN, please visit their privacy policy:
+https://mountain.com/privacy-policy/
+Additional Rights.
+Depending on where you live, you may have the following rights, subject to any applicable exemptions or limitations under local laws:
+The right to know and access your Personal Data, such as the categories of Personal Data we have collected, the sources of Personal Data, the purposes of collection, and how we used, disclosed, sold, or shared Personal Data;
+The right to correct inaccurate Personal Data that we maintain about you;
+The right to delete your Personal Data under specific circumstances;
+The right to opt out of the sale or sharing of your Personal Data, as such terms are defined by applicable laws;
+The right to object or opt out of certain types of processing, such as targeted advertising, direct marketing, and certain types of profiling and automated decision-making;
+The right to request the restriction of processing of your Personal Data;
+The right to data portability, which means requesting a copy of your Personal Data in an accessible format;
+The right to withdraw your consent under certain circumstances; and
+The right to lodge a complaint with the relevant data protection supervisory authority. Where applicable, EU residents can find contact information for the relevant data protection supervisory authority on the European Data Protection Board’s website,
+https://edpb.europa.eu/about-edpb/about-edpb/members_en
+, or through other publicly available sources.
+If you are located in the United States and access the Website, our use of certain Cookies could be considered a “sale” or “share” under applicable state privacy laws. If you are a resident of one of these states, you may have the right to opt out of the use of such Cookies that result in a “sale” or “share” by navigating to the “Your Privacy Choices” or “Cookie Settings” link in the footer of the Website or clicking through the option in the banner that appears when you first visit our Website.  Specifically, to opt out of “sales” or “sharing,” click the “Reject All” button, which will disable all optional Cookies, including Performance, Functional, and Targeting Cookies. Where required, we also honor requests to opt out submitted via privacy preference signals recognized under applicable laws, such as the Global Privacy Control (GPC). For more information on the GPC and how to use a browser or browser extension incorporating the signal to opt out of “sales” or “sharing,” see
+https://globalprivacycontrol.org
+. In addition to opting out with Calendly, there are other mechanisms generally available by advertising groups for consumers to opt out of interest-based advertising from a large number of advertising providers at once, including but not limited to, using the following links:
+http://optout.networkadvertising.org/
+and
+https://optout.aboutads.info/
+. Please note that these mechanisms are not managed by Calendly, and Calendly is not an advertising provider.
+To the extent any of the above rights are applicable,
+you may exercise your rights by submitting a request through our
+Privacy Center
+. We will take steps to verify your identity before processing certain requests. We will not fulfill your request unless you have provided sufficient information for us to reasonably verify that you are the individual about whom we collected Personal Data. If you do not have an account with us, we may request additional information about you to verify your identity. We will only use the Personal Data provided in the verification process to verify your identity or authority to make a request, and to track and document request responses, unless you initially provided the information for another purpose. Calendly will retain the relevant records associated with your request to demonstrate our compliance in accordance with legal requirements and reasonable retention periods.
+Based on your jurisdiction, you may be able to use an authorized agent to submit a rights request on your behalf. When we verify your agent’s request, we may verify both your and your agent’s identity and request a signed document from you that authorizes your agent to make the request on your behalf. To protect your Personal Data, we reserve the right to deny a request from an agent that does not submit proof that they have been authorized by you to act on their behalf.
+Certain laws may give you a right to appeal any denials of your request to exercise your rights. If we deny your request and you would like to submit an appeal, or if you have other concerns regarding how your request is being handled, please contact us at
+privacy@calendly.com
+.
+Note on Third-Party Links.
+Our Website may contain links to third party websites and applications. Subject to your opt-out or consent preferences, we may also use third party advertisers, ad networks, and other advertising, marketing and promotional companies, to serve advertisements on our Website and other websites and applications. Any access to and use of such linked websites and applications is not governed by this Privacy Notice, but instead is governed by the privacy policies of those third parties. We do not endorse these parties, their content, or any products and services they offer, and we do not endorse these parties, their content, or any products and services they offer, and we are not responsible for the information practices of such third party websites or applications.
+Security and Storage of Information.
+Given the nature of communications and information processing technology, there is no guarantee that Personal Data will be absolutely safe from access, alteration, or destruction by a breach of any of our physical, technical, and managerial safeguards. However, Calendly takes the security of your Personal Data very seriously. We work hard to protect the Personal Data that you provide from loss, misuse, unauthorized access or disclosure, and we have taken reasonable steps to help protect the Personal Data we collect. We have obtained industry recognized certifications and audits, such as the ISO/IEC 27001, which affirm our commitment to our security program. More information on Calendly security and storage practices is available
+here
+.
+You should also take steps to protect against unauthorized access to your device and account by, among other things, choosing a unique and complex password that nobody else knows or can easily guess and keeping your log-in and password private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity.
+We retain the Personal Data we collect for so long as is reasonably necessary to fulfill the purposes for which the data was collected, to perform our contractual and legal obligations (including any exemptions or exceptions contemplated by law), and for any applicable statute of limitations periods for the purposes of bringing and defending claims.
+Individuals Outside the USA.
+If you are an individual located in the European Economic Area, the United Kingdom, Canada or another jurisdiction outside of the United States with laws and regulations governing Personal Data collection, use, and disclosure that differ from United States laws, please be aware that information we collect (including through the use of methods such as Cookies and other web technologies) will be processed and stored in the United States or in other countries where we or our Service Providers have operations. By submitting your Personal Data to Calendly and using Calendly, please be aware that your Personal Data may be transferred to, processed, and stored in the United States or another jurisdiction which may not offer the same level of privacy protection as those in the country where you reside. For a list of applicable countries where data centers are located specifically for the sub-processors of our Services, you may check our
+subprocessors list
+.
+In connection with the operation of its Website, Calendly may transfer your Personal Data to various locations, which may include locations both inside and outside of the European Economic Area. We rely on the EU-U.S. Data Privacy Framework, Standard Contractual Clauses and the UK Addendum to legally transfer Personal Data submitted relating to individuals in the European Economic Area, the United Kingdom, and Switzerland.
+Calendly has designated representatives in the European Economic Area and in the United Kingdom in accordance with applicable legal requirements in the GDPR and UK GDPR. If you are located in these jurisdictions, you can contact our representatives at any time with any questions you may have about data protection. Their contact details are found in the “Contacting Us” section below.
+EU-U.S. Data Privacy Framework Notice.
+Calendly, LLC complies  with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) as set forth by the U.S. Department of Commerce. Calendly has certified to the U.S. Department of Commerce that it adheres to the EU-U.S. Data Privacy Framework Principles (EU-U.S. DPF Principles) with regard to the processing of personal data received from the European Union in reliance on the EU-U.S. DPF and from the United Kingdom (and Gibraltar) in reliance on the UK Extension to the EU-U.S. DPF.  Calendly has certified to the U.S. Department of Commerce that it adheres to the Swiss-U.S. Data Privacy Framework Principles (Swiss-U.S. DPF Principles) with regard to the processing of personal data received from Switzerland in reliance on the Swiss-U.S. DPF.  If there is any conflict between the terms in this privacy notice and the EU-U.S. DPF Principles and/or the Swiss-U.S. DPF Principles, the Principles shall govern.  To learn more about the Data Privacy Framework (DPF) program, and to view our certification, please visit
+https://www.dataprivacyframework.gov/
+.
+In compliance with the DPF principles, when we transfer Personal Data to a third party acting as our agent, we will be liable under the Principles if our agent processes such Personal Data in a manner inconsistent with the Principles unless we prove we are not responsible for the event giving rise to the damage. We may be required to disclose your Personal Data in response to a lawful request made by public authorities, including to meet national security or law enforcement requirements.
+The Federal Trade Commission has jurisdiction over Calendly’s compliance with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF).
+In compliance with the EU-U.S. DPF,  the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. DPF, Calendly commits to resolve DPF Principles-related complaints about our collection and use of your Personal Data. EU, UK, and Swiss individuals with inquiries or complaints regarding our handling of Personal Data received in reliance on the EU-U.S. DPF, the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. DPF should first contact Calendly at the contact methods set out in the “Contacting Us” section at the end of this Privacy Notice. Our goal is to address your complaint and make it right. However, if we can’t resolve your complaint,  you may contact JAMS, our U.S.-based third-party dispute resolution provider at
+https://www.jamsadr.com/dpf-dispute-resolution
+(free of charge). You may also contact your local data protection authority within the European Economic Area, United Kingdom or Switzerland (as applicable) for unresolved complaints.  It is also possible, under certain conditions, to invoke binding arbitration for complaints regarding DPF compliance not resolved by any of the other DPF mechanisms. Please see the
+Data Privacy Framework Annex I
+for more information on this option.
+Additional California Resident Privacy Disclosures.
+Under the California Consumer Privacy Act of 2018 and any subsequent amendments including the California Privacy Rights Act of 2020 (collectively, “CCPA”), California residents are entitled to the following additional disclosures about our data processing. These disclosures apply solely to individuals who live in the State of California (“California Residents”). All terms used in this section have the same meaning as when used in the CCPA. California Residents may also review our Notice at Collection for our Website
+here
+.
+In the preceding 12 months, we have collected the following categories of Personal Data: identifiers, personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)); commercial information; internet or other similar network activity; geolocation data, professional or employment-related data; and inferences drawn from other categories or personal information. For more details about the specific types of Personal Data we have collected, the purposes for which we have collected Personal Data and the sources of that information, please refer to the descriptions above in the Information We Collect and the How We Use Your Information sections above.
+In the preceding 12 months, we have disclosed all of the categories of Personal Data described above for a business purpose as detailed in the description of disclosures to “Service Providers” in the With Whom We May Share Your Information section above.
+We may also sell or share information to the extent our use of Cookies and tracking technologies for targeted advertising or analytics purposes constitutes a “sale” or “share” under the CCPA. Your opt-out rights are described in the Your Rights and Choices section above. In the preceding 12 months, we have sold or shared the following categories of Personal Data with our targeted advertising and analytics partners: identifiers and internet or other similar network activity.
+We do not knowingly sell the Personal Data of minors under age 18.
+Response to Requests.
+For an explanation of the rights you may have as a California resident, please see the Your Rights and Choices section above. We will attempt to respond to California Resident requests in a timely fashion. In the event of delays over 45 days, we will inform you of the reason and extension period in writing. If you have an account with us, we may deliver our written response to that account. Any disclosures we provide will only cover the 12-month period preceding the verifiable receipt of a California Resident’s request unless you request otherwise and that time period meets the regulatory requirements. The response we provide will explain the reasons we cannot comply with a request, if applicable.
+We do not charge a fee to process or respond to your verifiable consumer request unless it is excessive, repetitive, or manifestly unfounded. If we determine that the request warrants a fee, we will tell you why we made that decision and provide you with a cost estimate before fulfilling your request.
+Shine the Light.
+This Privacy Notice describes how we may share your information, including for marketing purposes. California residents are entitled to request and obtain from us once per calendar year information about any of your Personal Data shared with third parties for their own direct marketing purposes, including the categories of information and the names and addresses of those businesses with which we have shared such information. To request this information and for any other questions about our privacy practices and compliance with California law, please contact us at
+privacy@calendly.com
+.
+Changes to this Privacy Notice.
+This Privacy Notice is current as of the Effective Date set forth above. This Privacy Notice may change if there is a material change to the way information is handled at Calendly, or to clarify our Notice or adjust clerical errors. If any changes are made, we’ll post them on this page, so please be sure to check back periodically.
+Contacting Us.
+If you have any questions or comments about this Privacy Notice or anything related to privacy, please contact us via email at
+privacy@calendly.com
+.
+You may also write to us at:
+Attn: Privacy Department
+Calendly, Inc.
+115 E Main St., Ste A1B
+Buford, GA 30518
+USA
+For EEA Residents - you may also contact our EU Representative at
+eurep@calendly.com
+. Alternatively, they can be reached by post (DPO Centre Europe, BERLIN: Friedrichstrabe 88, Excellent Business Centre, Berlin, 10117, Germany or (+49 304 0817 3000).
+https://www.dpocentre.com/contact-us/
+For UK Residents: you may also contact our UK Representative at ukrep@calendly.com. Alternatively, they can be reached by post (The DPO Centre Ltd, 50 Liverpool Street, London, EC2M 7PY) or (+44 (0) 203 797 6340).
+https://www.dpocentre.com/contact-us/
+Product
+Scheduling automation
+Meeting Notetaker
+Payments
+Customizable availability
+Mobile apps
+Browser extensions
+Meeting routing
+Event Types
+Email & website embeds
+Reminders & follow-ups
+Meeting polls
+Analytics
+Admin management
+Integrations
+Google ecosystem
+Microsoft ecosystem
+Calendars
+Video conferencing
+Payment processors
+Sales & CRM
+Recruiting & ATS
+Email messaging
+Embed Calendly
+Analytics
+API & connectors
+Security & compliance
+Calendly
+Pricing
+Product overview
+Solutions
+For individuals
+For small businesses
+For large companies
+Compare
+Security
+Sign up for free
+Talk to sales
+Get a demo
+Resources
+Help center
+Resource center
+Blog
+Customer stories
+Calendly community
+Developer tools
+Release notes
+Company
+About us
+Leadership
+Careers
+We’re hiring!
+Newsroom
+Become a partner
+Contact us
+Downloads
+App Store
+Google Play
+Chrome extension
+Edge extension
+Firefox extension
+Safari extension
+Outlook add-in
+English
+English
+Privacy Policy
+Legal
+Status
+Cookie Settings
+Your Privacy Choices
+Copyright Calendly
