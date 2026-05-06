@@ -1,10 +1,13 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from pathlib import Path
 
-POLICY_FILE = "/Users/davidj.silva/Desktop/Data Science/Thesis/2. Project/data/processed/paragraphs.csv"
-GDPR_FILE = "/Users/davidj.silva/Desktop/Data Science/Thesis/2. Project/data/reference_law_articles.csv"
-OUTPUT_FILE = "/Users/davidj.silva/Desktop/Data Science/Thesis/2. Project/data/annotated/paragraphs_with_articles.csv"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+POLICY_FILE = PROJECT_ROOT / "data/processed/paragraphs.csv"
+GDPR_FILE = PROJECT_ROOT / "data/reference_law_articles.csv"
+OUTPUT_FILE = PROJECT_ROOT / "data/annotated/paragraphs_with_articles.csv"
 
 TOP_K = 3  # number of articles to keep per paragraph
 
