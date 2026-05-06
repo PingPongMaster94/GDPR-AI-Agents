@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 models/*.pkl
+data/annotated/llm_assessment_cache.jsonl
