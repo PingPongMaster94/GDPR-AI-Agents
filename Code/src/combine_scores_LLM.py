@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Dict, Tuple
 
 import pandas as pd
-from gdpr_agent import GDPRComplianceAgent
+from src.gdpr_agent import GDPRComplianceAgent
 
 
 # =========================
