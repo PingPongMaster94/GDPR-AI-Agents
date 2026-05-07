@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background: #f7f9fb;
+  color: #172033;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #d8e0ea;
+  border-radius: 999px;
+  color: #0f7895;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 56px;
+  margin: 20px 0 12px;
+  font-family: Georgia, serif;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #5a6b86;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e6ef;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 14px 40px rgba(15, 35, 70, 0.06);
+  margin-bottom: 32px;
+}
+
+.step {
+  color: #0f9bb8;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin: 8px 0 16px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 230px;
+  border: 1px solid #d8e0ea;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 15px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.word-count {
+  color: #5a6b86;
+  font-size: 14px;
+}
+
+button {
+  background: #14345c;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #c62828;
+  margin-top: 16px;
+}
+
+.summary-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #e0e6ef;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: #60718f;
+  font-weight: 700;
+}
+
+.score {
+  text-align: right;
+}
+
+.score strong {
+  font-size: 56px;
+  color: #14345c;
+}
+
+.issue {
+  border: 1px solid #ff9e9e;
+  background: #fff4f4;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.recommendation {
+  border: 1px solid #e0e6ef;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #fafcff;
+}
