@@ -27,7 +27,7 @@ export async function runComplianceCheck(
   input: string,
   mode: "llm_only" | "hybrid" = "llm_only"
 ): Promise<ComplianceResult> {
-  const response = await fetch("http://127.0.0.1:5000/api/check-compliance", {
+  const response = await fetch("https://gdpr-ai-agents.onrender.com/api/check-compliance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
