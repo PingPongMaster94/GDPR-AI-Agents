@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GDPR Compliance Checker — Academic design system
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 99%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    /* Deep navy as brand primary */
+    --primary: 215 60% 22%;
+    --primary-foreground: 210 40% 99%;
+
+    /* Soft blue accent */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 60% 22%;
+
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 20% 45%;
+
+    /* Teal accent */
+    --accent: 188 70% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 99%;
+
+    --success: 152 60% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 35% 15%;
+
+    --border: 215 25% 90%;
+    --input: 215 25% 90%;
+    --ring: 215 60% 22%;
+
+    --radius: 0.85rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 60% 22%) 0%, hsl(200 70% 30%) 50%, hsl(188 70% 42%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 99%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 60% 22% / 0.04);
+    --shadow-md: 0 4px 16px -4px hsl(215 60% 22% / 0.08);
+    --shadow-lg: 0 12px 40px -8px hsl(215 60% 22% / 0.12);
+    --shadow-glow: 0 0 60px hsl(188 70% 42% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-md);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-lg);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
