@@ -11,9 +11,9 @@ from src.llm_client import call_llm
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 GDPR_FILE = PROJECT_ROOT / "data" / "processed" / "reference_law_articles.csv"
 
-MAX_POLICY_CHARS = 14000
+MAX_POLICY_CHARS = 8000
 MAX_FINDINGS = 6
-MAX_EVIDENCE_ITEMS = 10
+MAX_EVIDENCE_ITEMS = 5
 
 
 COMPLIANCE_AREAS = {
@@ -207,7 +207,7 @@ def build_hybrid_evidence(policy_text: str, gdpr_df: pd.DataFrame) -> dict:
             "best_article_title": row["best_article_title"],
             "semantic_score": row["semantic_score"],
             "heuristic_score": round(heuristic_score, 3),
-            "text_preview": row["text"][:300],
+            "text_preview": row["text"][:180],
         })
 
     area_summary = []
