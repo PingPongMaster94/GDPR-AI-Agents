@@ -14,10 +14,94 @@ MIN_POLICY_WORDS = 50
 def clean_text(text: str) -> str:
     text = str(text or "")
     text = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", text)
-    text = re.sub(r"```json", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"```", "", text)
+    text = text.replace("```json", "")
+    text = text.replace("```", "")
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def fallback_parse_response(raw_clean: str) -> dict:
+    return {
+        "overall_status": "Non-Compliant",
+        "compliance_score": 0,
+        "summary": "The model response could not be parsed into the required structured JSON format.",
+        "findings": [
+            {
+                "policy_section": "General GDPR compliance",
+                "gdpr_article": "Articles 12–14",
+                "why": (
+                    "The assessment could not be parsed reliably. The submitted policy "
+                    "requires manual review against GDPR transparency requirements."
+                ),
+                "fix": (
+                    "Review the privacy policy manually and ensure GDPR information duties "
+                    "are clearly addressed."
+                ),
+            }
+        ],
+        "raw_response": raw_clean,
+    }
+
+
+def safe_json_loads(raw: str) -> dict:
+    raw_clean = str(raw or "").strip()
+
+    raw_clean = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", raw_clean)
+    raw_clean = re.sub(r"^```(?:json)?", "", raw_clean, flags=re.IGNORECASE).strip()
+    raw_clean = re.sub(r"```$", "", raw_clean).strip()
+
+    try:
+        parsed = json.loads(raw_clean)
+        if isinstance(parsed, dict):
+            return parsed
+    except Exception:
+        pass
+
+    start = raw_clean.find("{")
+    if start == -1:
+        return fallback_parse_response(clean_text(raw_clean))
+
+    brace_count = 0
+    end = -1
+    in_string = False
+    escape = False
+
+    for i in range(start, len(raw_clean)):
+        char = raw_clean[i]
+
+        if escape:
+            escape = False
+            continue
+
+        if char == "\\":
+            escape = True
+            continue
+
+        if char == '"':
+            in_string = not in_string
+            continue
+
+        if in_string:
+            continue
+
+        if char == "{":
+            brace_count += 1
+        elif char == "}":
+            brace_count -= 1
+            if brace_count == 0:
+                end = i + 1
+                break
+
+    if end != -1:
+        candidate = raw_clean[start:end]
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict):
+                return parsed
+        except Exception:
+            pass
+
+    return fallback_parse_response(clean_text(raw_clean))
 
 
 def status_from_score(score: int) -> str:
@@ -100,45 +184,6 @@ def invalid_policy_response(policy_text: str) -> dict:
             }
         ],
         "raw_llm_response": "",
-    }
-
-
-def safe_json_loads(raw: str) -> dict:
-    raw_clean = clean_text(raw)
-
-    try:
-        return json.loads(raw_clean)
-    except Exception:
-        pass
-
-    match = re.search(r"\{.*\}", raw_clean, flags=re.DOTALL)
-    if match:
-        candidate = match.group(0)
-
-        try:
-            return json.loads(candidate)
-        except Exception:
-            pass
-
-    return {
-        "overall_status": "Non-Compliant",
-        "compliance_score": 0,
-        "summary": "The model response could not be parsed into the required structured JSON format.",
-        "findings": [
-            {
-                "policy_section": "General GDPR compliance",
-                "gdpr_article": "Articles 12–14",
-                "why": (
-                    "The assessment could not be parsed reliably. The submitted policy "
-                    "requires manual review against GDPR transparency requirements."
-                ),
-                "fix": (
-                    "Review the privacy policy manually and ensure GDPR information duties "
-                    "are clearly addressed."
-                ),
-            }
-        ],
-        "raw_response": raw_clean,
     }
 
 

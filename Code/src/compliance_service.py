@@ -117,21 +117,9 @@ def status_from_score(score: int) -> str:
     return "Non-Compliant"
 
 
-def safe_json_loads(raw: str) -> dict:
-    raw_clean = clean_text(raw)
 
-    try:
-        return json.loads(raw_clean)
-    except Exception:
-        pass
 
-    match = re.search(r"\{.*\}", raw_clean, flags=re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group(0))
-        except Exception:
-            pass
-
+def fallback_parse_response(raw_clean: str) -> dict:
     return {
         "overall_status": "Non-Compliant",
         "compliance_score": 0,
@@ -144,7 +132,70 @@ def safe_json_loads(raw: str) -> dict:
                 "fix": "Review the policy manually against GDPR transparency and information requirements.",
             }
         ],
+        "raw_response": raw_clean,
     }
+
+
+def safe_json_loads(raw: str) -> dict:
+    raw_clean = str(raw or "").strip()
+
+    raw_clean = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", raw_clean)
+    raw_clean = re.sub(r"^```(?:json)?", "", raw_clean, flags=re.IGNORECASE).strip()
+    raw_clean = re.sub(r"```$", "", raw_clean).strip()
+
+    try:
+        parsed = json.loads(raw_clean)
+        if isinstance(parsed, dict):
+            return parsed
+    except Exception:
+        pass
+
+    start = raw_clean.find("{")
+    if start == -1:
+        return fallback_parse_response(clean_text(raw_clean))
+
+    brace_count = 0
+    end = -1
+    in_string = False
+    escape = False
+
+    for i in range(start, len(raw_clean)):
+        char = raw_clean[i]
+
+        if escape:
+            escape = False
+            continue
+
+        if char == "\\":
+            escape = True
+            continue
+
+        if char == '"':
+            in_string = not in_string
+            continue
+
+        if in_string:
+            continue
+
+        if char == "{":
+            brace_count += 1
+        elif char == "}":
+            brace_count -= 1
+            if brace_count == 0:
+                end = i + 1
+                break
+
+    if end != -1:
+        candidate = raw_clean[start:end]
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict):
+                return parsed
+        except Exception:
+            pass
+
+    return fallback_parse_response(clean_text(raw_clean))
+
 
 
 def semantic_match_chunks(chunks: list[str], gdpr_df: pd.DataFrame) -> list[dict]:
