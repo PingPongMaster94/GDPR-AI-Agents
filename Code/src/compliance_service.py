@@ -13,7 +13,7 @@ GDPR_FILE = PROJECT_ROOT / "data" / "processed" / "reference_law_articles.csv"
 
 MAX_POLICY_CHARS = 8000
 MAX_FINDINGS = 6
-MAX_EVIDENCE_ITEMS = 5
+MAX_EVIDENCE_ITEMS = 8
 
 
 COMPLIANCE_AREAS = {
@@ -117,8 +117,6 @@ def status_from_score(score: int) -> str:
     return "Non-Compliant"
 
 
-
-
 def fallback_parse_response(raw_clean: str) -> dict:
     return {
         "overall_status": "Non-Compliant",
@@ -197,7 +195,6 @@ def safe_json_loads(raw: str) -> dict:
     return fallback_parse_response(clean_text(raw_clean))
 
 
-
 def semantic_match_chunks(chunks: list[str], gdpr_df: pd.DataFrame) -> list[dict]:
     articles = gdpr_df[gdpr_df["section_type"] == "Article"].copy()
 
@@ -258,14 +255,13 @@ def build_hybrid_evidence(policy_text: str, gdpr_df: pd.DataFrame) -> dict:
             "best_article_title": row["best_article_title"],
             "semantic_score": row["semantic_score"],
             "heuristic_score": round(heuristic_score, 3),
-            "text_preview": row["text"][:180],
+            "text_preview": row["text"][:220],
         })
 
+    policy_lower = policy_text.lower()
     area_summary = []
 
-    policy_lower = policy_text.lower()
-
-    for key, area in COMPLIANCE_AREAS.items():
+    for _, area in COMPLIANCE_AREAS.items():
         keyword_hits = [
             kw for kw in area["keywords"]
             if kw.lower() in policy_lower
@@ -292,44 +288,68 @@ def build_hybrid_evidence(policy_text: str, gdpr_df: pd.DataFrame) -> dict:
             "average_semantic_score": round(avg_semantic, 3),
         })
 
-    weakest_evidence = sorted(
+    top_semantic_evidence = sorted(
         chunk_results,
-        key=lambda x: (x["heuristic_score"], x["semantic_score"])
+        key=lambda x: x["semantic_score"],
+        reverse=True,
+    )[:MAX_EVIDENCE_ITEMS]
+
+    weak_heuristic_evidence = sorted(
+        chunk_results,
+        key=lambda x: x["heuristic_score"],
     )[:MAX_EVIDENCE_ITEMS]
 
     return {
         "chunk_count": len(chunks),
         "area_summary": area_summary,
-        "weakest_evidence": weakest_evidence,
+        "top_semantic_evidence": top_semantic_evidence,
+        "weak_heuristic_evidence": weak_heuristic_evidence,
+        "important_note": (
+            "This evidence is advisory and should be used only for traceability. "
+            "Missing keywords or low heuristic scores must not be treated as proof of non-compliance."
+        ),
     }
 
 
 def build_hybrid_prompt(policy_text: str, evidence: dict) -> str:
+    was_truncated = len(policy_text) > MAX_POLICY_CHARS
     policy_text = policy_text[:MAX_POLICY_CHARS]
+
+    truncation_note = (
+        "The policy text was truncated because of deployment limits. Do not mark it as non-compliant only because it ends abruptly. Assess the visible content and identify substantive GDPR gaps."
+        if was_truncated
+        else "The full submitted policy text is included below."
+    )
 
     evidence_json = json.dumps(evidence, ensure_ascii=False, indent=2)
 
     return f"""
 You are a GDPR compliance auditor.
 
-Assess the whole privacy policy as one document.
+Assess the privacy policy as a whole document.
 
-You are given:
-1. The full privacy policy text.
-2. Structured evidence from a hybrid GDPR framework:
-   - heuristic coverage checks
-   - semantic GDPR article matching
-   - weak evidence areas
+This is a hybrid system, but the LLM is the final compliance judge.
 
-Use the structured evidence to guide your assessment, but produce a clear final judgement on the full policy.
+The heuristic and semantic evidence is provided only to support traceability:
+- heuristic checks may identify possible GDPR coverage areas
+- semantic matching may suggest relevant GDPR articles
+- missing keywords or low heuristic scores are NOT proof of non-compliance
+- do not penalise the policy only because the evidence says coverage_detected is false
+- base the final verdict primarily on the actual privacy policy text
+
+Your job:
+1. Read the privacy policy.
+2. Use the hybrid evidence only as supporting context.
+3. Produce a final GDPR compliance assessment.
+4. Return concise findings with relevant GDPR articles, why, and fix.
 
 Return ONLY valid JSON. No markdown. No text outside JSON.
 
 Use this exact JSON structure:
 
 {{
-  "overall_status": "Compliant | Partially Compliant | Non-Compliant",
-  "compliance_score": 0,
+  "overall_status": "Compliant",
+  "compliance_score": 85,
   "summary": "Short overall explanation.",
   "findings": [
     {{
@@ -342,12 +362,19 @@ Use this exact JSON structure:
 }}
 
 Rules:
+- overall_status must be exactly one of: "Compliant", "Partially Compliant", "Non-Compliant".
 - compliance_score must be an integer from 0 to 100.
 - Return between 1 and {MAX_FINDINGS} findings.
-- Do not mention chunk numbers or paragraph numbers.
+- Do not mention chunk numbers.
+- Do not mention paragraph numbers.
 - Do not list every GDPR article.
-- Focus on the most important GDPR compliance gaps.
+- Focus only on the most important GDPR compliance gaps.
+- Do not mark the policy as non-compliant solely because it is missing a specific keyword.
+- Do not mark the policy as non-compliant solely because the submitted text may be truncated.
 - Each finding must include policy_section, gdpr_article, why, and fix.
+
+Truncation note:
+{truncation_note}
 
 Hybrid evidence:
 {evidence_json}
@@ -357,6 +384,24 @@ Privacy policy text:
 {policy_text}
 \"\"\"
 """.strip()
+
+
+def normalise_status(value: str, score: int) -> str:
+    value = clean_text(value)
+
+    if value in ["Compliant", "Partially Compliant", "Non-Compliant"]:
+        return value
+
+    lower = value.lower()
+
+    if "non" in lower:
+        return "Non-Compliant"
+    if "partial" in lower:
+        return "Partially Compliant"
+    if "compliant" in lower:
+        return "Compliant"
+
+    return status_from_score(score)
 
 
 def normalise_findings(findings) -> list[dict]:
@@ -369,11 +414,16 @@ def normalise_findings(findings) -> list[dict]:
         if not isinstance(item, dict):
             continue
 
+        policy_section = clean_text(item.get("policy_section", "General GDPR compliance"))
+        gdpr_article = clean_text(item.get("gdpr_article", "Relevant GDPR provisions"))
+        why = clean_text(item.get("why", "The policy may require further review."))
+        fix = clean_text(item.get("fix", "Clarify this section in the privacy policy."))
+
         cleaned.append({
-            "policy_section": clean_text(item.get("policy_section", "General GDPR compliance")),
-            "gdpr_article": clean_text(item.get("gdpr_article", "Relevant GDPR provisions")),
-            "why": clean_text(item.get("why", "The policy may require further review.")),
-            "fix": clean_text(item.get("fix", "Clarify this section in the privacy policy.")),
+            "policy_section": policy_section or "General GDPR compliance",
+            "gdpr_article": gdpr_article or "Relevant GDPR provisions",
+            "why": why or "The policy may require further review.",
+            "fix": fix or "Clarify this section in the privacy policy.",
         })
 
     if not cleaned:
@@ -392,19 +442,19 @@ def build_issues(findings: list[dict], score: int) -> list[dict]:
 
     return [
         {
-            "title": f["policy_section"],
+            "title": finding["policy_section"],
             "severity": severity,
             "description": (
-                f"GDPR article to address: {f['gdpr_article']}\n\n"
-                f"Why: {f['why']}\n\n"
-                f"Fix: {f['fix']}"
+                f"GDPR article to address: {finding['gdpr_article']}\n\n"
+                f"Why: {finding['why']}\n\n"
+                f"Fix: {finding['fix']}"
             ),
-            "policy_section": f["policy_section"],
-            "gdpr_article": f["gdpr_article"],
-            "why": f["why"],
-            "fix": f["fix"],
+            "policy_section": finding["policy_section"],
+            "gdpr_article": finding["gdpr_article"],
+            "why": finding["why"],
+            "fix": finding["fix"],
         }
-        for f in findings
+        for finding in findings
     ]
 
 
@@ -413,11 +463,11 @@ def build_sections(findings: list[dict], score: int) -> list[dict]:
 
     return [
         {
-            "name": f["policy_section"],
+            "name": finding["policy_section"],
             "status": status,
-            "note": f"GDPR article to address: {f['gdpr_article']}",
+            "note": f"GDPR article to address: {finding['gdpr_article']}",
         }
-        for f in findings
+        for finding in findings
     ]
 
 
@@ -425,24 +475,24 @@ def build_paragraph_results(findings: list[dict], status: str, score: int) -> li
     return [
         {
             "paragraph_id": i + 1,
-            "policy_text": f["policy_section"],
-            "best_article_number": f["gdpr_article"],
-            "best_article_title": f["policy_section"],
-            "section_name": f["policy_section"],
+            "policy_text": finding["policy_section"],
+            "best_article_number": finding["gdpr_article"],
+            "best_article_title": finding["policy_section"],
+            "section_name": finding["policy_section"],
             "heuristic_score": 0.0,
             "semantic_score": 0.0,
             "llm_verdict": status,
             "llm_score": round(score / 100, 3),
             "llm_assessment": (
-                f"GDPR article to address: {f['gdpr_article']}\n\n"
-                f"Why: {f['why']}\n\n"
-                f"Fix: {f['fix']}"
+                f"GDPR article to address: {finding['gdpr_article']}\n\n"
+                f"Why: {finding['why']}\n\n"
+                f"Fix: {finding['fix']}"
             ),
             "reviewed_by_llm": True,
             "combined_score": round(score / 100, 3),
             "combined_label": status,
         }
-        for i, f in enumerate(findings)
+        for i, finding in enumerate(findings)
     ]
 
 
@@ -462,6 +512,11 @@ def assess_policy_text(policy_text: str) -> dict:
     prompt = build_hybrid_prompt(policy_text, evidence)
 
     raw_reply = call_llm(prompt)
+
+    print("\n\n===== RAW HYBRID MODEL RESPONSE =====")
+    print(raw_reply)
+    print("===== END RAW HYBRID MODEL RESPONSE =====\n\n")
+
     parsed = safe_json_loads(raw_reply)
 
     score = parsed.get("compliance_score", 0)
@@ -473,12 +528,9 @@ def assess_policy_text(policy_text: str) -> dict:
 
     score = max(0, min(100, score))
 
-    overall_status = clean_text(parsed.get("overall_status", "")) or status_from_score(score)
-
-    if overall_status not in ["Compliant", "Partially Compliant", "Non-Compliant"]:
-        overall_status = status_from_score(score)
-
+    overall_status = normalise_status(parsed.get("overall_status", ""), score)
     findings = normalise_findings(parsed.get("findings", []))
+
     summary = clean_text(parsed.get("summary", "")) or "Hybrid GDPR assessment completed."
 
     issues = build_issues(findings, score)
@@ -488,9 +540,9 @@ def assess_policy_text(policy_text: str) -> dict:
     recommendations = [
         {
             "number": i + 1,
-            "text": f"{f['policy_section']}: {f['fix']}",
+            "text": f"{finding['policy_section']}: {finding['fix']}",
         }
-        for i, f in enumerate(findings)
+        for i, finding in enumerate(findings)
     ]
 
     return {
@@ -502,7 +554,7 @@ def assess_policy_text(policy_text: str) -> dict:
         "word_count": word_count,
         "paragraph_count": evidence["chunk_count"],
         "llm_reviewed_paragraph_count": 1,
-        "api_mode": "hybrid_evidence_guided",
+        "api_mode": "hybrid_llm_final_with_traceability",
         "sections": sections,
         "paragraph_results": paragraph_results,
         "issues": issues,
