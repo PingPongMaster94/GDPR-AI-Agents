@@ -1,130 +1,197 @@
 # GDPR-AI-Agents
 
-This repository contains the implementation code and supporting study database for a Master's thesis on automated GDPR compliance assessment using AI agents, semantic retrieval, and local LLM reasoning.
+This repository contains the implementation and supporting research material for a Master's thesis focused on automated GDPR compliance assessment using a hybrid AI-driven approach.
 
-The repository has two main components:
+The system combines:
 
-- `Code/` — implementation of the GDPR compliance checking pipeline
-- `SLR/` — database of studies used for the Systematic Literature Review (SLR)
+- Rule-based GDPR compliance checks
+- Semantic retrieval of relevant GDPR articles
+- Large Language Model (LLM) reasoning
+- Explainable compliance recommendations
+
+The objective is to support transparent and scalable privacy policy assessment while maintaining traceability between detected issues and GDPR requirements.
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
 GDPR-AI-Agents/
 │
 ├── Code/
+│   ├── api.py
+│   ├── requirements.txt
 │   ├── src/
-│   ├── data/
-│   ├── notebooks/
-│   └── requirements.txt
+│   └── data/
+│
+├── Frontend/
+│   └── React + Vite web application
 │
 ├── SLR/
-│   ├── 1. Contextual/
-│   ├── 2. Supporting/
-│   └── 3. Core/
 │
 ├── README.md
 └── .gitignore
-Code Component
+```
 
-The Code/ folder contains the automated GDPR compliance evaluation pipeline.
+---
 
-Core Python Files
-File	Purpose
-extract_gdpr_sections.py	Extracts GDPR articles and recitals from the raw GDPR reference text.
-build_dataset.py	Loads raw privacy policies, cleans them, and splits them into paragraph-level records.
-semantic_linker.py	Links each policy paragraph to the most relevant GDPR article using TF-IDF cosine similarity.
-gdpr_agent.py	Implements the rule-based GDPR heuristic checklist and scoring logic.
-combine_scores_LLM.py	Combines heuristic score, semantic score, and LLM verdict into the final compliance score.
-cleaning_utils.py	Provides text cleaning and preprocessing utilities.
-data_loader.py	Provides helper functions for loading local text datasets.
-Pipeline Run Order
+# System Architecture
 
-Run the pipeline from the repository root:
+The project supports two analysis modes.
 
-python Code/src/extract_gdpr_sections.py
-python Code/src/build_dataset.py
-python Code/src/semantic_linker.py
-python Code/src/combine_scores_LLM.py
+## LLM-Only Mode
 
-The expected flow is:
+The entire privacy policy is evaluated directly by an LLM.
 
-raw GDPR text
-→ structured GDPR articles
-→ raw privacy policies
-→ paragraph-level dataset
-→ semantic GDPR article linking
-→ hybrid compliance scoring
-→ final compliance results
-Pipeline Outputs
-Step	Output
-GDPR extraction	Code/data/processed/reference_law_articles.csv
-Dataset construction	Code/data/processed/paragraphs.csv
-Semantic linking	Code/data/annotated/paragraphs_with_articles.csv
-Final scoring	Code/data/results/compliance_results.csv
-Hybrid Scoring Logic
+Features:
 
-The final compliance score combines:
+- Whole-policy assessment
+- GDPR compliance score
+- Compliance findings
+- Improvement recommendations
 
-Component	Weight
-Heuristic GDPR checklist	0.25
-Semantic article similarity	0.25
-LLM compliance verdict	0.50
+This mode provides faster assessments and serves as a baseline approach.
 
-The LLM is used as an auditing component rather than as the only decision mechanism.
+---
 
-SLR Component
+## Hybrid Mode
 
-The SLR/ folder contains the study database used for the Systematic Literature Review phase of the thesis.
+The hybrid mode combines multiple analysis layers:
+
+1. Heuristic GDPR compliance checks
+2. Semantic GDPR article matching
+3. LLM-based compliance reasoning
+
+The heuristic and semantic layers generate structured evidence that is supplied to the LLM to support explainable compliance assessments.
+
+Features:
+
+- Evidence-guided analysis
+- GDPR article traceability
+- Explainable recommendations
+- Improved transparency of decision-making
+
+---
+
+# Backend
+
+The backend is implemented using Flask.
+
+Main entry point:
+
+```bash
+python api.py
+```
+
+The API exposes a GDPR compliance assessment endpoint:
+
+```http
+POST /api/check-compliance
+```
+
+Example request:
+
+```json
+{
+  "policy_text": "Privacy policy text here",
+  "mode": "llm_only"
+}
+```
+
+or
+
+```json
+{
+  "policy_text": "Privacy policy text here",
+  "mode": "hybrid"
+}
+```
+
+---
+
+# Frontend
+
+The frontend is implemented using:
+
+- React
+- TypeScript
+- Vite
+
+The interface allows users to:
+
+- Submit privacy policies
+- Select analysis mode
+- View compliance scores
+- Review findings and recommendations
+
+---
+
+# Data Pipeline
+
+The repository also contains the original GDPR processing pipeline used during development and experimentation.
+
+Core components include:
+
+| File | Purpose |
+|--------|---------|
+| extract_gdpr_sections.py | Extracts GDPR articles from source documents |
+| build_dataset.py | Builds the privacy policy dataset |
+| semantic_linker.py | Links policy content to GDPR articles |
+| gdpr_agent.py | Implements heuristic GDPR checks |
+| combine_scores_LLM.py | Combines heuristic, semantic, and LLM outputs |
+
+Generated outputs include:
+
+- GDPR article database
+- Processed privacy policy dataset
+- GDPR article mappings
+- Compliance assessment results
+
+---
+
+# Requirements
+
+Install backend dependencies:
+
+```bash
+cd Code
+pip install -r requirements.txt
+```
+
+Key libraries include:
+
+- pandas
+- numpy
+- scikit-learn
+- Flask
+- google-genai
+- matplotlib
+
+---
+
+# Systematic Literature Review (SLR)
+
+The `SLR/` directory contains the study database used during the thesis literature review.
 
 Studies are organised into three categories:
 
-Folder	Meaning
-1. Contextual/	Background and contextual studies.
-2. Supporting/	Supporting studies relevant to automated compliance, GDPR, NLP, and AI governance.
-3. Core/	Core studies most directly aligned with the thesis topic.
+| Folder | Description |
+|----------|------------|
+| 1. Contextual | Background and contextual studies |
+| 2. Supporting | Studies related to GDPR, NLP, compliance automation, and AI governance |
+| 3. Core | Studies most directly aligned with the thesis research question |
 
-This folder is included to make the literature selection transparent and traceable.
+The inclusion of the SLR database promotes transparency and traceability of the literature review process.
 
-Requirements
+---
 
-Install dependencies from inside the Code/ folder:
+# Thesis Focus
 
-cd Code
-pip install -r requirements.txt
+This project investigates how hybrid AI architectures can support GDPR compliance assessment through:
 
-Core dependencies include:
+- Explainable compliance reasoning
+- Semantic retrieval of legal requirements
+- Automated privacy policy analysis
+- Human-readable compliance recommendations
 
-pandas
-numpy
-scikit-learn
-matplotlib
-regex
-tqdm
-python-dateutil
-joblib
-
-Ollama must be installed separately for local LLM execution.
-
-Example:
-
-ollama pull phi3:mini
-ollama pull mistral
-Notes
-
-This repository supports a thesis project on transparent and explainable GDPR compliance automation. The implementation is designed as a hybrid system combining deterministic rules, semantic retrieval, and LLM-based reasoning.
-
-
-## 3. Add both folders
-
-From your local repo root:
-
-```bash
-cd "/Users/davidj.silva/Desktop/Data Science/Thesis/GDPR-AI-Agents"
-
-Then:
-
-git add Code SLR README.md .gitignore
-git commit -m "Upload code and SLR study database"
+The system is designed as a research prototype and educational tool rather than a substitute for legal advice.
