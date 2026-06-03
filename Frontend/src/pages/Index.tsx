@@ -46,7 +46,7 @@ const resultsRef = useRef<HTMLDivElement>(null);
               <ShieldCheck className="h-4 w-4" />
             </div>
             <span className="font-bold text-lg font-semibold tracking-tight">
-              GDPR Compliance Checker
+              AI-Driven Data Governance - Automating GDPR Compliance with LLM Agents
             </span>
           </div>
           <div className="hidden items-center gap-2 text-xs text-muted-foreground sm:flex">
