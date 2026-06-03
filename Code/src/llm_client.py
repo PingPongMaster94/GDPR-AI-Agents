@@ -72,6 +72,7 @@ def call_gemini(prompt: str) -> str:
             return "(Gemini error: missing GEMINI_API_KEY or GOOGLE_API_KEY environment variable)"
 
         client = genai.Client(api_key=api_key)
+        print(f"DEBUG: GEMINI_MODEL = {GEMINI_MODEL}")
 
         response = client.models.generate_content(
             model=GEMINI_MODEL,
