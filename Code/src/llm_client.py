@@ -72,18 +72,36 @@ def call_gemini(prompt: str) -> str:
             return "(Gemini error: missing GEMINI_API_KEY or GOOGLE_API_KEY environment variable)"
 
         client = genai.Client(api_key=api_key)
-        print(f"DEBUG: GEMINI_MODEL = {GEMINI_MODEL}")
 
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt,
-            config={
-                "response_mime_type": "application/json",
-                "temperature": 0.1,
-            },
-        )
+        models_to_try = [
+            "gemini-2.5-flash",
+            "gemini-2.0-flash",
+        ]
 
-        return response.text or ""
+        last_error = None
+
+        for model_name in models_to_try:
+            try:
+                print(f"DEBUG: Trying Gemini model: {model_name}")
+
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config={
+                        "response_mime_type": "application/json",
+                        "temperature": 0.1,
+                    },
+                )
+
+                print(f"DEBUG: Success with model: {model_name}")
+
+                return response.text or ""
+
+            except Exception as model_error:
+                print(f"DEBUG: Failed model {model_name}: {model_error}")
+                last_error = model_error
+
+        return f"(Gemini error: {type(last_error).__name__}: {last_error})"
 
     except Exception as e:
         return f"(Gemini error: {type(e).__name__}: {e})"
