@@ -45,7 +45,7 @@ const resultsRef = useRef<HTMLDivElement>(null);
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <ShieldCheck className="h-4 w-4" />
             </div>
-            <span className="font-serif text-lg font-semibold tracking-tight">
+            <span className="font-bold text-lg font-semibold tracking-tight">
               GDPR Compliance Checker
             </span>
           </div>
@@ -56,45 +56,61 @@ const resultsRef = useRef<HTMLDivElement>(null);
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-          aria-hidden
-        />
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium text-secondary-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              AI-powered privacy policy analysis
-            </div>
-            <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl">
-              GDPR Compliance{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">Checker</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Upload or paste a privacy policy to assess its alignment with GDPR requirements
-              using an AI-powered compliance analysis tool.
-            </p>
 
-            <div className="mx-auto mt-8 max-w-xl rounded-xl border border-border/70 bg-card/60 p-5 text-left shadow-sm">
-              <div className="flex items-start gap-3">
-                <ScrollText className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="font-medium text-foreground">About this project. </span>
-                  This tool was developed as part of a thesis project to support automated
-                  privacy policy analysis and identify potential GDPR compliance issues.
-                </p>
-              </div>
-            </div>
-          </div>
+
+
+      {/* Hero */}
+<section className="relative overflow-hidden">
+  <div
+    className="absolute inset-0 -z-10 opacity-[0.04]"
+    style={{
+      backgroundImage:
+        "radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)",
+      backgroundSize: "32px 32px",
+    }}
+    aria-hidden
+  />
+
+  <div className="container mx-auto px-4 py-16 md:py-24">
+    <div className="mx-auto max-w-4xl text-center">
+      <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-medium text-secondary-foreground">
+        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+        AI-Powered GDPR Compliance Assessment
+      </div>
+
+      <div className="relative mx-auto flex max-w-5xl items-center justify-center">
+        <div className="absolute inset-x-0 top-1/2 h-20 -translate-y-1/2 rounded-xl bg-gradient-hero opacity-95 md:h-24" />
+
+        <h1 className="relative z-10 px-6 text-center text-4xl font-extrabold leading-tight tracking-tight text-white md:px-10 md:text-6xl">
+          GDPR Compliance Checker
+        </h1>
+      </div>
+
+      <h2 className="mt-10 text-2xl font-semibold tracking-tight text-foreground md:text-4xl">
+   
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+        Upload or paste a privacy policy to assess its alignment with GDPR requirements
+        using an AI-powered compliance analysis tool.
+      </p>
+
+      <div className="mx-auto mt-8 max-w-xl rounded-xl border border-border/70 bg-card/60 p-5 text-left shadow-sm">
+        <div className="flex items-start gap-3">
+          <ScrollText className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            <span className="font-medium text-foreground">About this project. </span>
+            This tool was developed as part of a thesis project to support automated
+            privacy policy analysis and identify potential GDPR compliance issues.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Main content */}
       <main className="container mx-auto px-4 pb-24">
@@ -151,7 +167,7 @@ const resultsRef = useRef<HTMLDivElement>(null);
                 </div>
               </div>
               <div>
-                <p className="font-serif text-xl font-semibold text-foreground">
+                <p className="font-bold text-xl font-semibold text-foreground">
                   Analysing privacy policy for GDPR compliance…
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
