@@ -11,9 +11,9 @@ from src.llm_client import call_llm
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 GDPR_FILE = PROJECT_ROOT / "data" / "processed" / "reference_law_articles.csv"
 
-MAX_POLICY_CHARS = 8000
+MAX_POLICY_CHARS = 6000
 MAX_FINDINGS = 6
-MAX_EVIDENCE_ITEMS = 8
+MAX_EVIDENCE_ITEMS = 4
 
 
 COMPLIANCE_AREAS = {
