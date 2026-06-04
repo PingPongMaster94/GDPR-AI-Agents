@@ -1,3 +1,5 @@
+import time
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -16,12 +18,19 @@ def check_compliance():
         policy_text = data.get("policy_text", "")
         mode = data.get("mode", "hybrid")
 
+        start = time.perf_counter()
+
         if mode == "llm_only":
             result = assess_llm_only(policy_text)
         else:
             result = assess_hybrid(policy_text)
 
+        processing_time = round(time.perf_counter() - start, 2)
+
         result["selected_mode"] = mode
+        result["processing_time_seconds"] = processing_time
+
+        print(f"Processing time: {processing_time}s")
 
         return jsonify(result), 200
 
