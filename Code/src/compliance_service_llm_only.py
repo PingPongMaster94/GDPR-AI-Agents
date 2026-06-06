@@ -370,7 +370,7 @@ def assess_policy_text(policy_text: str) -> dict:
 
     score = max(0, min(100, score))
 
-    overall_status = normalise_status(parsed.get("overall_status", ""), score)
+    overall_status = status_from_score(score)
     findings = normalise_findings(parsed.get("findings", []))
 
     summary = clean_text(parsed.get("summary", "")) or (
