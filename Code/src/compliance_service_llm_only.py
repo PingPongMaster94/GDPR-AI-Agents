@@ -1,407 +1,782 @@
-from pathlib import Path
 import json
 import re
 
 from src.llm_client import call_llm
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-MAX_POLICY_CHARS = 18000
+MAX_POLICY_CHARS = 60000
+MAX_STRENGTHS = 4
 MAX_FINDINGS = 6
 MIN_POLICY_WORDS = 50
 
 
 def clean_text(text: str) -> str:
     text = str(text or "")
-    text = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", text)
-    text = text.replace("```json", "")
-    text = text.replace("```", "")
+
+    text = re.sub(
+        r"\x1b\[[0-9;]*[A-Za-z]",
+        "",
+        text,
+    )
+    text = re.sub(
+        r"```json",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(r"```", "", text)
     text = re.sub(r"\s+", " ", text)
+
     return text.strip()
 
 
-def fallback_parse_response(raw_clean: str) -> dict:
-    return {
-        "overall_status": "Non-Compliant",
-        "compliance_score": 0,
-        "summary": "The model response could not be parsed into the required structured JSON format.",
-        "findings": [
-            {
-                "policy_section": "General GDPR compliance",
-                "gdpr_article": "Articles 12–14",
-                "why": (
-                    "The assessment could not be parsed reliably. The submitted policy "
-                    "requires manual review against GDPR transparency requirements."
-                ),
-                "fix": (
-                    "Review the privacy policy manually and ensure GDPR information duties "
-                    "are clearly addressed."
-                ),
-            }
-        ],
-        "raw_response": raw_clean,
-    }
+def status_from_score(score: int) -> str:
+    if score >= 75:
+        return "Compliant"
+
+    if score >= 45:
+        return "Partially Compliant"
+
+    return "Non-Compliant"
 
 
 def safe_json_loads(raw: str) -> dict:
     raw_clean = str(raw or "").strip()
 
-    raw_clean = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", raw_clean)
-    raw_clean = re.sub(r"^```(?:json)?", "", raw_clean, flags=re.IGNORECASE).strip()
-    raw_clean = re.sub(r"```$", "", raw_clean).strip()
+    raw_clean = re.sub(
+        r"\x1b\[[0-9;]*[A-Za-z]",
+        "",
+        raw_clean,
+    )
+    raw_clean = re.sub(
+        r"^```(?:json)?",
+        "",
+        raw_clean,
+        flags=re.IGNORECASE,
+    ).strip()
+    raw_clean = re.sub(
+        r"```$",
+        "",
+        raw_clean,
+    ).strip()
 
     try:
         parsed = json.loads(raw_clean)
+
         if isinstance(parsed, dict):
             return parsed
-    except Exception:
+    except json.JSONDecodeError:
         pass
 
     start = raw_clean.find("{")
+
     if start == -1:
-        return fallback_parse_response(clean_text(raw_clean))
+        raise ValueError(
+            "The model response did not contain a JSON object."
+        )
 
     brace_count = 0
     end = -1
     in_string = False
-    escape = False
+    escaped = False
 
-    for i in range(start, len(raw_clean)):
-        char = raw_clean[i]
+    for index in range(start, len(raw_clean)):
+        character = raw_clean[index]
 
-        if escape:
-            escape = False
+        if escaped:
+            escaped = False
             continue
 
-        if char == "\\":
-            escape = True
+        if character == "\\":
+            escaped = True
             continue
 
-        if char == '"':
+        if character == '"':
             in_string = not in_string
             continue
 
         if in_string:
             continue
 
-        if char == "{":
+        if character == "{":
             brace_count += 1
-        elif char == "}":
+
+        elif character == "}":
             brace_count -= 1
+
             if brace_count == 0:
-                end = i + 1
+                end = index + 1
                 break
 
-    if end != -1:
-        candidate = raw_clean[start:end]
-        try:
-            parsed = json.loads(candidate)
-            if isinstance(parsed, dict):
-                return parsed
-        except Exception:
-            pass
+    if end == -1:
+        raise ValueError(
+            "The model returned an incomplete JSON object."
+        )
 
-    return fallback_parse_response(clean_text(raw_clean))
+    candidate = raw_clean[start:end]
+
+    try:
+        parsed = json.loads(candidate)
+    except json.JSONDecodeError as error:
+        raise ValueError(
+            "The model response could not be parsed into "
+            "the required structured JSON format."
+        ) from error
+
+    if not isinstance(parsed, dict):
+        raise ValueError(
+            "The model response was not a JSON object."
+        )
+
+    return parsed
 
 
-def status_from_score(score: int) -> str:
-    if score >= 75:
-        return "Compliant"
-    if score >= 45:
-        return "Partially Compliant"
-    return "Non-Compliant"
+def count_policy_sections(policy_text: str) -> int:
+    paragraphs = re.split(
+        r"\n\s*\n",
+        policy_text.strip(),
+    )
+
+    meaningful_paragraphs = [
+        paragraph
+        for paragraph in paragraphs
+        if len(paragraph.strip()) > 50
+    ]
+
+    return max(
+        1,
+        len(meaningful_paragraphs),
+    )
 
 
-def invalid_policy_response(policy_text: str) -> dict:
-    word_count = len(policy_text.split())
+def invalid_policy_response(
+    policy_text: str,
+) -> dict:
+    word_count = len(
+        policy_text.split()
+    )
 
     why = (
-        "The submitted text is not a complete privacy policy and does not provide "
-        "the information required under GDPR transparency obligations."
+        "The submitted text does not contain enough information "
+        "to be evaluated as a complete privacy policy."
     )
-    fix = (
-        "Submit a full privacy policy containing information about data collection, "
-        "purposes, lawful basis, rights, retention, sharing, security, and contact details."
+
+    recommendation = (
+        "Submit a complete privacy policy covering personal data "
+        "collection, processing purposes, lawful bases, data subject "
+        "rights, retention, sharing, security, international transfers, "
+        "and controller contact details."
     )
+
+    issue = {
+        "title": "Privacy policy completeness",
+        "severity": "high",
+        "description": (
+            "GDPR article to address: Articles 12-14\n\n"
+            f"Why: {why}"
+        ),
+        "policy_section": "Privacy policy completeness",
+        "gdpr_article": "Articles 12-14",
+        "why": why,
+    }
 
     return {
         "combined_score": 0.0,
         "combined_score_percent": 0,
         "combined_label": "Non-Compliant",
         "overall_status": "Non-Compliant",
-        "summary": "The submitted text is too short to be assessed as a valid privacy policy.",
+        "summary": (
+            "The submitted text is too short to be assessed as a "
+            "complete privacy policy."
+        ),
+        "analysis_method": {
+            "title": "LLM-only whole-policy review",
+            "description": (
+                "The submitted text would normally be assessed directly "
+                "by the language model without heuristic requirement "
+                "checks or semantic GDPR article matching."
+            ),
+            "limitations": (
+                "The submitted text was too short for the model analysis "
+                "to be performed."
+            ),
+        },
+        "strengths": [],
         "word_count": word_count,
         "paragraph_count": 1,
         "llm_reviewed_paragraph_count": 0,
+        "llm_call_count": 0,
         "api_mode": "llm_only_whole_policy",
-        "sections": [
-            {
-                "name": "General privacy policy completeness",
-                "status": "missing",
-                "note": "The submitted text does not contain enough information to evaluate GDPR compliance.",
-            }
-        ],
-        "paragraph_results": [
-            {
-                "paragraph_id": 1,
-                "policy_text": "General privacy policy completeness",
-                "best_article_number": "Articles 12–14",
-                "best_article_title": "Transparency and information duties",
-                "section_name": "General privacy policy completeness",
-                "heuristic_score": 0.0,
-                "semantic_score": 0.0,
-                "llm_verdict": "Non-Compliant",
-                "llm_score": 0.0,
-                "llm_assessment": (
-                    f"GDPR article to address: Articles 12–14\n\n"
-                    f"Why: {why}\n\n"
-                    f"Fix: {fix}"
-                ),
-                "reviewed_by_llm": False,
-                "combined_score": 0.0,
-                "combined_label": "Non-Compliant",
-            }
-        ],
-        "issues": [
-            {
-                "title": "General privacy policy completeness",
-                "severity": "High",
-                "description": (
-                    f"GDPR article to address: Articles 12–14\n\n"
-                    f"Why: {why}\n\n"
-                    f"Fix: {fix}"
-                ),
-                "policy_section": "General privacy policy completeness",
-                "gdpr_article": "Articles 12–14",
-                "why": why,
-                "fix": fix,
-            }
-        ],
+        "sections": [],
+        "paragraph_results": [],
+        "issues": [issue],
         "recommendations": [
             {
                 "number": 1,
-                "text": "Submit a complete privacy policy before running the GDPR compliance check.",
+                "text": recommendation,
             }
         ],
         "raw_llm_response": "",
+        "policy_was_truncated": False,
     }
 
 
-def build_prompt(policy_text: str) -> str:
-    policy_text = policy_text[:MAX_POLICY_CHARS]
+def build_prompt(
+    policy_text: str,
+) -> str:
+    was_truncated = (
+        len(policy_text) > MAX_POLICY_CHARS
+    )
+
+    visible_policy = (
+        policy_text[:MAX_POLICY_CHARS]
+    )
+
+    truncation_note = (
+        "The submitted document exceeded the current analysis limit and "
+        "was truncated. Do not treat an abrupt ending as evidence that the "
+        "original privacy notice is incomplete. Assess only the substantive "
+        "content that is visible."
+        if was_truncated
+        else (
+            "The submitted privacy notice is included within the current "
+            "analysis limit. Do not claim that sections or sentences were "
+            "cut off unless the submitted text itself clearly demonstrates it."
+        )
+    )
 
     return f"""
-You are a GDPR compliance auditor reviewing a privacy policy.
+You are reviewing a privacy notice for its likely alignment with GDPR
+transparency and information requirements.
 
-Assess the whole policy as one document. Do not review paragraph by paragraph.
+Assess the submitted privacy notice as one complete document.
 
-Return ONLY valid JSON. Do not include markdown. Do not include explanations outside JSON.
+The main purpose of this assessment is to evaluate the completeness,
+clarity, accessibility, and likely GDPR alignment of the privacy notice,
+with particular emphasis on Articles 12, 13, and 14.
 
-Use this exact JSON structure:
+This is not an audit of the organisation's entire GDPR compliance
+programme. Distinguish carefully between:
+
+1. Information that must or may need to be disclosed in a privacy notice;
+2. Broader operational, governance, security, and accountability duties
+   that the controller may need to perform internally.
+
+This is an LLM-only assessment. No deterministic GDPR requirement
+checklist, heuristic score, or semantic GDPR article retrieval evidence
+is available.
+
+Your assessment must be balanced. Identify both the main strengths of
+the privacy notice and the most important disclosure gaps.
+
+Return ONLY valid JSON.
+Do not use markdown.
+Do not include text outside the JSON object.
+
+Use this exact structure:
 
 {{
-  "overall_status": "Compliant",
-  "compliance_score": 85,
-  "summary": "Short overall explanation in plain English.",
+  "overall_status": "Partially Compliant",
+  "compliance_score": 65,
+  "summary": "Concise overall explanation balancing strengths and weaknesses.",
+  "strengths": [
+    {{
+      "title": "Clear processing purposes",
+      "evidence": "A short quotation or concise summary of the relevant privacy-notice content.",
+      "gdpr_relevance": "Why this contributes to GDPR transparency or information duties."
+    }}
+  ],
   "findings": [
     {{
-      "policy_section": "Name of the policy section or compliance area that needs improvement",
-      "gdpr_article": "Relevant GDPR article or article range",
-      "why": "Why this section is incomplete, unclear, or non-compliant",
-      "fix": "Concrete action needed to improve compliance"
+      "policy_section": "Data retention",
+      "gdpr_article": "Articles 5(1)(e), 13(2)(a), 14(2)(a)",
+      "why": "Why this disclosure is incomplete, unclear, or potentially non-compliant.",
+      "recommendation": "Concrete action required to improve the privacy notice."
     }}
   ]
 }}
 
-Important rules:
-- overall_status must be exactly one of: "Compliant", "Partially Compliant", "Non-Compliant".
-- compliance_score must be an integer from 0 to 100.
-- Return between 1 and {MAX_FINDINGS} findings.
-- Do not mention paragraph numbers.
-- Do not list every GDPR article.
-- Focus only on the most important compliance gaps.
-- Each finding must include policy_section, gdpr_article, why, and fix.
-- If the submitted text is not a real privacy policy, return "Non-Compliant" and score 0.
-- If the text is offensive, meaningless, or too short to be a privacy policy, return "Non-Compliant" and score 0.
-- Use clear, concise language suitable for a thesis prototype.
+Score thresholds:
 
-Privacy policy text:
+- 75 to 100: Compliant
+- 45 to 74: Partially Compliant
+- 0 to 44: Non-Compliant
+
+Core assessment rules:
+
+- compliance_score must be an integer from 0 to 100.
+- overall_status must be consistent with the score thresholds.
+- Return between 1 and {MAX_STRENGTHS} strengths when genuine strengths exist.
+- Return between 0 and {MAX_FINDINGS} findings.
+- Do not invent strengths merely to fill the strengths array.
+- Do not invent compliance gaps.
+- Each strength must include title, evidence, and gdpr_relevance.
+- Each finding must include policy_section, gdpr_article, why, and recommendation.
+- Focus on substantive privacy-notice disclosure requirements.
+- Give primary attention to Articles 12, 13, and 14 and to other provisions
+  that directly create information duties relevant to the privacy notice.
+- Do not treat every obligation contained in the GDPR as information that
+  must appear in the privacy notice.
+- Do not assess the organisation's complete internal GDPR governance,
+  accountability, or operational compliance based only on its privacy notice.
+- Do not penalise the notice for company descriptions, addresses, contact
+  information, navigation text, introductory material, or contextual content.
+- Evaluate whether required information is meaningfully present, not what
+  percentage of the document it occupies.
+- Do not require exact GDPR terminology when equivalent meaning is present.
+- Consider the privacy notice as a whole before assigning the score.
+- Minor drafting improvements should not automatically make an otherwise
+  complete privacy notice non-compliant.
+- Do not mention paragraph numbers or chunk numbers.
+- Do not state that content was cut off unless supported by the document
+  handling note below.
+
+Data Protection Officer rules:
+
+- DPO contact details are privacy-notice information only where a DPO is
+  applicable or has been appointed.
+- Do not assume that every organisation is required to appoint a DPO.
+- Do not require the privacy notice to justify why a DPO has not been appointed.
+- Do not create a finding merely because a general privacy contact, privacy
+  manager, or privacy lead is used instead of the title "Data Protection Officer".
+- Create a DPO-related finding only when the policy indicates that a DPO exists
+  or is applicable but does not provide an adequate way to contact that DPO.
+
+Personal-data breach rules:
+
+- Articles 33 and 34 establish breach-response and notification duties.
+- Do not treat the absence of internal breach procedures as a privacy-notice gap.
+- Do not require the privacy notice to promise or explain notification to the
+  supervisory authority or affected data subjects following a breach.
+- Do not create a finding merely because breach-response procedures are not
+  described in the privacy notice.
+- If the policy voluntarily describes breach procedures, assess whether those
+  statements are clear and non-misleading, but do not require their inclusion.
+
+Other operational-compliance rules:
+
+- Do not require descriptions of internal processor contracts under Article 28.
+- Do not require records of processing activities, DPIA procedures, staff
+  training, audit arrangements, or internal accountability documentation.
+- Do not require a detailed description of all technical and organisational
+  security measures under Article 32.
+- General security information may be treated as a positive feature, but the
+  absence of detailed internal security controls is not automatically a
+  privacy-notice deficiency.
+- For international transfers, assess whether applicable transfers, destinations
+  or categories of destination, safeguards, and methods for obtaining further
+  information are adequately explained.
+- For automated decision-making, evaluate the disclosure only where such
+  processing is stated, suggested, or applicable. Do not assume it occurs merely
+  because analytics, marketing, or personalisation are mentioned.
+- Do not require disclosure about processing activities that genuinely do not
+  apply, unless the notice would be materially unclear without clarification.
+
+Document handling note:
+
+{truncation_note}
+
+Privacy notice:
+
 \"\"\"
-{policy_text}
+{visible_policy}
 \"\"\"
 """.strip()
 
 
-def normalise_status(value: str, score: int) -> str:
-    value = clean_text(value)
+def normalise_strengths(
+    strengths,
+) -> list[dict]:
+    if not isinstance(strengths, list):
+        strengths = []
 
-    if value in ["Compliant", "Partially Compliant", "Non-Compliant"]:
-        return value
+    cleaned_strengths: list[dict] = []
 
-    lower = value.lower()
+    for strength in strengths[:MAX_STRENGTHS]:
+        if not isinstance(strength, dict):
+            continue
 
-    if "non" in lower:
-        return "Non-Compliant"
-    if "partial" in lower:
-        return "Partially Compliant"
-    if "compliant" in lower:
-        return "Compliant"
+        title = clean_text(
+            strength.get(
+                "title",
+                "",
+            )
+        )
 
-    return status_from_score(score)
+        evidence = clean_text(
+            strength.get(
+                "evidence",
+                "",
+            )
+        )
+
+        gdpr_relevance = clean_text(
+            strength.get(
+                "gdpr_relevance",
+                strength.get(
+                    "relevance",
+                    "",
+                ),
+            )
+        )
+
+        if not title or not evidence:
+            continue
+
+        cleaned_strengths.append({
+            "title": title,
+            "evidence": evidence,
+            "gdpr_relevance": (
+                gdpr_relevance
+                or (
+                    "This contributes to the transparency and "
+                    "information requirements of the GDPR."
+                )
+            ),
+        })
+
+    return cleaned_strengths
 
 
-def normalise_findings(findings) -> list[dict]:
+def normalise_findings(
+    findings,
+    score: int,
+) -> list[dict]:
     if not isinstance(findings, list):
         findings = []
 
-    cleaned = []
+    cleaned_findings: list[dict] = []
 
-    for item in findings[:MAX_FINDINGS]:
-        if not isinstance(item, dict):
+    for finding in findings[:MAX_FINDINGS]:
+        if not isinstance(finding, dict):
             continue
 
-        policy_section = clean_text(item.get("policy_section", "General GDPR compliance"))
-        gdpr_article = clean_text(item.get("gdpr_article", "Relevant GDPR provisions"))
-        why = clean_text(item.get("why", "The policy may require further review."))
-        fix = clean_text(item.get("fix", "Clarify this section in the privacy policy."))
+        policy_section = clean_text(
+            finding.get(
+                "policy_section",
+                "",
+            )
+        )
 
-        cleaned.append({
-            "policy_section": policy_section or "General GDPR compliance",
-            "gdpr_article": gdpr_article or "Relevant GDPR provisions",
-            "why": why or "The policy may require further review.",
-            "fix": fix or "Clarify this section in the privacy policy.",
+        gdpr_article = clean_text(
+            finding.get(
+                "gdpr_article",
+                "",
+            )
+        )
+
+        why = clean_text(
+            finding.get(
+                "why",
+                "",
+            )
+        )
+
+        recommendation = clean_text(
+            finding.get(
+                "recommendation",
+                finding.get(
+                    "fix",
+                    "",
+                ),
+            )
+        )
+
+        if not policy_section or not why:
+            continue
+
+        cleaned_findings.append({
+            "policy_section": policy_section,
+            "gdpr_article": (
+                gdpr_article
+                or "Relevant GDPR provisions"
+            ),
+            "why": why,
+            "recommendation": (
+                recommendation
+                or (
+                    "Review and clarify this part of the "
+                    "privacy policy."
+                )
+            ),
         })
 
-    if not cleaned:
-        cleaned.append({
-            "policy_section": "General GDPR compliance",
-            "gdpr_article": "Articles 12–14",
-            "why": "The model did not return specific structured findings.",
-            "fix": "Review the policy manually and ensure key GDPR transparency requirements are addressed.",
+    if (
+        score < 75
+        and not cleaned_findings
+    ):
+        cleaned_findings.append({
+            "policy_section": (
+                "General GDPR transparency"
+            ),
+            "gdpr_article": "Articles 12-14",
+            "why": (
+                "The assessment indicates that the policy requires "
+                "improvement, but the model did not provide a specific "
+                "structured finding."
+            ),
+            "recommendation": (
+                "Review the policy against the GDPR transparency "
+                "and information requirements."
+            ),
         })
 
-    return cleaned
+    return cleaned_findings
 
 
-def build_issues(findings: list[dict], score: int) -> list[dict]:
-    severity = "High" if score < 45 else "Medium"
+def build_issues(
+    findings: list[dict],
+    score: int,
+) -> list[dict]:
+    severity = (
+        "high"
+        if score < 45
+        else "medium"
+    )
 
     return [
         {
-            "title": finding["policy_section"],
+            "title": finding[
+                "policy_section"
+            ],
             "severity": severity,
             "description": (
-                f"GDPR article to address: {finding['gdpr_article']}\n\n"
-                f"Why: {finding['why']}\n\n"
-                f"Fix: {finding['fix']}"
+                f"GDPR article to address: "
+                f"{finding['gdpr_article']}\n\n"
+                f"Why: {finding['why']}"
             ),
-            "policy_section": finding["policy_section"],
-            "gdpr_article": finding["gdpr_article"],
+            "policy_section": (
+                finding["policy_section"]
+            ),
+            "gdpr_article": (
+                finding["gdpr_article"]
+            ),
             "why": finding["why"],
-            "fix": finding["fix"],
         }
         for finding in findings
     ]
 
 
-def build_sections(findings: list[dict], score: int) -> list[dict]:
-    status = "missing" if score < 45 else "weak"
-
+def build_recommendations(
+    findings: list[dict],
+) -> list[dict]:
     return [
         {
-            "name": finding["policy_section"],
-            "status": status,
-            "note": f"GDPR article to address: {finding['gdpr_article']}",
+            "number": index + 1,
+            "text": (
+                f"{finding['policy_section']}: "
+                f"{finding['recommendation']}"
+            ),
         }
-        for finding in findings
+        for index, finding
+        in enumerate(findings)
     ]
 
 
-def build_paragraph_results(findings: list[dict], overall_status: str, score: int) -> list[dict]:
+def build_paragraph_results(
+    findings: list[dict],
+    overall_status: str,
+    score: int,
+) -> list[dict]:
     return [
         {
-            "paragraph_id": i + 1,
-            "policy_text": finding["policy_section"],
-            "best_article_number": finding["gdpr_article"],
-            "best_article_title": finding["policy_section"],
-            "section_name": finding["policy_section"],
+            "paragraph_id": index + 1,
+            "policy_text": (
+                finding["policy_section"]
+            ),
+            "best_article_number": (
+                finding["gdpr_article"]
+            ),
+            "best_article_title": (
+                finding["policy_section"]
+            ),
+            "section_name": (
+                finding["policy_section"]
+            ),
             "heuristic_score": 0.0,
             "semantic_score": 0.0,
             "llm_verdict": overall_status,
-            "llm_score": round(score / 100, 3),
+            "llm_score": round(
+                score / 100,
+                3,
+            ),
             "llm_assessment": (
-                f"GDPR article to address: {finding['gdpr_article']}\n\n"
-                f"Why: {finding['why']}\n\n"
-                f"Fix: {finding['fix']}"
+                f"GDPR article to address: "
+                f"{finding['gdpr_article']}\n\n"
+                f"Why: {finding['why']}"
             ),
             "reviewed_by_llm": True,
-            "combined_score": round(score / 100, 3),
+            "combined_score": round(
+                score / 100,
+                3,
+            ),
             "combined_label": overall_status,
         }
-        for i, finding in enumerate(findings)
+        for index, finding
+        in enumerate(findings)
     ]
 
 
-def assess_policy_text(policy_text: str) -> dict:
+def assess_policy_text(
+    policy_text: str,
+) -> dict:
     if not policy_text or not policy_text.strip():
-        raise ValueError("No policy text provided.")
+        raise ValueError(
+            "No policy text provided."
+        )
 
     policy_text = policy_text.strip()
-    word_count = len(policy_text.split())
 
-    if word_count < MIN_POLICY_WORDS:
-        return invalid_policy_response(policy_text)
-
-    prompt = build_prompt(policy_text)
-    raw_reply = call_llm(prompt)
-
-    print("\n\n===== RAW MODEL RESPONSE =====")
-    print(raw_reply)
-    print("===== END RAW MODEL RESPONSE =====\n\n")
-
-    parsed = safe_json_loads(raw_reply)
-
-    score = parsed.get("compliance_score", 0)
-
-    try:
-        score = int(float(score))
-    except Exception:
-        score = 0
-
-    score = max(0, min(100, score))
-
-    overall_status = status_from_score(score)
-    findings = normalise_findings(parsed.get("findings", []))
-
-    summary = clean_text(parsed.get("summary", "")) or (
-        "The submitted policy was reviewed for high-level GDPR alignment."
+    word_count = len(
+        policy_text.split()
     )
 
-    issues = build_issues(findings, score)
-    sections = build_sections(findings, score)
-    paragraph_results = build_paragraph_results(findings, overall_status, score)
+    if word_count < MIN_POLICY_WORDS:
+        return invalid_policy_response(
+            policy_text
+        )
 
-    recommendations = [
-        {
-            "number": i + 1,
-            "text": f"{finding['policy_section']}: {finding['fix']}",
-        }
-        for i, finding in enumerate(findings)
-    ]
+    was_truncated = (
+        len(policy_text) > MAX_POLICY_CHARS
+    )
+
+    prompt = build_prompt(
+        policy_text
+    )
+
+    raw_reply = call_llm(
+        prompt
+    )
+
+    print(
+        "\n===== RAW LLM-ONLY ASSESSMENT ====="
+    )
+    print(raw_reply)
+    print(
+        "===== END LLM-ONLY ASSESSMENT =====\n"
+    )
+
+    parsed = safe_json_loads(
+        raw_reply
+    )
+
+    try:
+        score = int(
+            float(
+                parsed.get(
+                    "compliance_score"
+                )
+            )
+        )
+    except (
+        TypeError,
+        ValueError,
+    ) as error:
+        raise ValueError(
+            "The model did not return a valid compliance score."
+        ) from error
+
+    score = max(
+        0,
+        min(100, score),
+    )
+
+    overall_status = (
+        status_from_score(score)
+    )
+
+    summary = clean_text(
+        parsed.get(
+            "summary",
+            "",
+        )
+    )
+
+    if not summary:
+        raise ValueError(
+            "The model did not return an assessment summary."
+        )
+
+    strengths = normalise_strengths(
+        parsed.get(
+            "strengths",
+            [],
+        )
+    )
+
+    findings = normalise_findings(
+        parsed.get(
+            "findings",
+            [],
+        ),
+        score,
+    )
+
+    issues = build_issues(
+        findings,
+        score,
+    )
+
+    recommendations = (
+        build_recommendations(
+            findings
+        )
+    )
+
+    paragraph_results = (
+        build_paragraph_results(
+            findings,
+            overall_status,
+            score,
+        )
+    )
 
     return {
-        "combined_score": round(score / 100, 3),
+        "combined_score": round(
+            score / 100,
+            3,
+        ),
         "combined_score_percent": score,
         "combined_label": overall_status,
         "overall_status": overall_status,
         "summary": summary,
+        "analysis_method": {
+            "title": "LLM-only privacy-notice review",
+            "description": (
+                "The complete submitted privacy notice was assessed directly "
+                "by the language model, with primary emphasis on the GDPR "
+                "transparency and information requirements applicable to "
+                "privacy notices."
+    ),
+            "limitations": (
+                "This mode does not use heuristic requirement checks, semantic "
+                "GDPR article matching, or the structured traceability evidence "
+                "available in Hybrid mode. It evaluates the submitted notice "
+                "rather than the organisation's complete GDPR compliance programme."
+    ),
+},
+        "strengths": strengths,
         "word_count": word_count,
-        "paragraph_count": 1,
+        "paragraph_count": (
+            count_policy_sections(
+                policy_text
+            )
+        ),
         "llm_reviewed_paragraph_count": 1,
+        "llm_call_count": 1,
         "api_mode": "llm_only_whole_policy",
-        "sections": sections,
-        "paragraph_results": paragraph_results,
+        "sections": [],
+        "paragraph_results": (
+            paragraph_results
+        ),
         "issues": issues,
-        "recommendations": recommendations,
-        "raw_llm_response": clean_text(raw_reply),
+        "recommendations": (
+            recommendations
+        ),
+        "raw_llm_response": clean_text(
+            raw_reply
+        ),
+        "policy_was_truncated": (
+            was_truncated
+        ),
     }

@@ -1,26 +1,38 @@
 from pathlib import Path
 import json
 import re
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-from src.gdpr_agent import GDPRComplianceAgent
 from src.llm_client import call_llm
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-GDPR_FILE = PROJECT_ROOT / "data" / "processed" / "reference_law_articles.csv"
 
-MAX_POLICY_CHARS = 8000
-MAX_FINDINGS = 6
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+GDPR_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "reference_law_articles.csv"
+)
+
+MAX_POLICY_CHARS = 60000
 MAX_EVIDENCE_ITEMS = 8
 
 
 GDPR_REQUIREMENTS = {
     "controller_identity": {
-        "policy_section": "Controller identity and contact details",
-        "gdpr_article": "Articles 13(1)(a), 14(1)(a)",
-        "description": "The policy should identify the data controller and provide accessible contact details.",
+        "policy_section": (
+            "Controller identity and contact details"
+        ),
+        "gdpr_article": (
+            "Articles 13(1)(a), 14(1)(a)"
+        ),
+        "description": (
+            "The policy should identify the data controller "
+            "and provide accessible contact details."
+        ),
         "patterns": [
             r"\b(controller|data controller|we are responsible|company responsible)\b",
             r"\b(contact us|privacy team|privacy office|privacy manager|dpo|data protection officer)\b",
@@ -29,8 +41,13 @@ GDPR_REQUIREMENTS = {
     },
     "purposes": {
         "policy_section": "Purposes of processing",
-        "gdpr_article": "Articles 5(1)(b), 13(1)(c), 14(1)(c)",
-        "description": "The policy should explain why personal data is processed.",
+        "gdpr_article": (
+            "Articles 5(1)(b), 13(1)(c), 14(1)(c)"
+        ),
+        "description": (
+            "The policy should explain why personal data "
+            "is processed."
+        ),
         "patterns": [
             r"\b(purpose|purposes|we use|we process|used to|in order to|so that we can)\b",
             r"\b(provide|deliver|operate|improve|personalise|communicate|support|security|marketing)\b",
@@ -39,7 +56,10 @@ GDPR_REQUIREMENTS = {
     "lawful_basis": {
         "policy_section": "Lawful basis for processing",
         "gdpr_article": "Article 6",
-        "description": "The policy should identify or explain the lawful basis for processing personal data.",
+        "description": (
+            "The policy should identify or explain the lawful "
+            "basis for processing personal data."
+        ),
         "patterns": [
             r"\b(lawful basis|legal basis|legal ground|basis for processing)\b",
             r"\b(consent|contract|legitimate interest|legal obligation|vital interests|public task)\b",
@@ -47,9 +67,16 @@ GDPR_REQUIREMENTS = {
         ],
     },
     "data_categories": {
-        "policy_section": "Categories of personal data",
-        "gdpr_article": "Articles 13(1)(c), 14(1)(d)",
-        "description": "The policy should describe the categories of personal data collected or processed.",
+        "policy_section": (
+            "Categories of personal data"
+        ),
+        "gdpr_article": (
+            "Articles 13(1)(c), 14(1)(d)"
+        ),
+        "description": (
+            "The policy should describe the categories of "
+            "personal data collected or processed."
+        ),
         "patterns": [
             r"\b(personal data|personal information|information we collect|data we collect)\b",
             r"\b(name|email|address|phone|payment|account|device|ip address|location|usage data|cookies)\b",
@@ -59,7 +86,11 @@ GDPR_REQUIREMENTS = {
     "data_subject_rights": {
         "policy_section": "Data subject rights",
         "gdpr_article": "Articles 12, 15-22",
-        "description": "The policy should explain the rights available to data subjects.",
+        "description": (
+            "The policy should explain the rights available "
+            "to data subjects and how those rights may be "
+            "exercised."
+        ),
         "patterns": [
             r"\b(your rights|data subject rights|privacy rights|rights under)\b",
             r"\b(access|rectification|erasure|delete|restriction|portability|object|withdraw consent)\b",
@@ -68,8 +99,15 @@ GDPR_REQUIREMENTS = {
     },
     "retention": {
         "policy_section": "Data retention",
-        "gdpr_article": "Article 5(1)(e), Article 13(2)(a), Article 14(2)(a)",
-        "description": "The policy should explain how long data is retained or the criteria used to determine retention.",
+        "gdpr_article": (
+            "Article 5(1)(e), Article 13(2)(a), "
+            "Article 14(2)(a)"
+        ),
+        "description": (
+            "The policy should explain how long data is "
+            "retained or the criteria used to determine "
+            "retention."
+        ),
         "patterns": [
             r"\b(retain|retention|keep|store|storage period|how long)\b",
             r"\b(as long as necessary|for as long as|retention period|deleted after|criteria used)\b",
@@ -77,9 +115,16 @@ GDPR_REQUIREMENTS = {
         ],
     },
     "recipients": {
-        "policy_section": "Recipients and third-party sharing",
-        "gdpr_article": "Articles 13(1)(e), 14(1)(e), 28",
-        "description": "The policy should explain whether data is shared with recipients, processors, or third parties.",
+        "policy_section": (
+            "Recipients and third-party sharing"
+        ),
+        "gdpr_article": (
+            "Articles 13(1)(e), 14(1)(e), 28"
+        ),
+        "description": (
+            "The policy should explain whether data is shared "
+            "with recipients, processors, or third parties."
+        ),
         "patterns": [
             r"\b(share|disclose|transfer|provide|recipient|third party|third parties)\b",
             r"\b(service provider|processor|vendor|partner|affiliate|supplier|contractor)\b",
@@ -87,9 +132,15 @@ GDPR_REQUIREMENTS = {
         ],
     },
     "international_transfers": {
-        "policy_section": "International data transfers",
+        "policy_section": (
+            "International data transfers"
+        ),
         "gdpr_article": "Articles 44-49",
-        "description": "The policy should explain international transfers and safeguards where applicable.",
+        "description": (
+            "The policy should explain international "
+            "transfers and the safeguards used where "
+            "applicable."
+        ),
         "patterns": [
             r"\b(international transfer|transfer outside|outside the eea|outside the eu|outside the uk)\b",
             r"\b(standard contractual clauses|scc|adequacy|safeguards|data privacy framework)\b",
@@ -99,7 +150,10 @@ GDPR_REQUIREMENTS = {
     "security": {
         "policy_section": "Security of processing",
         "gdpr_article": "Article 32",
-        "description": "The policy should describe technical or organisational security measures.",
+        "description": (
+            "The policy should describe relevant technical "
+            "or organisational security measures."
+        ),
         "patterns": [
             r"\b(security|secure|protect|safeguard|confidentiality)\b",
             r"\b(encryption|access controls|authentication|monitoring|technical and organisational measures)\b",
@@ -107,18 +161,34 @@ GDPR_REQUIREMENTS = {
         ],
     },
     "complaints": {
-        "policy_section": "Right to lodge a complaint",
-        "gdpr_article": "Article 13(2)(d), Article 14(2)(e), Article 77",
-        "description": "The policy should mention the right to lodge a complaint with a supervisory authority.",
+        "policy_section": (
+            "Right to lodge a complaint"
+        ),
+        "gdpr_article": (
+            "Article 13(2)(d), Article 14(2)(e), "
+            "Article 77"
+        ),
+        "description": (
+            "The policy should mention the right to lodge "
+            "a complaint with a supervisory authority."
+        ),
         "patterns": [
             r"\b(complaint|lodge a complaint|supervisory authority|data protection authority)\b",
             r"\b(ico|cnpd|dpc|edpb|regulator|authority)\b",
         ],
     },
     "automated_decision_making": {
-        "policy_section": "Automated decision-making and profiling",
-        "gdpr_article": "Article 13(2)(f), Article 14(2)(g), Article 22",
-        "description": "The policy should state whether automated decision-making or profiling is used.",
+        "policy_section": (
+            "Automated decision-making and profiling"
+        ),
+        "gdpr_article": (
+            "Article 13(2)(f), Article 14(2)(g), "
+            "Article 22"
+        ),
+        "description": (
+            "The policy should state whether automated "
+            "decision-making or profiling is used."
+        ),
         "patterns": [
             r"\b(automated decision|automated decision-making|solely automated|profiling)\b",
             r"\b(algorithm|automated processing|personalised recommendations|targeted advertising)\b",
@@ -130,43 +200,161 @@ GDPR_REQUIREMENTS = {
 
 def clean_text(text: str) -> str:
     text = str(text or "")
-    text = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", text)
-    text = re.sub(r"```json", "", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"\x1b\[[0-9;]*[A-Za-z]",
+        "",
+        text,
+    )
+    text = re.sub(
+        r"```json",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
     text = re.sub(r"```", "", text)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
 
+def safe_json_loads(raw: str) -> dict:
+    raw_clean = str(raw or "").strip()
+
+    raw_clean = re.sub(
+        r"\x1b\[[0-9;]*[A-Za-z]",
+        "",
+        raw_clean,
+    )
+    raw_clean = re.sub(
+        r"^```(?:json)?",
+        "",
+        raw_clean,
+        flags=re.IGNORECASE,
+    ).strip()
+    raw_clean = re.sub(
+        r"```$",
+        "",
+        raw_clean,
+    ).strip()
+
+    try:
+        parsed = json.loads(raw_clean)
+
+        if isinstance(parsed, dict):
+            return parsed
+    except json.JSONDecodeError:
+        pass
+
+    start = raw_clean.find("{")
+
+    if start == -1:
+        raise ValueError(
+            "The model response did not contain a JSON object."
+        )
+
+    brace_count = 0
+    end = -1
+    in_string = False
+    escaped = False
+
+    for index in range(start, len(raw_clean)):
+        character = raw_clean[index]
+
+        if escaped:
+            escaped = False
+            continue
+
+        if character == "\\":
+            escaped = True
+            continue
+
+        if character == '"':
+            in_string = not in_string
+            continue
+
+        if in_string:
+            continue
+
+        if character == "{":
+            brace_count += 1
+
+        elif character == "}":
+            brace_count -= 1
+
+            if brace_count == 0:
+                end = index + 1
+                break
+
+    if end == -1:
+        raise ValueError(
+            "The model returned an incomplete JSON object."
+        )
+
+    candidate = raw_clean[start:end]
+
+    try:
+        parsed = json.loads(candidate)
+    except json.JSONDecodeError as error:
+        raise ValueError(
+            "The model response could not be parsed into "
+            "the required structured JSON format."
+        ) from error
+
+    if not isinstance(parsed, dict):
+        raise ValueError(
+            "The model response was not a JSON object."
+        )
+
+    return parsed
+
+
 def split_into_chunks(text: str) -> list[str]:
-    text = text.strip()
-    parts = re.split(r"\n\s*\n", text)
+    parts = re.split(
+        r"\n\s*\n",
+        text.strip(),
+    )
 
     if len(parts) <= 1:
         parts = re.split(
-            r"(?=\n?\d+\.\s+[A-Z])|(?=\n?[A-Z][A-Za-z\s]{3,80}\n)",
+            r"(?=\n?\d+\.\s+[A-Z])|"
+            r"(?=\n?[A-Z][A-Za-z\s]{3,80}\n)",
             text,
         )
 
-    parts = [p.strip() for p in parts if len(p.strip()) > 80]
-    chunks = []
+    parts = [
+        part.strip()
+        for part in parts
+        if len(part.strip()) > 80
+    ]
+
+    chunks: list[str] = []
 
     for part in parts:
         if len(part) <= 1200:
             chunks.append(part)
-        else:
-            sentences = re.split(r"(?<=[.!?])\s+", part)
-            buffer = ""
+            continue
 
-            for sentence in sentences:
-                if len(buffer) + len(sentence) <= 1000:
-                    buffer = f"{buffer} {sentence}".strip()
-                else:
-                    if len(buffer) > 80:
-                        chunks.append(buffer)
-                    buffer = sentence
+        sentences = re.split(
+            r"(?<=[.!?])\s+",
+            part,
+        )
 
-            if len(buffer) > 80:
-                chunks.append(buffer)
+        buffer = ""
+
+        for sentence in sentences:
+            candidate = (
+                f"{buffer} {sentence}"
+            ).strip()
+
+            if len(candidate) <= 1000:
+                buffer = candidate
+            else:
+                if len(buffer) > 80:
+                    chunks.append(buffer)
+
+                buffer = sentence
+
+        if len(buffer) > 80:
+            chunks.append(buffer)
 
     return chunks if chunks else [text]
 
@@ -174,90 +362,29 @@ def split_into_chunks(text: str) -> list[str]:
 def status_from_score(score: int) -> str:
     if score >= 75:
         return "Compliant"
+
     if score >= 45:
         return "Partially Compliant"
+
     return "Non-Compliant"
 
 
-def fallback_parse_response(raw_clean: str) -> dict:
-    return {
-        "overall_status": "Non-Compliant",
-        "compliance_score": 0,
-        "summary": "The hybrid assessment could not be parsed into structured JSON.",
-        "findings": [
-            {
-                "policy_section": "General GDPR compliance",
-                "gdpr_article": "Articles 12-14",
-                "why": "The model response could not be parsed reliably.",
-                "fix": "Review the policy manually against GDPR transparency and information requirements.",
-            }
-        ],
-        "raw_response": raw_clean,
-    }
+def semantic_match_chunks(
+    chunks: list[str],
+    gdpr_df: pd.DataFrame,
+) -> list[dict]:
+    articles = gdpr_df[
+        gdpr_df["section_type"] == "Article"
+    ].copy()
 
+    if articles.empty:
+        return []
 
-def safe_json_loads(raw: str) -> dict:
-    raw_clean = str(raw or "").strip()
-    raw_clean = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", raw_clean)
-    raw_clean = re.sub(r"^```(?:json)?", "", raw_clean, flags=re.IGNORECASE).strip()
-    raw_clean = re.sub(r"```$", "", raw_clean).strip()
-
-    try:
-        parsed = json.loads(raw_clean)
-        if isinstance(parsed, dict):
-            return parsed
-    except Exception:
-        pass
-
-    start = raw_clean.find("{")
-    if start == -1:
-        return fallback_parse_response(clean_text(raw_clean))
-
-    brace_count = 0
-    end = -1
-    in_string = False
-    escape = False
-
-    for i in range(start, len(raw_clean)):
-        char = raw_clean[i]
-
-        if escape:
-            escape = False
-            continue
-
-        if char == "\\":
-            escape = True
-            continue
-
-        if char == '"':
-            in_string = not in_string
-            continue
-
-        if in_string:
-            continue
-
-        if char == "{":
-            brace_count += 1
-        elif char == "}":
-            brace_count -= 1
-            if brace_count == 0:
-                end = i + 1
-                break
-
-    if end != -1:
-        candidate = raw_clean[start:end]
-        try:
-            parsed = json.loads(candidate)
-            if isinstance(parsed, dict):
-                return parsed
-        except Exception:
-            pass
-
-    return fallback_parse_response(clean_text(raw_clean))
-
-
-def semantic_match_chunks(chunks: list[str], gdpr_df: pd.DataFrame) -> list[dict]:
-    articles = gdpr_df[gdpr_df["section_type"] == "Article"].copy()
+    article_texts = (
+        articles["text"]
+        .fillna("")
+        .tolist()
+    )
 
     vectorizer = TfidfVectorizer(
         stop_words="english",
@@ -265,113 +392,162 @@ def semantic_match_chunks(chunks: list[str], gdpr_df: pd.DataFrame) -> list[dict
         ngram_range=(1, 2),
     )
 
-    corpus = articles["text"].fillna("").tolist() + chunks
-    vectorizer.fit(corpus)
+    vectorizer.fit(article_texts + chunks)
 
-    x_articles = vectorizer.transform(articles["text"].fillna("").tolist())
-    x_policy = vectorizer.transform(chunks)
+    article_vectors = vectorizer.transform(
+        article_texts
+    )
 
-    sims = cosine_similarity(x_policy, x_articles)
-    matches = []
+    policy_vectors = vectorizer.transform(
+        chunks
+    )
 
-    for i, sim_row in enumerate(sims):
-        best_idx = sim_row.argsort()[::-1][0]
-        article = articles.iloc[best_idx]
+    similarity_matrix = cosine_similarity(
+        policy_vectors,
+        article_vectors,
+    )
 
-        title = article.get("title", "")
-        if pd.isna(title):
-            title = ""
+    matches: list[dict] = []
+
+    for index, similarity_row in enumerate(
+        similarity_matrix
+    ):
+        best_index = int(
+            similarity_row.argmax()
+        )
+
+        article = articles.iloc[best_index]
+
+        article_title = article.get(
+            "title",
+            "",
+        )
+
+        if pd.isna(article_title):
+            article_title = ""
 
         matches.append({
-            "chunk_id": i + 1,
-            "text": chunks[i],
-            "best_article_number": str(article["number"]),
-            "best_article_title": str(title),
-            "semantic_score": round(float(sim_row[best_idx]), 3),
+            "chunk_id": index + 1,
+            "text": chunks[index],
+            "best_article_number": str(
+                article["number"]
+            ),
+            "best_article_title": str(
+                article_title
+            ),
+            "semantic_score": round(
+                float(
+                    similarity_row[best_index]
+                ),
+                3,
+            ),
         })
 
     return matches
 
 
-def evaluate_requirement(policy_text: str, chunks: list[str], requirement: dict) -> dict:
-    pattern_results = []
-    matched_chunks = []
+def evaluate_requirement(
+    policy_text: str,
+    chunks: list[str],
+    requirement: dict,
+) -> dict:
+    matched_patterns: list[str] = []
+    matched_chunks: list[dict] = []
 
     for pattern in requirement["patterns"]:
-        matches = re.findall(pattern, policy_text, flags=re.IGNORECASE)
-        pattern_results.append({
-            "pattern": pattern,
-            "matched": len(matches) > 0,
-            "match_count": len(matches),
-        })
+        if re.search(
+            pattern,
+            policy_text,
+            flags=re.IGNORECASE,
+        ):
+            matched_patterns.append(pattern)
 
-    for i, chunk in enumerate(chunks):
-        for pattern in requirement["patterns"]:
-            if re.search(pattern, chunk, flags=re.IGNORECASE):
-                matched_chunks.append({
-                    "chunk_id": i + 1,
-                    "text_preview": chunk[:250],
-                })
-                break
+    for index, chunk in enumerate(chunks):
+        if any(
+            re.search(
+                pattern,
+                chunk,
+                flags=re.IGNORECASE,
+            )
+            for pattern in requirement["patterns"]
+        ):
+            matched_chunks.append({
+                "chunk_id": index + 1,
+                "text_preview": chunk[:300],
+            })
 
-    matched_patterns = sum(1 for p in pattern_results if p["matched"])
-    total_patterns = len(pattern_results)
+    total_patterns = len(
+        requirement["patterns"]
+    )
 
-    score = matched_patterns / total_patterns if total_patterns else 0.0
+    heuristic_score = (
+        len(matched_patterns) / total_patterns
+        if total_patterns
+        else 0.0
+    )
 
-    if matched_chunks and score < 0.5:
-        score = 0.5
-
-    if score >= 0.75:
-        coverage_status = "strong"
-    elif score >= 0.35:
-        coverage_status = "partial"
-    else:
-        coverage_status = "weak_or_missing"
+    if matched_chunks and heuristic_score < 0.5:
+        heuristic_score = 0.5
 
     return {
-        "policy_section": requirement["policy_section"],
-        "gdpr_article": requirement["gdpr_article"],
-        "description": requirement["description"],
-        "heuristic_coverage_score": round(score, 3),
-        "coverage_status": coverage_status,
-        "matched_patterns": [
-            p["pattern"] for p in pattern_results if p["matched"]
-        ],
-        "matched_chunk_count": len(matched_chunks),
-        "matched_chunk_examples": matched_chunks[:3],
+        "policy_section": (
+            requirement["policy_section"]
+        ),
+        "gdpr_article": (
+            requirement["gdpr_article"]
+        ),
+        "description": (
+            requirement["description"]
+        ),
+        "heuristic_coverage_score": round(
+            heuristic_score,
+            3,
+        ),
+        "matched_patterns": matched_patterns,
+        "matched_chunk_count": len(
+            matched_chunks
+        ),
+        "matched_chunk_examples": (
+            matched_chunks[:3]
+        ),
     }
 
 
-def build_requirement_evidence(policy_text: str, chunks: list[str]) -> list[dict]:
+def build_requirement_evidence(
+    policy_text: str,
+    chunks: list[str],
+) -> list[dict]:
     return [
-        evaluate_requirement(policy_text, chunks, requirement)
-        for requirement in GDPR_REQUIREMENTS.values()
+        evaluate_requirement(
+            policy_text,
+            chunks,
+            requirement,
+        )
+        for requirement
+        in GDPR_REQUIREMENTS.values()
     ]
 
 
-def build_llm_requirement_review_prompt(policy_text: str, requirement_evidence: list[dict]) -> str:
-    policy_text = policy_text[:MAX_POLICY_CHARS]
+def build_requirement_review_prompt(
+    policy_text: str,
+    requirement_evidence: list[dict],
+) -> str:
+    visible_policy = (
+        policy_text[:MAX_POLICY_CHARS]
+    )
 
-    requirements = [
-        {
-            "policy_section": item["policy_section"],
-            "gdpr_article": item["gdpr_article"],
-            "description": item["description"],
-            "heuristic_coverage_score": item["heuristic_coverage_score"],
-            "matched_chunk_examples": item.get("matched_chunk_examples", []),
-        }
-        for item in requirement_evidence
-    ]
-
-    requirements_json = json.dumps(requirements, ensure_ascii=False, indent=2)
+    evidence_json = json.dumps(
+        requirement_evidence,
+        ensure_ascii=False,
+        indent=2,
+    )
 
     return f"""
-You are reviewing GDPR privacy policy coverage.
+You are reviewing GDPR requirement coverage in a privacy policy.
 
-For each GDPR requirement, decide whether the submitted privacy policy addresses it.
+Review every supplied GDPR requirement against the actual policy text.
 
-Return ONLY valid JSON. No markdown. No explanation outside JSON.
+Return ONLY valid JSON. Do not use markdown or add text outside JSON.
 
 Use this exact structure:
 
@@ -381,121 +557,180 @@ Use this exact structure:
       "policy_section": "Controller identity and contact details",
       "status": "PRESENT",
       "gdpr_article": "Articles 13(1)(a), 14(1)(a)",
-      "evidence": "Short quote or summary of the relevant evidence from the policy.",
-      "reason": "Brief explanation of why the requirement is present, weak, or missing."
+      "evidence": "Short quotation or concise summary of relevant policy evidence.",
+      "reason": "Why the requirement is present, weak, or missing.",
+      "recommendation": "Concrete corrective action, or an empty string when present."
     }}
   ]
 }}
 
-Status must be exactly one of:
+Status must be exactly:
 - PRESENT
 - WEAK
 - MISSING
 
 Rules:
-- Do not mark a requirement as missing only because exact GDPR wording is absent.
-- If the policy addresses the idea using different wording, mark it PRESENT or WEAK.
-- Use PRESENT only when the requirement is clearly addressed.
-- Use WEAK when the requirement is mentioned but lacks detail, clarity, or specificity.
-- Use MISSING when the requirement is not addressed.
-- Review the actual policy text, not only the heuristic evidence.
+- Preserve every policy_section name exactly.
+- Review every supplied requirement.
+- Recognise equivalent wording and meaning.
+- Do not depend on exact GDPR terminology.
+- PRESENT means clearly and sufficiently addressed.
+- WEAK means addressed but incomplete, vague, or insufficiently specific.
+- MISSING means not meaningfully addressed.
+- For PRESENT requirements, recommendation may be empty.
+- For WEAK or MISSING requirements, provide a practical recommendation.
+- Extra company information must not reduce coverage.
+- Evaluate what the policy contains, not how much text is devoted to it.
+- Preliminary heuristic evidence is advisory only.
 
-Heuristic evidence:
-{requirements_json}
+Preliminary evidence:
+{evidence_json}
 
-Privacy policy text:
+Privacy policy:
 \"\"\"
-{policy_text}
+{visible_policy}
 \"\"\"
 """.strip()
 
 
-def normalise_llm_requirement_reviews(parsed: dict, requirement_evidence: list[dict]) -> list[dict]:
-    reviews = parsed.get("requirements", [])
+def normalise_requirement_reviews(
+    parsed: dict,
+    requirement_evidence: list[dict],
+) -> list[dict]:
+    reviews = parsed.get(
+        "requirements",
+        [],
+    )
 
     if not isinstance(reviews, list):
-        reviews = []
+        raise ValueError(
+            "The requirement review did not return "
+            "a requirements list."
+        )
 
-    review_map = {}
+    review_map: dict[str, dict] = {}
 
-    for item in reviews:
-        if not isinstance(item, dict):
+    for review in reviews:
+        if not isinstance(review, dict):
             continue
 
-        section = clean_text(item.get("policy_section", ""))
-        status = clean_text(item.get("status", "")).upper()
+        section = clean_text(
+            review.get(
+                "policy_section",
+                "",
+            )
+        )
 
-        if status not in ["PRESENT", "WEAK", "MISSING"]:
+        if not section:
+            continue
+
+        status = clean_text(
+            review.get(
+                "status",
+                "",
+            )
+        ).upper()
+
+        if status not in {
+            "PRESENT",
+            "WEAK",
+            "MISSING",
+        }:
             status = "WEAK"
 
-        review_map[section] = {
+        review_map[section.casefold()] = {
             "llm_status": status,
-            "llm_evidence": clean_text(item.get("evidence", "")),
-            "llm_reason": clean_text(item.get("reason", "")),
+            "llm_evidence": clean_text(
+                review.get(
+                    "evidence",
+                    "",
+                )
+            ),
+            "llm_reason": clean_text(
+                review.get(
+                    "reason",
+                    "",
+                )
+            ),
+            "llm_recommendation": clean_text(
+                review.get(
+                    "recommendation",
+                    "",
+                )
+            ),
         }
 
-    final = []
+    normalised: list[dict] = []
 
     for item in requirement_evidence:
-        section = item["policy_section"]
-        llm_review = review_map.get(section)
+        section_key = (
+            item["policy_section"].casefold()
+        )
 
-        if llm_review:
-            merged = {**item, **llm_review}
-        else:
-            heuristic_score = item.get("heuristic_coverage_score", 0)
+        review = review_map.get(
+            section_key
+        )
 
-            if heuristic_score >= 0.75:
-                fallback_status = "PRESENT"
-            elif heuristic_score >= 0.35:
-                fallback_status = "WEAK"
-            else:
-                fallback_status = "MISSING"
+        if not review:
+            raise ValueError(
+                "The requirement review omitted: "
+                f"{item['policy_section']}."
+            )
 
-            merged = {
-                **item,
-                "llm_status": fallback_status,
-                "llm_evidence": "",
-                "llm_reason": "Fallback status derived from heuristic coverage evidence.",
-            }
+        normalised.append({
+            **item,
+            **review,
+        })
 
-        final.append(merged)
-
-    return final
+    return normalised
 
 
-def build_semantic_evidence(semantic_rows: list[dict]) -> dict:
-    top_semantic_evidence = sorted(
+def build_semantic_evidence(
+    semantic_rows: list[dict],
+) -> dict:
+    top_matches = sorted(
         semantic_rows,
-        key=lambda x: x["semantic_score"],
+        key=lambda row: row["semantic_score"],
         reverse=True,
     )[:MAX_EVIDENCE_ITEMS]
 
-    article_counts = {}
+    article_counts: dict[str, dict] = {}
 
     for row in semantic_rows:
-        article_number = row["best_article_number"]
-        article_title = row["best_article_title"]
-
-        key = f"Article {article_number}"
+        key = (
+            f"Article "
+            f"{row['best_article_number']}"
+        )
 
         if key not in article_counts:
             article_counts[key] = {
                 "gdpr_article": key,
-                "article_title": article_title,
+                "article_title": (
+                    row["best_article_title"]
+                ),
                 "matched_chunks": 0,
                 "max_similarity": 0.0,
             }
 
-        article_counts[key]["matched_chunks"] += 1
-        article_counts[key]["max_similarity"] = max(
-            article_counts[key]["max_similarity"],
+        article_counts[key][
+            "matched_chunks"
+        ] += 1
+
+        article_counts[key][
+            "max_similarity"
+        ] = max(
+            article_counts[key][
+                "max_similarity"
+            ],
             row["semantic_score"],
         )
 
     article_summary = sorted(
         article_counts.values(),
-        key=lambda x: (x["matched_chunks"], x["max_similarity"]),
+        key=lambda item: (
+            item["matched_chunks"],
+            item["max_similarity"],
+        ),
         reverse=True,
     )[:MAX_EVIDENCE_ITEMS]
 
@@ -503,392 +738,543 @@ def build_semantic_evidence(semantic_rows: list[dict]) -> dict:
         "top_semantic_matches": [
             {
                 "chunk_id": row["chunk_id"],
-                "gdpr_article": f"Article {row['best_article_number']}",
-                "article_title": row["best_article_title"],
-                "semantic_score": row["semantic_score"],
-                "text_preview": row["text"][:250],
+                "gdpr_article": (
+                    f"Article "
+                    f"{row['best_article_number']}"
+                ),
+                "article_title": (
+                    row["best_article_title"]
+                ),
+                "semantic_score": (
+                    row["semantic_score"]
+                ),
+                "text_preview": (
+                    row["text"][:300]
+                ),
             }
-            for row in top_semantic_evidence
+            for row in top_matches
         ],
         "article_summary": article_summary,
     }
 
 
-def build_hybrid_evidence(policy_text: str, gdpr_df: pd.DataFrame) -> dict:
-    chunks = split_into_chunks(policy_text)
-    semantic_rows = semantic_match_chunks(chunks, gdpr_df)
-
-    requirement_evidence = build_requirement_evidence(policy_text, chunks)
-
-    review_prompt = build_llm_requirement_review_prompt(policy_text, requirement_evidence)
-    raw_requirement_review = call_llm(review_prompt)
-
-    print("\n\n===== RAW REQUIREMENT REVIEW RESPONSE =====")
-    print(raw_requirement_review)
-    print("===== END RAW REQUIREMENT REVIEW RESPONSE =====\n\n")
-
-    parsed_requirement_review = safe_json_loads(raw_requirement_review)
-
-    requirement_evidence = normalise_llm_requirement_reviews(
-        parsed_requirement_review,
-        requirement_evidence,
+def build_hybrid_evidence(
+    policy_text: str,
+    gdpr_df: pd.DataFrame,
+) -> dict:
+    chunks = split_into_chunks(
+        policy_text
     )
 
-    semantic_evidence = build_semantic_evidence(semantic_rows)
+    semantic_rows = semantic_match_chunks(
+        chunks,
+        gdpr_df,
+    )
 
-    try:
-        agent = GDPRComplianceAgent(gdpr_articles_df=gdpr_df)
-        heuristic_reports = []
-
-        for chunk in chunks:
-            report = agent.evaluate_policy(chunk)
-            heuristic_score = (
-                float(agent.overall_score(report))
-                if report is not None and not report.empty
-                else 0.0
-            )
-            heuristic_reports.append(heuristic_score)
-
-        legacy_heuristic_average = (
-            sum(heuristic_reports) / len(heuristic_reports)
-            if heuristic_reports
-            else 0.0
+    preliminary_evidence = (
+        build_requirement_evidence(
+            policy_text,
+            chunks,
         )
-    except Exception:
-        legacy_heuristic_average = 0.0
+    )
 
-    status_to_score = {
+    requirement_prompt = (
+        build_requirement_review_prompt(
+            policy_text,
+            preliminary_evidence,
+        )
+    )
+
+    raw_requirement_review = call_llm(
+        requirement_prompt
+    )
+
+    print(
+        "\n===== RAW REQUIREMENT REVIEW ====="
+    )
+    print(raw_requirement_review)
+    print(
+        "===== END REQUIREMENT REVIEW =====\n"
+    )
+
+    parsed_requirement_review = (
+        safe_json_loads(
+            raw_requirement_review
+        )
+    )
+
+    requirement_evidence = (
+        normalise_requirement_reviews(
+            parsed_requirement_review,
+            preliminary_evidence,
+        )
+    )
+
+    semantic_evidence = (
+        build_semantic_evidence(
+            semantic_rows
+        )
+    )
+
+    status_scores = {
         "PRESENT": 1.0,
         "WEAK": 0.5,
         "MISSING": 0.0,
     }
 
-    requirement_scores = [
-        status_to_score.get(item.get("llm_status", "MISSING"), 0.0)
-        for item in requirement_evidence
-    ]
-
     requirement_coverage_score = (
-        sum(requirement_scores) / len(requirement_scores)
-        if requirement_scores
-        else 0.0
+        sum(
+            status_scores[
+                item["llm_status"]
+            ]
+            for item
+            in requirement_evidence
+        )
+        / len(requirement_evidence)
     )
-
-    strong_areas = [
-        item["policy_section"]
-        for item in requirement_evidence
-        if item.get("llm_status") == "PRESENT"
-    ]
-
-    partial_areas = [
-        item["policy_section"]
-        for item in requirement_evidence
-        if item.get("llm_status") == "WEAK"
-    ]
-
-    weak_areas = [
-        item["policy_section"]
-        for item in requirement_evidence
-        if item.get("llm_status") == "MISSING"
-    ]
 
     return {
         "chunk_count": len(chunks),
-        "requirement_coverage_score": round(requirement_coverage_score, 3),
-        "legacy_heuristic_average": round(legacy_heuristic_average, 3),
-        "strong_areas": strong_areas,
-        "partial_areas": partial_areas,
-        "weak_or_missing_areas": weak_areas,
-        "requirement_evidence": requirement_evidence,
-        "semantic_evidence": semantic_evidence,
-        "important_note": (
-            "This evidence is advisory and is used for traceability. "
-            "Requirement coverage is reviewed by the LLM using both the policy text and heuristic evidence. "
-            "The final compliance judgement is made separately by the LLM using the full hybrid context."
+        "requirement_coverage_score": round(
+            requirement_coverage_score,
+            3,
+        ),
+        "present_areas": [
+            item["policy_section"]
+            for item
+            in requirement_evidence
+            if item["llm_status"]
+            == "PRESENT"
+        ],
+        "weak_areas": [
+            item["policy_section"]
+            for item
+            in requirement_evidence
+            if item["llm_status"]
+            == "WEAK"
+        ],
+        "missing_areas": [
+            item["policy_section"]
+            for item
+            in requirement_evidence
+            if item["llm_status"]
+            == "MISSING"
+        ],
+        "requirement_evidence": (
+            requirement_evidence
+        ),
+        "semantic_evidence": (
+            semantic_evidence
         ),
     }
 
 
-def build_hybrid_prompt(policy_text: str, evidence: dict) -> str:
-    was_truncated = len(policy_text) > MAX_POLICY_CHARS
-    policy_text = policy_text[:MAX_POLICY_CHARS]
-
-    truncation_note = (
-        "The policy text was truncated because of deployment limits. Do not mark it as non-compliant only because it ends abruptly. Assess the visible policy content and identify substantive GDPR gaps."
-        if was_truncated
-        else "The full submitted policy text is included below."
+def build_final_assessment_prompt(
+    policy_text: str,
+    evidence: dict,
+) -> str:
+    visible_policy = (
+        policy_text[:MAX_POLICY_CHARS]
     )
 
     compact_evidence = {
-        "requirement_coverage_score": evidence["requirement_coverage_score"],
-        "strong_areas": evidence["strong_areas"],
-        "partial_areas": evidence["partial_areas"],
-        "weak_or_missing_areas": evidence["weak_or_missing_areas"],
-        "requirement_evidence": evidence["requirement_evidence"],
-        "semantic_article_summary": evidence["semantic_evidence"]["article_summary"],
-        "important_note": evidence["important_note"],
+        "requirement_coverage_score": (
+            evidence[
+                "requirement_coverage_score"
+            ]
+        ),
+        "present_areas": (
+            evidence["present_areas"]
+        ),
+        "weak_areas": (
+            evidence["weak_areas"]
+        ),
+        "missing_areas": (
+            evidence["missing_areas"]
+        ),
+        "requirements": [
+            {
+                "policy_section": (
+                    item["policy_section"]
+                ),
+                "gdpr_article": (
+                    item["gdpr_article"]
+                ),
+                "status": (
+                    item["llm_status"]
+                ),
+                "evidence": (
+                    item["llm_evidence"]
+                ),
+                "reason": (
+                    item["llm_reason"]
+                ),
+            }
+            for item
+            in evidence[
+                "requirement_evidence"
+            ]
+        ],
+        "semantic_article_summary": (
+            evidence[
+                "semantic_evidence"
+            ]["article_summary"]
+        ),
     }
 
-    evidence_json = json.dumps(compact_evidence, ensure_ascii=False, indent=2)
+    evidence_json = json.dumps(
+        compact_evidence,
+        ensure_ascii=False,
+        indent=2,
+    )
 
     return f"""
 You are a GDPR compliance auditor.
 
-Assess the privacy policy as a whole document.
+Assess the privacy policy as one complete document.
 
-This is a hybrid system, but the LLM is the final compliance judge.
+Use the structured evidence for traceability and legal grounding.
+The final score must reflect the overall quality, completeness,
+clarity, and transparency of the policy.
 
-The hybrid evidence is provided to support traceability:
-- requirement coverage evidence checks whether expected GDPR disclosure elements are present, weak, or missing
-- semantic evidence links policy content to likely relevant GDPR articles
-- the evidence should guide your review but should not mechanically determine the final score
-- base the final verdict primarily on the actual privacy policy text
+Return ONLY valid JSON. Do not use markdown or add text outside JSON.
 
-Your job:
-1. Read the privacy policy.
-2. Use the hybrid evidence as supporting context.
-3. Produce a final GDPR compliance assessment.
-4. Return concise findings with relevant GDPR articles, why, and fix.
-
-Return ONLY valid JSON. No markdown. No text outside JSON.
-
-Use this exact JSON structure:
+Use this exact structure:
 
 {{
   "overall_status": "Compliant",
-  "compliance_score": 85,
-  "summary": "Short overall explanation.",
-  "findings": [
-    {{
-      "policy_section": "Policy section or compliance area that needs improvement",
-      "gdpr_article": "Relevant GDPR article or article range",
-      "why": "Why this area is incomplete, unclear, or non-compliant",
-      "fix": "Concrete action needed to improve compliance"
-    }}
-  ]
+  "compliance_score": 78,
+  "summary": "Concise explanation of the overall assessment."
 }}
 
-Rules:
-- overall_status must be exactly one of: "Compliant", "Partially Compliant", "Non-Compliant".
-- compliance_score must be an integer from 0 to 100.
-- Return between 1 and {MAX_FINDINGS} findings.
-- Do not mention chunk numbers.
-- Do not mention paragraph numbers.
-- Do not list every GDPR article.
-- Focus only on the most important GDPR compliance gaps.
-- Do not penalise the policy simply because it does not use exact GDPR wording.
-- Do not mark the policy as non-compliant solely because a pattern was not matched.
-- Do not mark the policy as non-compliant solely because the submitted text may be truncated.
-- Each finding must include policy_section, gdpr_article, why, and fix.
+Score thresholds:
+- 75 to 100: Compliant
+- 45 to 74: Partially Compliant
+- 0 to 44: Non-Compliant
 
-Truncation note:
-{truncation_note}
+Rules:
+- compliance_score must be an integer from 0 to 100.
+- overall_status must match the score threshold.
+- Additional company information must not reduce the score.
+- Do not score based on keyword density.
+- Assess what the policy meaningfully contains.
+- Do not penalise semantically equivalent wording.
+- Consider both strengths and weaknesses.
+- Do not repeat detailed findings because they are already represented in the requirement evidence.
 
 Hybrid evidence:
 {evidence_json}
 
-Privacy policy text:
+Privacy policy:
 \"\"\"
-{policy_text}
+{visible_policy}
 \"\"\"
 """.strip()
 
 
-def normalise_status(value: str, score: int) -> str:
-    value = clean_text(value)
-
-    if value in ["Compliant", "Partially Compliant", "Non-Compliant"]:
-        return value
-
-    lower = value.lower()
-
-    if "non" in lower:
-        return "Non-Compliant"
-    if "partial" in lower:
-        return "Partially Compliant"
-    if "compliant" in lower:
-        return "Compliant"
-
-    return status_from_score(score)
-
-
-def normalise_findings(findings) -> list[dict]:
-    if not isinstance(findings, list):
-        findings = []
-
-    cleaned = []
-
-    for item in findings[:MAX_FINDINGS]:
-        if not isinstance(item, dict):
-            continue
-
-        policy_section = clean_text(item.get("policy_section", "General GDPR compliance"))
-        gdpr_article = clean_text(item.get("gdpr_article", "Relevant GDPR provisions"))
-        why = clean_text(item.get("why", "The policy may require further review."))
-        fix = clean_text(item.get("fix", "Clarify this section in the privacy policy."))
-
-        cleaned.append({
-            "policy_section": policy_section or "General GDPR compliance",
-            "gdpr_article": gdpr_article or "Relevant GDPR provisions",
-            "why": why or "The policy may require further review.",
-            "fix": fix or "Clarify this section in the privacy policy.",
-        })
-
-    if not cleaned:
-        cleaned.append({
-            "policy_section": "General GDPR compliance",
-            "gdpr_article": "Articles 12-14",
-            "why": "The model did not return specific structured findings.",
-            "fix": "Review the policy manually and ensure key GDPR requirements are addressed.",
-        })
-
-    return cleaned
-
-
-def build_issues(findings: list[dict], score: int) -> list[dict]:
-    severity = "High" if score < 45 else "Medium"
-
-    return [
-        {
-            "title": finding["policy_section"],
-            "severity": severity,
-            "description": (
-                f"GDPR article to address: {finding['gdpr_article']}\n\n"
-                f"Why: {finding['why']}\n\n"
-                f"Fix: {finding['fix']}"
-            ),
-            "policy_section": finding["policy_section"],
-            "gdpr_article": finding["gdpr_article"],
-            "why": finding["why"],
-            "fix": finding["fix"],
-        }
-        for finding in findings
-    ]
-
-
-def build_sections_from_evidence(evidence: dict) -> list[dict]:
-    sections = []
-
+def build_sections_from_evidence(
+    evidence: dict,
+) -> list[dict]:
     status_map = {
         "PRESENT": "present",
         "WEAK": "weak",
         "MISSING": "missing",
     }
 
-    for item in evidence.get("requirement_evidence", []):
-        llm_status = item.get("llm_status", "MISSING")
-        score = item.get("heuristic_coverage_score", 0)
-
-        note_parts = [
-            item.get("description", ""),
-            f"GDPR reference: {item.get('gdpr_article', '')}.",
-            f"Coverage status: {llm_status}.",
-        ]
-
-        if item.get("llm_evidence"):
-            note_parts.append(f"Evidence: {item['llm_evidence']}.")
-
-        if item.get("llm_reason"):
-            note_parts.append(f"Reason: {item['llm_reason']}.")
-
-        note_parts.append(f"Heuristic evidence score: {score}.")
-
-        sections.append({
-            "name": item["policy_section"],
-            "status": status_map.get(llm_status, "missing"),
-            "note": " ".join(note_parts),
-        })
-
-    return sections
-
-
-def build_paragraph_results(findings: list[dict], status: str, score: int) -> list[dict]:
     return [
         {
-            "paragraph_id": i + 1,
-            "policy_text": finding["policy_section"],
-            "best_article_number": finding["gdpr_article"],
-            "best_article_title": finding["policy_section"],
-            "section_name": finding["policy_section"],
-            "heuristic_score": 0.0,
+            "name": item["policy_section"],
+            "status": status_map[
+                item["llm_status"]
+            ],
+            "note": (
+                f"{item['description']}\n"
+                f"GDPR reference: "
+                f"{item['gdpr_article']}\n"
+                f"Evidence: "
+                f"{item['llm_evidence'] or 'No specific evidence was identified.'}\n"
+                f"Assessment: "
+                f"{item['llm_reason'] or 'No explanation was provided.'}"
+            ),
+        }
+        for item
+        in evidence["requirement_evidence"]
+    ]
+
+
+def build_gap_outputs(
+    evidence: dict,
+) -> tuple[list[dict], list[dict]]:
+    status_order = {
+        "MISSING": 0,
+        "WEAK": 1,
+    }
+
+    gap_items = [
+        item
+        for item
+        in evidence["requirement_evidence"]
+        if item["llm_status"]
+        in {"MISSING", "WEAK"}
+    ]
+
+    gap_items.sort(
+        key=lambda item: (
+            status_order[
+                item["llm_status"]
+            ],
+            item["policy_section"],
+        )
+    )
+
+    issues: list[dict] = []
+    recommendations: list[dict] = []
+
+    for index, item in enumerate(
+        gap_items
+    ):
+        reason = (
+            item["llm_reason"]
+            or (
+                "The policy does not provide "
+                "sufficient information for "
+                "this requirement."
+            )
+        )
+
+        recommendation = (
+            item["llm_recommendation"]
+            or (
+                "Review and improve the "
+                f"{item['policy_section'].lower()} "
+                "section."
+            )
+        )
+
+        issues.append({
+            "title": item["policy_section"],
+            "severity": (
+                "high"
+                if item["llm_status"]
+                == "MISSING"
+                else "medium"
+            ),
+            "description": (
+                f"GDPR article to address: "
+                f"{item['gdpr_article']}\n\n"
+                f"Why: {reason}"
+            ),
+            "policy_section": (
+                item["policy_section"]
+            ),
+            "gdpr_article": (
+                item["gdpr_article"]
+            ),
+            "why": reason,
+            "coverage_status": (
+                item["llm_status"]
+            ),
+        })
+
+        recommendations.append({
+            "number": index + 1,
+            "text": (
+                f"{item['policy_section']}: "
+                f"{recommendation}"
+            ),
+        })
+
+    return issues, recommendations
+
+
+def build_paragraph_results(
+    issues: list[dict],
+    overall_status: str,
+    score: int,
+) -> list[dict]:
+    return [
+        {
+            "paragraph_id": index + 1,
+            "policy_text": (
+                issue["policy_section"]
+            ),
+            "best_article_number": (
+                issue["gdpr_article"]
+            ),
+            "best_article_title": (
+                issue["policy_section"]
+            ),
+            "section_name": (
+                issue["policy_section"]
+            ),
+            "heuristic_score": (
+                0.0
+                if issue["coverage_status"]
+                == "MISSING"
+                else 0.5
+            ),
             "semantic_score": 0.0,
-            "llm_verdict": status,
-            "llm_score": round(score / 100, 3),
+            "llm_verdict": overall_status,
+            "llm_score": round(
+                score / 100,
+                3,
+            ),
             "llm_assessment": (
-                f"GDPR article to address: {finding['gdpr_article']}\n\n"
-                f"Why: {finding['why']}\n\n"
-                f"Fix: {finding['fix']}"
+                f"GDPR article to address: "
+                f"{issue['gdpr_article']}\n\n"
+                f"Why: {issue['why']}"
             ),
             "reviewed_by_llm": True,
-            "combined_score": round(score / 100, 3),
-            "combined_label": status,
+            "combined_score": round(
+                score / 100,
+                3,
+            ),
+            "combined_label": overall_status,
         }
-        for i, finding in enumerate(findings)
+        for index, issue
+        in enumerate(issues)
     ]
 
 
-def assess_policy_text(policy_text: str) -> dict:
+def assess_policy_text(
+    policy_text: str,
+) -> dict:
     if not policy_text or not policy_text.strip():
-        raise ValueError("No policy text provided.")
+        raise ValueError(
+            "No policy text provided."
+        )
 
     if not GDPR_FILE.exists():
-        raise FileNotFoundError(f"Missing GDPR reference file: {GDPR_FILE}")
+        raise FileNotFoundError(
+            f"Missing GDPR reference file: "
+            f"{GDPR_FILE}"
+        )
 
     policy_text = policy_text.strip()
-    word_count = len(policy_text.split())
+    word_count = len(
+        policy_text.split()
+    )
 
-    gdpr_df = pd.read_csv(GDPR_FILE)
+    gdpr_df = pd.read_csv(
+        GDPR_FILE
+    )
 
-    evidence = build_hybrid_evidence(policy_text, gdpr_df)
-    prompt = build_hybrid_prompt(policy_text, evidence)
+    evidence = build_hybrid_evidence(
+        policy_text,
+        gdpr_df,
+    )
 
-    raw_reply = call_llm(prompt)
+    final_prompt = (
+        build_final_assessment_prompt(
+            policy_text,
+            evidence,
+        )
+    )
 
-    print("\n\n===== RAW HYBRID MODEL RESPONSE =====")
+    raw_reply = call_llm(
+        final_prompt
+    )
+
+    print(
+        "\n===== RAW HYBRID ASSESSMENT ====="
+    )
     print(raw_reply)
-    print("===== END RAW HYBRID MODEL RESPONSE =====\n\n")
+    print(
+        "===== END HYBRID ASSESSMENT =====\n"
+    )
 
-    parsed = safe_json_loads(raw_reply)
-
-    score = parsed.get("compliance_score", 0)
+    parsed = safe_json_loads(
+        raw_reply
+    )
 
     try:
-        score = int(float(score))
-    except Exception:
-        score = 0
+        score = int(
+            float(
+                parsed.get(
+                    "compliance_score"
+                )
+            )
+        )
+    except (
+        TypeError,
+        ValueError,
+    ) as error:
+        raise ValueError(
+            "The model did not return a valid "
+            "compliance score."
+        ) from error
 
-    score = max(0, min(100, score))
+    score = max(
+        0,
+        min(100, score),
+    )
 
-    overall_status = status_from_score(score)
-    findings = normalise_findings(parsed.get("findings", []))
-    summary = clean_text(parsed.get("summary", "")) or "Hybrid GDPR assessment completed."
+    overall_status = (
+        status_from_score(score)
+    )
 
-    issues = build_issues(findings, score)
-    sections = build_sections_from_evidence(evidence)
-    paragraph_results = build_paragraph_results(findings, overall_status, score)
+    summary = clean_text(
+        parsed.get(
+            "summary",
+            "",
+        )
+    )
 
-    recommendations = [
-        {
-            "number": i + 1,
-            "text": f"{finding['policy_section']}: {finding['fix']}",
-        }
-        for i, finding in enumerate(findings)
-    ]
+    if not summary:
+        raise ValueError(
+            "The model did not return an "
+            "assessment summary."
+        )
+
+    sections = (
+        build_sections_from_evidence(
+            evidence
+        )
+    )
+
+    issues, recommendations = (
+        build_gap_outputs(
+            evidence
+        )
+    )
+
+    paragraph_results = (
+        build_paragraph_results(
+            issues,
+            overall_status,
+            score,
+        )
+    )
 
     return {
-        "combined_score": round(score / 100, 3),
+        "combined_score": round(
+            score / 100,
+            3,
+        ),
         "combined_score_percent": score,
         "combined_label": overall_status,
         "overall_status": overall_status,
         "summary": summary,
         "word_count": word_count,
-        "paragraph_count": evidence["chunk_count"],
+        "paragraph_count": (
+            evidence["chunk_count"]
+        ),
         "llm_reviewed_paragraph_count": 2,
-        "api_mode": "hybrid_llm_requirement_semantic_traceability",
+        "llm_call_count": 2,
+        "api_mode": (
+            "hybrid_llm_requirement_"
+            "semantic_traceability"
+        ),
         "sections": sections,
-        "paragraph_results": paragraph_results,
+        "paragraph_results": (
+            paragraph_results
+        ),
         "issues": issues,
-        "recommendations": recommendations,
+        "recommendations": (
+            recommendations
+        ),
         "hybrid_evidence": evidence,
-        "raw_llm_response": clean_text(raw_reply),
+        "raw_llm_response": clean_text(
+            raw_reply
+        ),
     }
