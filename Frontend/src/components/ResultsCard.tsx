@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronUp,
+  Download,
   FileSearch,
   Info,
   Lightbulb,
@@ -29,6 +30,12 @@ import type {
   IssueSeverity,
 } from "@/lib/complianceMock";
 import { cn } from "@/lib/utils";
+
+import {
+  exportReportAsDOCX,
+  exportReportAsPDF,
+  exportReportAsTXT,
+} from "@/lib/exportReport";
 
 const statusConfig = {
   Compliant: {
@@ -885,6 +892,82 @@ export const ResultsCard = ({
             </ol>
           </section>
         )}
+
+        {/* Download report */}
+                {/* Download report */}
+        <section className="overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/40 to-accent/10 p-6 shadow-sm">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/20 bg-background/80 text-primary shadow-sm">
+                <Download className="h-6 w-6" />
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Download report
+                  </h3>
+
+                  <Badge
+                    variant="outline"
+                    className="border-primary/30 bg-background/60 text-xs text-primary"
+                  >
+                    Exportable
+                  </Badge>
+                </div>
+
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  Save the full compliance assessment, including the overall result,
+                  requirement coverage, identified gaps, evidence and recommended actions.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:min-w-[360px]">
+             <button
+  type="button"
+  onClick={() => exportReportAsPDF(result)}
+  className="group rounded-xl border border-red-300/60 bg-red-100 px-4 py-3 text-sm font-semibold text-red-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-red-200 hover:text-red-800 hover:shadow-md"
+>
+  <span className="flex items-center justify-center gap-2">
+    <Download className="h-4 w-4 transition group-hover:scale-110" />
+    PDF
+  </span>
+</button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  void exportReportAsDOCX(result);
+                }}
+                className="group rounded-xl border border-accent/40 bg-accent/10 px-4 py-3 text-sm font-semibold text-accent transition hover:-translate-y-0.5 hover:bg-accent/15 hover:shadow-md"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <Download className="h-4 w-4 transition group-hover:scale-110" />
+                  Word
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => exportReportAsTXT(result)}
+                className="group rounded-xl border border-border/70 bg-background/80 px-4 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:bg-secondary hover:shadow-md"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <Download className="h-4 w-4 transition group-hover:scale-110" />
+                  TXT
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-xl border border-border/50 bg-background/60 px-4 py-3">
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              The exported report is intended for documentation and review purposes only.
+              It does not constitute legal advice.
+            </p>
+          </div>
+        </section>
       </CardContent>
     </Card>
   );
